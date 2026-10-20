@@ -287,3 +287,33 @@ footer p {
     transition: none;
   }
 }
+
+/* Espace occupé par la carte */
+#carte-stations {
+  width: 100%;
+  height: 540px;
+  margin-top: 24px;
+  border: 1px solid var(--bordure);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Informations affichées au clic sur un point */
+#carte-stations .leaflet-popup-content {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--texte);
+}
+
+#message-carte {
+  font-size: 13px;
+}
+
+/* Carte adaptée au téléphone */
+@media (max-width: 700px) {
+  #carte-stations {
+    height: 420px;
+  }
+}
