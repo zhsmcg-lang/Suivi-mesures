@@ -1,10 +1,14 @@
-/* Couleurs et présentation générales */
+/* =========================================
+   COULEURS ET RÉGLAGES GÉNÉRAUX
+   ========================================= */
+
 :root {
   --fond: #f3f6f4;
   --blanc: #ffffff;
   --texte: #183d41;
   --texte-secondaire: #526b6b;
   --vert: #167568;
+  --vert-clair: #eaf3ed;
   --bordure: #dce6e1;
 }
 
@@ -18,6 +22,9 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
   background: var(--fond);
   color: var(--texte);
@@ -26,7 +33,16 @@ body {
   line-height: 1.7;
 }
 
-/* Bandeau supérieur */
+/* Les rubriques masquées par JavaScript restent invisibles */
+[hidden] {
+  display: none !important;
+}
+
+
+/* =========================================
+   GRAND BANDEAU VERT SUPÉRIEUR
+   ========================================= */
+
 header {
   padding: 36px 24px 28px;
   background: var(--texte);
@@ -35,18 +51,24 @@ header {
 }
 
 header h1 {
-  margin: 0;
+  max-width: 1050px;
+  margin: 0 auto;
   font-size: 36px;
   font-weight: 600;
   letter-spacing: -1px;
+  line-height: 1.3;
 }
 
 header p {
-  margin: 6px 0 24px;
+  margin: 12px 0 26px;
   color: #bcd9d0;
 }
 
-/* Liens de navigation */
+
+/* =========================================
+   NAVIGATION ENTRE LES RUBRIQUES
+   ========================================= */
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -55,71 +77,119 @@ nav {
 }
 
 nav a {
+  display: inline-block;
   padding: 10px 18px;
   border: 1px solid #557976;
   border-radius: 6px;
   color: var(--blanc);
   text-decoration: none;
   font-size: 14px;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 nav a:hover {
   background: #2b5856;
 }
 
+/* Bouton de la rubrique actuellement affichée */
+nav a[aria-current="page"] {
+  border-color: var(--blanc);
+  background: var(--blanc);
+  color: var(--texte);
+  font-weight: 600;
+}
+
+/* Repère visible lors de la navigation au clavier */
 a:focus-visible {
   outline: 3px solid #e4b45f;
   outline-offset: 4px;
 }
 
-/* Organisation du contenu */
+
+/* =========================================
+   ZONE PRINCIPALE
+   ========================================= */
+
 main {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  flex: 1;
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
   padding: 36px 24px;
 }
 
-section {
-  padding: 30px;
+/* Présentation commune des rubriques */
+main > section {
+  padding: 36px;
   border: 1px solid var(--bordure);
   border-radius: 12px;
   background: var(--blanc);
 }
 
-section h2 {
-  margin: 0 0 16px;
-  font-size: 25px;
+main h2 {
+  margin: 0 0 18px;
+  font-size: 26px;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
-section p {
-  margin: 12px 0 0;
+main p {
+  margin: 14px 0 0;
   color: var(--texte-secondaire);
 }
 
-/* Introduction sur toute la largeur */
-#accueil {
-  grid-column: 1 / -1;
-  padding: 40px;
-  border-left: 5px solid var(--vert);
-  background: #eaf3ed;
+main ul {
+  margin: 16px 0;
+  padding-left: 26px;
+  color: var(--texte-secondaire);
 }
 
-#accueil h2 {
-  max-width: 700px;
+main li {
+  margin-bottom: 5px;
+}
+
+
+/* =========================================
+   ACCUEIL : DEUX BLOCS VERT CLAIR
+   ========================================= */
+
+/* Conteneur transparent séparant les deux blocs */
+#accueil {
+  display: grid;
+  gap: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Même présentation pour les deux blocs */
+#accueil > .bandeau-bienvenue,
+#accueil > .bandeau-origine {
+  padding: 36px 40px;
+  border: 1px solid var(--bordure);
+  border-left: 5px solid var(--vert);
+  border-radius: 12px;
+  background: var(--vert-clair);
+}
+
+/* Titre du bloc de bienvenue */
+#accueil .bandeau-bienvenue h2 {
   font-size: 34px;
   letter-spacing: -0.8px;
 }
 
-#accueil p {
-  max-width: 760px;
+/* Titre du bloc Origine des données */
+#accueil .bandeau-origine h2 {
+  font-size: 26px;
+  letter-spacing: normal;
 }
 
-/* Repères visuels des espaces */
+
+/* =========================================
+   AUTRES RUBRIQUES
+   ========================================= */
+
 #carte {
   border-top: 4px solid var(--vert);
 }
@@ -129,10 +199,14 @@ section p {
 }
 
 #informations {
-  grid-column: 1 / -1;
+  border-top: 4px solid var(--vert);
 }
 
-/* Bas de page */
+
+/* =========================================
+   BAS DE PAGE
+   ========================================= */
+
 footer {
   padding: 20px 24px;
   border-top: 1px solid var(--bordure);
@@ -145,14 +219,22 @@ footer p {
   margin: 0;
 }
 
-/* Adaptation aux téléphones */
+
+/* =========================================
+   AFFICHAGE SUR TÉLÉPHONE
+   ========================================= */
+
 @media (max-width: 700px) {
   header {
     padding: 28px 18px;
   }
 
   header h1 {
-    font-size: 29px;
+    font-size: 27px;
+  }
+
+  header p {
+    font-size: 14px;
   }
 
   nav a {
@@ -161,108 +243,47 @@ footer p {
   }
 
   main {
-    grid-template-columns: 1fr;
-    gap: 18px;
     padding: 24px 16px;
   }
 
-  section,
-  #accueil {
+  main > section {
     padding: 24px;
   }
 
-  #accueil h2 {
-    font-size: 28px;
-  }
-
-  section h2 {
+  main h2 {
     font-size: 23px;
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
-
-  /* Masquer les rubriques non sélectionnées */
-[hidden] {
-  display: none !important;
-}
-
-/* La rubrique visible occupe toute la largeur */
-main > section {
-  grid-column: 1 / -1;
-}
-
-/* Identifier le bouton sélectionné */
-nav a[aria-current="page"] {
-  background: #ffffff;
-  color: var(--texte);
-  border-color: #ffffff;
-  font-weight: 600;
-
-  /* Limiter la largeur du grand titre pour faciliter sa lecture */
-header h1 {
-  max-width: 1050px;
-  margin: 0 auto;
-  line-height: 1.3;
-}
-
-/* Organiser les deux bandeaux de l'accueil */
-#accueil {
-  display: grid;
-  gap: 24px;
-  padding: 0;
-  border: none;
-  background: transparent;
-}
-
-/* Premier bandeau : présentation du portail */
-.bandeau-bienvenue {
-  padding: 40px;
-  border: 1px solid var(--bordure);
-  border-left: 5px solid var(--vert);
-  border-radius: 12px;
-  background: #eaf3ed;
-}
-
-/* Second bandeau : origine des données */
-.bandeau-origine {
-  padding: 32px 40px;
-  border: 1px solid var(--bordure);
-  border-radius: 12px;
-  background: var(--blanc);
-}
-
-#accueil .bandeau-origine h2 {
-  font-size: 26px;
-  letter-spacing: normal;
-}
-
-#accueil ul {
-  padding-left: 24px;
-  color: var(--texte-secondaire);
-}
-
-#accueil li {
-  margin-bottom: 5px;
-}
-
-/* Adapter les bandeaux aux téléphones */
-@media (max-width: 700px) {
-  header h1 {
-    font-size: 27px;
+  #accueil {
+    gap: 22px;
+    padding: 0;
   }
 
-  .bandeau-bienvenue,
-  .bandeau-origine {
+  #accueil > .bandeau-bienvenue,
+  #accueil > .bandeau-origine {
     padding: 24px;
+  }
+
+  #accueil .bandeau-bienvenue h2 {
+    font-size: 28px;
   }
 
   #accueil .bandeau-origine h2 {
     font-size: 23px;
   }
 }
-}
+
+
+/* =========================================
+   RÉDUCTION DES ANIMATIONS SI SOUHAITÉE
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  nav a {
+    transition: none;
   }
 }
