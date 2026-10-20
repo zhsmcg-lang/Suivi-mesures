@@ -90,7 +90,7 @@ function initialiserCarte() {
 
     const lien = document.createElement("a");
     lien.href = "https://www.camarguegardoise.com/";
-    lien.textContent = "Site du SMCG (nouvel onglet)";
+    lien.textContent = "Site du SMCG";
     lien.target = "_blank";
     lien.rel = "noopener noreferrer";
 
