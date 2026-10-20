@@ -317,3 +317,64 @@ footer p {
     height: 420px;
   }
 }
+
+/* Commandes de filtrage de la carte */
+.filtres-carte {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid var(--bordure);
+  border-radius: 10px;
+  background: var(--fond);
+}
+
+.filtres-carte label {
+  display: grid;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.filtres-carte select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 9px 10px;
+  border: 1px solid #a8bdb4;
+  border-radius: 6px;
+  background: var(--blanc);
+  color: var(--texte);
+  font: inherit;
+  font-weight: normal;
+}
+
+#reinitialiser-filtres {
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 10px 16px;
+  border: 1px solid var(--vert);
+  border-radius: 6px;
+  background: var(--blanc);
+  color: var(--vert);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#reinitialiser-filtres:hover {
+  background: var(--vert-clair);
+}
+
+.filtres-carte select:focus-visible,
+#reinitialiser-filtres:focus-visible {
+  outline: 3px solid #e4b45f;
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .filtres-carte {
+    grid-template-columns: 1fr;
+  }
+}
