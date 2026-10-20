@@ -2,26 +2,62 @@
    STATIONS ET COORDONNÉES
    ========================================= */
 
+// Informations communes aux structures.
+const structures = {
+  SMCG: {
+    nom: "SMCG — Syndicat Mixte Camargue Gardoise",
+    site: "https://www.camarguegardoise.com/",
+    texteLien: "Site du SMCG"
+  },
+
+  VNF: {
+    nom: "VNF",
+    site: "https://www.vnf.fr/aghyre/#!/displaySIG",
+    texteLien: "Cartes et mesures du réseau VNF"
+  }
+};
+
+// Informations propres à chaque station.
 const stations = [
   {
     nom: "Chenal Marette",
     latitude: 43.552118917373306,
-    longitude: 4.170558794461427
+    longitude: 4.170558794461427,
+    structure: "SMCG",
+    teletransmission: false,
+    parametres: ["Salinité", "Température", "Oxygène"]
   },
   {
     nom: "Marette sud",
     latitude: 43.55308777446753,
-    longitude: 4.170699836116174
+    longitude: 4.170699836116174,
+    structure: "SMCG",
+    teletransmission: false,
+    parametres: ["Salinité", "Température", "Oxygène"]
   },
   {
     nom: "Médard Sud Ouest",
     latitude: 43.541609743542324,
-    longitude: 4.142196992593226
+    longitude: 4.142196992593226,
+    structure: "SMCG",
+    teletransmission: false,
+    parametres: ["Salinité", "Température", "Oxygène"]
   },
   {
     nom: "Ponant",
     latitude: 43.564589198174176,
-    longitude: 4.121582251596615
+    longitude: 4.121582251596615,
+    structure: "SMCG",
+    teletransmission: false,
+    parametres: ["Salinité", "Température", "Oxygène"]
+  },
+  {
+    nom: "Pont de Franquevaux",
+    latitude: 43.64670848647801,
+    longitude: 4.348546346343558,
+    structure: "VNF",
+    teletransmission: true,
+    parametres: ["Conductivité", "Salinité", "Température"]
   }
 ];
 
@@ -70,27 +106,28 @@ function initialiserCarte() {
       }
     ).addTo(carte);
 
-        // Préparer la fiche du point.
+            // Préparer la fiche du point.
+    const structure = structures[station.structure];
+
     const fiche = document.createElement("div");
 
     const titre = document.createElement("strong");
     titre.textContent = station.nom;
 
     const organisme = document.createElement("div");
-    organisme.textContent =
-      "SMCG — Syndicat Mixte Camargue Gardoise";
+    organisme.textContent = structure.nom;
 
     const mode = document.createElement("div");
-    mode.textContent =
-      "Relevés mensuels — sans télétransmission";
+    mode.textContent = station.teletransmission
+      ? "Suivi en télétransmission"
+      : "Relevés mensuels — sans télétransmission";
 
     const parametres = document.createElement("div");
-    parametres.textContent =
-      "Salinité · Température · Oxygène";
+    parametres.textContent = station.parametres.join(" · ");
 
     const lien = document.createElement("a");
-    lien.href = "https://www.camarguegardoise.com/";
-    lien.textContent = "Site du SMCG";
+    lien.href = structure.site;
+    lien.textContent = structure.texteLien;
     lien.target = "_blank";
     lien.rel = "noopener noreferrer";
 
