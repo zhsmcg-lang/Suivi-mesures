@@ -100,13 +100,50 @@
 
 </section>
 
-    <section id="carte">
+   <section id="carte">
   <h2>Carte des suivis</h2>
 
   <p>
-    Retrouvez les stations du réseau et cliquez sur un point
+    Filtrez les stations et cliquez sur un point
     pour consulter ses informations.
   </p>
+
+  <div class="filtres-carte">
+
+    <label for="filtre-structure">
+      Structure
+      <select id="filtre-structure">
+        <option value="">Toutes les structures</option>
+        <option value="SMCG">SMCG</option>
+        <option value="VNF">VNF</option>
+      </select>
+    </label>
+
+    <label for="filtre-parametre">
+      Paramètre suivi
+      <select id="filtre-parametre">
+        <option value="">Tous les paramètres</option>
+        <option value="Salinité">Salinité</option>
+        <option value="Température">Température</option>
+        <option value="Oxygène">Oxygène</option>
+        <option value="Conductivité">Conductivité</option>
+      </select>
+    </label>
+
+    <label for="filtre-mode">
+      Mode de suivi
+      <select id="filtre-mode">
+        <option value="">Tous les modes</option>
+        <option value="tt">Télétransmission</option>
+        <option value="mensuel">Relevés mensuels</option>
+      </select>
+    </label>
+
+    <button id="reinitialiser-filtres" type="button">
+      Afficher toutes les stations
+    </button>
+
+  </div>
 
   <div
     id="carte-stations"
@@ -114,9 +151,7 @@
     aria-label="Carte des stations de suivi"
   ></div>
 
-  <p id="message-carte" aria-live="polite">
-    Stations SMCG en relevés mensuels et station VNF en télétransmission.
-  </p>
+  <p id="message-carte" role="status" aria-live="polite"></p>
 </section>
 
     <section id="graphiques">
