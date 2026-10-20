@@ -70,11 +70,15 @@ function initialiserCarte() {
       }
     ).addTo(carte);
 
-    // Préparer la fiche du point.
+        // Préparer la fiche du point.
     const fiche = document.createElement("div");
 
     const titre = document.createElement("strong");
     titre.textContent = station.nom;
+
+    const organisme = document.createElement("div");
+    organisme.textContent =
+      "SMCG — Syndicat Mixte Camargue Gardoise";
 
     const mode = document.createElement("div");
     mode.textContent =
@@ -84,7 +88,19 @@ function initialiserCarte() {
     parametres.textContent =
       "Salinité · Température · Oxygène";
 
-    fiche.append(titre, mode, parametres);
+    const lien = document.createElement("a");
+    lien.href = "https://www.camarguegardoise.com/";
+    lien.textContent = "Site du SMCG (nouvel onglet)";
+    lien.target = "_blank";
+    lien.rel = "noopener noreferrer";
+
+    fiche.append(
+      titre,
+      organisme,
+      mode,
+      parametres,
+      lien
+    );
 
     point.bindPopup(fiche);
     points.push(point);
