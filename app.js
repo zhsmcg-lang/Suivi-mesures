@@ -67,23 +67,125 @@ const stations = [
    ========================================= */
 
 let carte = null;
+let coucheStations = null;
 
+
+/* Créer la fiche descriptive d'une station */
+function creerFiche(station) {
+  const structure = structures[station.structure];
+  const fiche = document.createElement("div");
+
+  const titre = document.createElement("strong");
+  titre.textContent = station.nom;
+
+  const organisme = document.createElement("div");
+  organisme.textContent = structure.nom;
+
+  const mode = document.createElement("div");
+  mode.textContent = station.teletransmission
+    ? "Suivi en télétransmission"
+    : "Relevés mensuels — sans télétransmission";
+
+  const parametres = document.createElement("div");
+  parametres.textContent = station.parametres.join(" · ");
+
+  const lien = document.createElement("a");
+  lien.href = structure.site;
+  lien.textContent = structure.texteLien;
+  lien.target = "_blank";
+  lien.rel = "noopener noreferrer";
+
+  fiche.append(titre, organisme, mode, parametres, lien);
+
+  return fiche;
+}
+
+
+/* Afficher les stations correspondant aux filtres */
+function actualiserStations() {
+  if (carte === null || coucheStations === null) {
+    return;
+  }
+
+  const structureChoisie =
+    document.getElementById("filtre-structure")?.value || "";
+
+  const parametreChoisi =
+    document.getElementById("filtre-parametre")?.value || "";
+
+  const modeChoisi =
+    document.getElementById("filtre-mode")?.value || "";
+
+  const stationsVisibles = stations.filter(station => {
+    const structureValide =
+      structureChoisie === "" ||
+      station.structure === structureChoisie;
+
+    const parametreValide =
+      parametreChoisi === "" ||
+      station.parametres.includes(parametreChoisi);
+
+    const modeValide =
+      modeChoisi === "" ||
+      (modeChoisi === "tt" && station.teletransmission) ||
+      (modeChoisi === "mensuel" && !station.teletransmission);
+
+    return structureValide && parametreValide && modeValide;
+  });
+
+  carte.closePopup();
+  coucheStations.clearLayers();
+
+  stationsVisibles.forEach(station => {
+    L.marker(
+      [station.latitude, station.longitude],
+      {
+        title: station.nom,
+        alt: station.nom
+      }
+    )
+      .bindPopup(creerFiche(station))
+      .addTo(coucheStations);
+  });
+
+  const nombre = stationsVisibles.length;
+  const message = document.getElementById("message-carte");
+
+  if (nombre === 0) {
+    message.textContent =
+      "Aucune station ne correspond à cette sélection.";
+  } else {
+    const pluriel = nombre > 1 ? "s" : "";
+
+    message.textContent =
+      `${nombre} station${pluriel} affichée${pluriel}` +
+      ` sur ${stations.length}.`;
+
+    carte.fitBounds(coucheStations.getBounds(), {
+      padding: [35, 35],
+      maxZoom: 14
+    });
+  }
+}
+
+
+/* Créer la carte une seule fois */
 function initialiserCarte() {
-  // Conserver la carte si elle existe déjà.
   if (carte !== null) {
     return;
   }
 
-  // Afficher un message si Leaflet n'a pas pu être chargé.
   if (typeof L === "undefined") {
     document.getElementById("message-carte").textContent =
       "La carte n’a pas pu être chargée. Actualisez la page.";
     return;
   }
 
-  carte = L.map("carte-stations");
+  carte = L.map("carte-stations").setView(
+    [43.59, 4.23],
+    11
+  );
 
-  // Fond de carte OpenStreetMap.
   L.tileLayer(
     "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
@@ -94,74 +196,17 @@ function initialiserCarte() {
     }
   ).addTo(carte);
 
-  const points = [];
+  coucheStations = L.featureGroup().addTo(carte);
 
-  // Ajouter chaque station.
-  stations.forEach(station => {
-    const point = L.marker(
-      [station.latitude, station.longitude],
-      {
-        title: station.nom,
-        alt: station.nom
-      }
-    ).addTo(carte);
-
-            // Préparer la fiche du point.
-    const structure = structures[station.structure];
-
-    const fiche = document.createElement("div");
-
-    const titre = document.createElement("strong");
-    titre.textContent = station.nom;
-
-    const organisme = document.createElement("div");
-    organisme.textContent = structure.nom;
-
-    const mode = document.createElement("div");
-    mode.textContent = station.teletransmission
-      ? "Suivi en télétransmission"
-      : "Relevés mensuels — sans télétransmission";
-
-    const parametres = document.createElement("div");
-    parametres.textContent = station.parametres.join(" · ");
-
-    const lien = document.createElement("a");
-    lien.href = structure.site;
-    lien.textContent = structure.texteLien;
-    lien.target = "_blank";
-    lien.rel = "noopener noreferrer";
-
-    fiche.append(
-      titre,
-      organisme,
-      mode,
-      parametres,
-      lien
-    );
-
-    point.bindPopup(fiche);
-    points.push(point);
-  });
-
-  // Cadrer la carte sur les quatre stations.
-  const groupe = L.featureGroup(points);
-
-  carte.fitBounds(groupe.getBounds(), {
-    padding: [35, 35],
-    maxZoom: 14
-  });
-
-  // Ajouter une échelle en mètres et kilomètres.
   L.control.scale({
     imperial: false
   }).addTo(carte);
+
+  actualiserStations();
 }
 
 
-/* =========================================
-   NAVIGATION ENTRE LES RUBRIQUES
-   ========================================= */
-
+/* Navigation entre les rubriques */
 const rubriques = document.querySelectorAll("main > section");
 const liens = document.querySelectorAll("nav a");
 
@@ -176,12 +221,10 @@ function afficherRubrique() {
     ? rubriqueDemandee
     : "accueil";
 
-  // Afficher uniquement la rubrique choisie.
   rubriques.forEach(rubrique => {
     rubrique.hidden = rubrique.id !== rubriqueActive;
   });
 
-  // Identifier le bouton sélectionné.
   liens.forEach(lien => {
     const estActif =
       lien.getAttribute("href") === "#" + rubriqueActive;
@@ -193,7 +236,6 @@ function afficherRubrique() {
     }
   });
 
-  // Placer le focus sur le titre de la rubrique.
   const titre = document.querySelector(
     "#" + rubriqueActive + " h2"
   );
@@ -203,11 +245,9 @@ function afficherRubrique() {
     titre.focus({ preventScroll: true });
   }
 
-  // Charger la carte lorsqu'elle devient visible.
   if (rubriqueActive === "carte") {
     initialiserCarte();
 
-    // Réajuster la carte après un changement d'onglet.
     requestAnimationFrame(() => {
       if (carte !== null) {
         carte.invalidateSize();
@@ -215,6 +255,37 @@ function afficherRubrique() {
     });
   }
 }
+
+
+/* Réagir aux changements de sélection */
+document.querySelectorAll(".filtres-carte select").forEach(
+  filtre => {
+    filtre.addEventListener("change", actualiserStations);
+  }
+);
+
+
+/* Réinitialiser les trois filtres */
+const boutonReset = document.getElementById(
+  "reinitialiser-filtres"
+);
+
+if (boutonReset) {
+  boutonReset.addEventListener("click", () => {
+    document.querySelectorAll(".filtres-carte select").forEach(
+      filtre => {
+        filtre.selectedIndex = 0;
+      }
+    );
+
+    actualiserStations();
+  });
+}
+
+
+/* Afficher la bonne rubrique au chargement */
+window.addEventListener("hashchange", afficherRubrique);
+afficherRubrique();
 
 // Prendre en compte les clics et l'historique du navigateur.
 window.addEventListener("hashchange", afficherRubrique);
