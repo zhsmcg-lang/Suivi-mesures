@@ -171,12 +171,53 @@
 </section>
 
     <section id="graphiques">
-      <h2>Graphiques</h2>
-      <p>
-        Cet espace permettra de choisir une période,
-        des stations et des paramètres pour afficher les mesures.
-      </p>
-    </section>
+  <h2>Graphiques des mesures</h2>
+  <p>
+    Choisissez des stations, des paramètres et une période.
+    Les graphiques s’actualisent automatiquement à chaque modification.
+  </p>
+  <p id="resume-donnees"></p>
+
+  <fieldset id="commandes-graphiques" class="commandes-graphiques" disabled>
+    <legend>Choisir les mesures à afficher</legend>
+
+    <div class="periode-graphiques">
+      <label for="date-debut">Du
+        <input id="date-debut" type="date" required>
+      </label>
+      <label for="date-fin">Au
+        <input id="date-fin" type="date" required>
+      </label>
+    </div>
+
+    <fieldset class="choix-graphiques">
+      <legend>Stations du SMCG</legend>
+      <div id="stations-graphiques" class="cases-graphiques"></div>
+    </fieldset>
+
+    <fieldset class="choix-graphiques">
+      <legend>Paramètres</legend>
+      <div class="cases-graphiques">
+        <label><input type="checkbox" name="parametre-graphe" value="salinite" checked> Salinité (PSU)</label>
+        <label><input type="checkbox" name="parametre-graphe" value="temperature" checked> Température (°C)</label>
+        <label><input type="checkbox" name="parametre-graphe" value="oxygene" checked> Oxygène dissous (mg/L)</label>
+      </div>
+    </fieldset>
+
+    <button id="retablir-graphiques" type="button">Tout afficher</button>
+  </fieldset>
+
+  <p id="message-graphiques" role="status" aria-live="polite">Chargement des mesures…</p>
+  <div id="courbes-graphiques"></div>
+
+  <p class="aide-graphiques">
+    Survolez ou touchez un point pour consulter la date et la valeur du relevé.
+    Chaque station conserve sa couleur et son symbole dans les différents graphiques.
+    Les lignes relient les relevés disponibles et ne représentent pas une mesure continue.
+    Les mesures des stations partenaires sont consultables depuis la carte.
+  </p>
+</section>
+
 
     <section id="informations">
   <h2>Comprendre les suivis</h2>
