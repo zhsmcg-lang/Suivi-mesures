@@ -16,7 +16,7 @@ const structures = {
     texteLien: "Cartes et mesures du réseau VNF",
     donneesPubliques: true
   },
-    SYMADREM: {
+  SYMADREM: {
     nom: "SYMADREM",
     site: "http://195.101.247.177:88/WebServ2/?PageType=Mimic&PageId=2",
     texteLien: "Cartographie SYMADREM",
@@ -289,7 +289,6 @@ function creerFiche(station) {
     detail.textContent = "Seules la localisation et les informations descriptives sont présentées sur ce portail.";
     fiche.append(acces, detail);
   }
-
   if (organisme.site) {
     const ligneLien = document.createElement("div");
     const lien = document.createElement("a");
@@ -299,6 +298,14 @@ function creerFiche(station) {
     lien.rel = "noopener noreferrer";
     ligneLien.append(lien);
     fiche.append(ligneLien);
+  }
+  if (station.structure === "SMCG" && publiques !== false) {
+    const ligneGraphiques = document.createElement("div");
+    const lienGraphiques = document.createElement("a");
+    lienGraphiques.href = "#graphiques?station=" + encodeURIComponent(station.nom);
+    lienGraphiques.textContent = "Voir les graphiques de cette station";
+    ligneGraphiques.append(lienGraphiques);
+    fiche.append(ligneGraphiques);
   }
   return fiche;
 }
@@ -393,7 +400,8 @@ const rubriques = document.querySelectorAll("main > section");
 const liens = document.querySelectorAll("nav a");
 
 function afficherRubrique() {
-  const demandee = window.location.hash.slice(1);
+  // Le nom de station reste dans l’adresse pour permettre le partage du lien.
+  const demandee = window.location.hash.slice(1).split("?")[0];
   const existe = Array.from(rubriques).some(rubrique => rubrique.id === demandee);
   const active = existe ? demandee : "accueil";
   rubriques.forEach(rubrique => { rubrique.hidden = rubrique.id !== active; });
