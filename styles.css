@@ -552,3 +552,79 @@ footer p {
   }
 }
 
+/* Options de lecture des graphiques.
+   Ajouter ce bloc à la FIN de styles.css. */
+
+.choix-affichage {
+  display: grid;
+  gap: 6px;
+  max-width: 390px;
+  margin: 18px 0;
+  font-weight: 600;
+}
+.choix-affichage select {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid #a8bfba;
+  border-radius: 6px;
+  background: var(--blanc);
+  color: var(--texte);
+  font: inherit;
+  font-weight: 400;
+}
+#graphiques .methode-graphique {
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--vert-clair);
+  color: var(--texte);
+  font-size: 14px;
+}
+.reperes-graphiques {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--bordure);
+}
+.reperes-graphiques summary {
+  width: fit-content;
+  padding: 8px 0;
+  color: var(--vert);
+  font-weight: 600;
+  cursor: pointer;
+}
+.tableau-reperes {
+  max-width: 100%;
+  margin-top: 14px;
+  overflow-x: auto;
+}
+.tableau-reperes table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.tableau-reperes caption {
+  padding-bottom: 10px;
+  text-align: left;
+  font-weight: 600;
+}
+.tableau-reperes th,
+.tableau-reperes td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--bordure);
+  text-align: right;
+  white-space: nowrap;
+}
+.tableau-reperes th:first-child {
+  text-align: left;
+}
+.tableau-reperes thead {
+  background: var(--vert-clair);
+}
+#graphiques .choix-affichage select:focus-visible,
+#graphiques .reperes-graphiques summary:focus-visible,
+#graphiques .tableau-reperes:focus-visible {
+  outline: 3px solid #c28a2b;
+  outline-offset: 3px;
+}
+
+
