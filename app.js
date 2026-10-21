@@ -16,10 +16,10 @@ const structures = {
     texteLien: "Cartes et mesures du réseau VNF",
     donneesPubliques: true
   },
-  SYMADREM: {
+    SYMADREM: {
     nom: "SYMADREM",
-    site: null,
-    texteLien: null,
+    site: "http://195.101.247.177:88/WebServ2/?PageType=Mimic&PageId=2",
+    texteLien: "Cartographie SYMADREM",
     donneesPubliques: false
   }
 };
@@ -288,7 +288,9 @@ function creerFiche(station) {
     const detail = document.createElement("div");
     detail.textContent = "Seules la localisation et les informations descriptives sont présentées sur ce portail.";
     fiche.append(acces, detail);
-  } else if (organisme.site) {
+  }
+
+  if (organisme.site) {
     const ligneLien = document.createElement("div");
     const lien = document.createElement("a");
     lien.href = organisme.site;
