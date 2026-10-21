@@ -378,3 +378,49 @@ footer p {
     grid-template-columns: 1fr;
   }
 }
+
+/* Comprendre les suivis :
+   blocs blancs sur fond vert clair */
+
+#informations {
+  display: grid;
+  gap: 24px;
+  background: var(--vert-clair);
+}
+
+#informations > h2 {
+  margin: 0;
+}
+
+#informations .bloc-informations {
+  padding: 28px;
+  border: 1px solid var(--bordure);
+  border-radius: 12px;
+  background: var(--blanc);
+}
+
+#informations .bloc-informations h3 {
+  margin: 0 0 16px;
+  color: var(--texte);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+#informations .bloc-informations > :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  #informations {
+    gap: 18px;
+  }
+
+  #informations .bloc-informations {
+    padding: 20px;
+  }
+
+  #informations .bloc-informations h3 {
+    font-size: 20px;
+  }
+}
