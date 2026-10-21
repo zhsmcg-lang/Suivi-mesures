@@ -161,10 +161,7 @@ function actualiserStations() {
       `${nombre} station${pluriel} affichée${pluriel}` +
       ` sur ${stations.length}.`;
 
-    carte.fitBounds(coucheStations.getBounds(), {
-      padding: [35, 35],
-      maxZoom: 14
-    });
+    
   }
 }
 
