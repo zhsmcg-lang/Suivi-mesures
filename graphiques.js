@@ -315,6 +315,22 @@
         canvas.setAttribute("role", "img");
         canvas.textContent = "Graphique de " + p.nom + ".";
         cadre.append(canvas);
+        const outilsZoom = document.createElement("div");
+        outilsZoom.className = "outils-zoom";
+        outilsZoom.setAttribute("role", "group");
+        outilsZoom.setAttribute("aria-label", "Zoom du graphique de " + p.nom);
+        const agrandir = document.createElement("button");
+        agrandir.type = "button";
+        agrandir.textContent = "Agrandir";
+        const reduire = document.createElement("button");
+        reduire.type = "button";
+        reduire.textContent = "Réduire";
+        const vueComplete = document.createElement("button");
+        vueComplete.type = "button";
+        vueComplete.textContent = "Vue complète";
+        outilsZoom.append(agrandir, reduire, vueComplete);
+        const aideZoom = document.createElement("p");
+        aideZoom.className = "aide-zoom";
         const reperes = document.createElement("details");
         reperes.className = "reperes-graphiques";
         const sommaire = document.createElement("summary");
@@ -344,7 +360,7 @@
         tableau.append(caption, entetes, corpsTableau);
         conteneurTableau.append(tableau);
         reperes.append(sommaire, aideReperes, conteneurTableau);
-        article.append(titre, choix, info, methode, cadre, reperes);
+        article.append(titre, choix, info, methode, outilsZoom, aideZoom, cadre, reperes);
         zone.append(article);
         const chart = new Chart(canvas, {
           type: "line",
@@ -356,6 +372,23 @@
             animation: { duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 250 },
             interaction: { mode: "nearest", intersect: false },
             plugins: {
+              zoom: {
+                pan: { enabled: false },
+                zoom: {
+                  mode: "x",
+                  wheel: { enabled: true, modifierKey: "ctrl", speed: 0.1 },
+                  drag: {
+                    enabled: true,
+                    modifierKey: "shift",
+                    threshold: 10,
+                    backgroundColor: "rgba(22,117,104,0.15)",
+                    borderColor: "#167568",
+                    borderWidth: 1
+                  },
+                  pinch: { enabled: true }
+                },
+                limits: { x: { minRange: JOUR } }
+              },
               legend: { position: "bottom", labels: { usePointStyle: true, padding: 18 } },
               tooltip: {
                 callbacks: {
@@ -381,7 +414,22 @@
             }
           }
         });
-        element = { article, info, cadre, canvas, chart, select, methode, corpsTableau };
+        element = { article, info, cadre, canvas, chart, select, methode, corpsTableau, vueComplete: null, signature: null };
+        const zoomDisponible = typeof chart.zoom === "function";
+        for (const bouton of [agrandir, reduire, vueComplete]) bouton.disabled = !zoomDisponible;
+        aideZoom.textContent = zoomDisponible
+          ? "Zoom sur les dates : Ctrl + molette, Maj + glisser sur le graphique, ou les boutons. "
+            + "Sur écran tactile : pincez avec deux doigts. Les calculs et les repères restent basés sur la période choisie dans les filtres."
+          : "Le module de zoom n’est pas chargé. Vérifiez les scripts ajoutés dans index.html. Les graphiques restent consultables.";
+        agrandir.addEventListener("click", () => { if (zoomDisponible) chart.zoom({ x: 1.4 }, "none"); });
+        reduire.addEventListener("click", () => { if (zoomDisponible) chart.zoom({ x: 0.7 }, "none"); });
+        vueComplete.addEventListener("click", () => {
+          if (!element.vueComplete) return;
+          if (typeof chart.resetZoom === "function") chart.resetZoom("none");
+          chart.options.scales.x.min = element.vueComplete.min;
+          chart.options.scales.x.max = element.vueComplete.max;
+          chart.update("none");
+        });
         graphiques.set(p.cle, element);
       }
       const mode = modesAffichage.get(p.cle) || "mesures";
@@ -443,9 +491,22 @@
       element.chart.data.datasets = datasets;
       const axe = element.chart.options.scales.x;
       // Une seule journée reste visible avec une petite marge horizontale.
-      axe.min = du === au ? du - JOUR / 2 : du;
-      axe.max = du === au ? au + JOUR / 2 : au;
-      axe.ticks.callback = valeur => (au - du < 90 * JOUR ? dateCourte : moisAnnee).format(valeur);
+      const signature = JSON.stringify([choisies, du, au]);
+      element.vueComplete = {
+        min: du === au ? du - JOUR / 2 : du,
+        max: du === au ? au + JOUR / 2 : au
+      };
+      element.chart.options.plugins.zoom.limits.x.min = element.vueComplete.min;
+      element.chart.options.plugins.zoom.limits.x.max = element.vueComplete.max;
+      if (signature !== element.signature) {
+        if (typeof element.chart.resetZoom === "function") element.chart.resetZoom("none");
+        axe.min = element.vueComplete.min;
+        axe.max = element.vueComplete.max;
+        element.signature = signature;
+      }
+      axe.ticks.callback = function(valeur) {
+        return (this.max - this.min < 90 * JOUR ? dateCourte : moisAnnee).format(valeur);
+      };
       element.chart.update();
     }
     message.textContent = selection.length + " relevés sélectionnés · " + choisies.length
