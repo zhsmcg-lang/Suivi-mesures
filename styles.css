@@ -647,6 +647,35 @@ footer p {
   text-align: left;
 }
 
+/* Zoom des graphiques : ajouter à la fin de styles.css. */
+#graphiques .outils-zoom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+#graphiques .outils-zoom button {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--vert);
+  border-radius: 6px;
+  background: var(--blanc);
+  color: var(--vert);
+  font: inherit;
+  cursor: pointer;
+}
+#graphiques .outils-zoom button:hover {
+  background: var(--vert-clair);
+}
+#graphiques .outils-zoom button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+#graphiques .aide-zoom {
+  font-size: 13px;
+  color: var(--texte-secondaire);
+}
+
 #graphiques .tableau-reperes td {
   font-variant-numeric: tabular-nums;
 }
