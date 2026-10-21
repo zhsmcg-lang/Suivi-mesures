@@ -627,4 +627,28 @@ footer p {
   outline-offset: 3px;
 }
 
+/* Centrer les titres et les valeurs des repères chiffrés */
+
+#graphiques .tableau-reperes table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#graphiques .tableau-reperes th,
+#graphiques .tableau-reperes td {
+  padding: 12px 16px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Garder les noms des stations à gauche */
+#graphiques .tableau-reperes th:first-child,
+#graphiques .tableau-reperes td:first-child {
+  text-align: left;
+}
+
+#graphiques .tableau-reperes td {
+  font-variant-numeric: tabular-nums;
+}
+
 
