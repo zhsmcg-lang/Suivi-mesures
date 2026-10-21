@@ -19,6 +19,54 @@ const structures = {
 
 // Informations propres à chaque station.
 const stations = [
+     {
+    nom: "Capette sud",
+    latitude: 43.608608507158365,
+    longitude: 4.333387926632358,
+    structure: "SMCG",
+    teletransmission: false,
+    parametres: ["Salinité", "Température", "Oxygène"]
+  },
+  {
+    nom: "Capette nord",
+    latitude: 43.608608826210265,
+    longitude: 4.333361926403964,
+    structure: "SMCG",
+    teletransmission: false,
+    parametres: ["Salinité", "Température", "Oxygène"]
+  },
+  {
+    nom: "Charnier",
+    latitude: 43.6204119851779,
+    longitude: 4.315412373880283,
+    structure: "SMCG",
+    teletransmission: false,
+    parametres: ["Salinité", "Température", "Oxygène"]
+  },
+  {
+    nom: "Scamandre",
+    latitude: 43.62234084221612,
+    longitude: 4.351107997830763,
+    structure: "SMCG",
+    teletransmission: false,
+    parametres: ["Salinité", "Température", "Oxygène"]
+  },
+  {
+    nom: "Crey",
+    latitude: 43.624404777462,
+    longitude: 4.317870045912599,
+    structure: "SMCG",
+    teletransmission: false,
+    parametres: ["Salinité", "Température", "Oxygène"]
+  },
+  {
+    nom: "CRS Gallician",
+    latitude: 43.63793312845474,
+    longitude: 4.298950345926178,
+    structure: "SMCG",
+    teletransmission: false,
+    parametres: ["Salinité", "Température", "Oxygène"]
+  },
   {
     nom: "Chenal Marette",
     latitude: 43.552118917373306,
