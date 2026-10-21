@@ -32,6 +32,7 @@
   let mesures = [];
   let nomsStations = [];
   let chargement = null;
+  let stationSansDonnees = "";
   const graphiques = new Map();
 
   // Lire explicitement JJ/MM/AAAA, sans inverser mois et jour.
@@ -104,6 +105,19 @@
     return Array.from(section.querySelectorAll('input[name="' + nom + '"]:checked'), c => c.value);
   }
 
+  // Un lien de la carte ressemble à #graphiques?station=Marette%20sud.
+  // Les choix de paramètres et de période restent ceux du visiteur.
+  function preselectionnerStation() {
+    const recherche = window.location.hash.split("?").slice(1).join("?");
+    const demandee = new URLSearchParams(recherche).get("station")?.trim() || "";
+    stationSansDonnees = "";
+    if (!demandee) return;
+    section.querySelectorAll('input[name="station-graphe"]').forEach(caseACocher => {
+      caseACocher.checked = caseACocher.value === demandee;
+    });
+    if (!nomsStations.includes(demandee)) stationSansDonnees = demandee;
+  }
+
   function viderGraphiques() {
     for (const element of graphiques.values()) element.chart.destroy();
     graphiques.clear();
@@ -117,7 +131,10 @@
     const cles = valeursCochees("parametre-graphe");
     const du = dateChoisie(debut);
     const au = dateChoisie(fin);
-    const erreur = !choisies.length ? "Cochez au moins une station."
+    const erreur = !choisies.length
+      ? stationSansDonnees
+        ? "Les relevés de « " + stationSansDonnees + " » ne sont pas encore disponibles dans ce portail. Choisissez une autre station pour consulter ses mesures."
+        : "Cochez au moins une station."
       : !cles.length ? "Cochez au moins un paramètre."
       : du === null || au === null || !Number.isFinite(du) || !Number.isFinite(au)
         ? "Renseignez les deux dates de la période."
@@ -257,9 +274,13 @@
     resume.textContent = "SMCG · Relevés mensuels sans télétransmission · " + mesures.length
       + " relevés disponibles, du " + dateCourte.format(mesures[0].date)
       + " au " + dateCourte.format(mesures[mesures.length - 1].date) + ".";
-    controles.addEventListener("change", actualiser);
+    controles.addEventListener("change", evenement => {
+      if (evenement.target.name === "station-graphe") stationSansDonnees = "";
+      actualiser();
+    });
     for (const champ of [debut, fin]) champ.addEventListener("input", actualiser);
     document.getElementById("retablir-graphiques").addEventListener("click", () => {
+      stationSansDonnees = "";
       controles.querySelectorAll('input[type="checkbox"]').forEach(c => { c.checked = true; });
       debut.value = debut.min;
       fin.value = fin.max;
@@ -277,6 +298,7 @@
       mesures = lireMesures(await reponse.text());
       if (!mesures.length) throw new Error("Le fichier mesures.csv ne contient aucun relevé.");
       preparerControles();
+      preselectionnerStation();
       message.textContent = "Données chargées.";
       actualiser();
     } catch (erreur) {
@@ -294,6 +316,7 @@
       if (!chargement) chargement = charger();
     } else {
       requestAnimationFrame(() => {
+        preselectionnerStation();
         actualiser();
         for (const element of graphiques.values()) element.chart.resize();
       });
