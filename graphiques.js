@@ -290,7 +290,6 @@
         for (const [valeur, texte] of [
           ["mesures", "Mesures seules"],
           ["mobile3", "Mesures + lissage sur 3 mois"],
-          ["mobile12", "Mesures + lissage sur 12 mois"],
           ["tendance", "Mesures + droite de tendance"]
         ]) {
           const option = document.createElement("option");
@@ -449,36 +448,44 @@
         };
         datasets.push({
           ...style, label: serie.station, data: pointsMesures(serie.releves, p.cle),
-          borderWidth: mode === "mesures" ? 2 : 1, pointRadius: 3
+          borderWidth: mode === "mesures" ? 2 : 1, pointRadius: 3,
+          showLine: mode !== "mobile3"
         });
         if (mode === "mesures") continue;
-        const fenetre = mode === "mobile3" ? 3 : 12;
-        const courbe = mode === "tendance" ? tendanceLineaire(serie.mois) : moyenneMobile(serie.mois, fenetre);
+        const courbe = mode === "tendance" ? tendanceLineaire(serie.mois) : moyenneMobile(serie.mois, 3);
         if (!courbe?.some(point => point.y !== null)) {
           indisponibles.push(serie.station);
           continue;
         }
         datasets.push({
           ...style,
-          label: serie.station + (mode === "tendance" ? " — tendance" : " — lissage " + fenetre + " mois"),
+          label: serie.station + (mode === "tendance" ? " — tendance" : " — lissage 3 mois"),
           data: courbe,
           calcul: true,
           borderWidth: 3,
-          borderDash: mode === "tendance" ? [10, 5] : [5, 4],
-          pointRadius: 2,
-          pointHoverRadius: 4
+          borderDash: mode === "tendance" ? [10, 5] : [],
+          pointStyle: mode === "tendance" ? style.pointStyle : "circle",
+          pointBackgroundColor: mode === "tendance" ? style.backgroundColor : "#ffffff",
+          pointBorderColor: style.borderColor,
+          pointBorderWidth: mode === "tendance" ? 1 : 2,
+          pointRadius: mode === "tendance" ? 2 : 4,
+          pointHoverRadius: mode === "tendance" ? 4 : 6,
+          pointHoverBackgroundColor: mode === "tendance" ? style.backgroundColor : "#ffffff",
+          pointHoverBorderColor: style.borderColor,
+          pointHoverBorderWidth: 2
         });
       }
       const explication = mode === "mesures"
         ? "Les points représentent les relevés. Une coupure est conservée lorsqu’un mois est absent ou qu’une valeur manque."
         : mode === "tendance"
           ? "La droite en pointillés décrit la période sélectionnée. Elle est ajustée sur les moyennes mensuelles, chaque mois ayant le même poids. Elle dépend de la période et des saisons ; elle ne constitue pas une prévision."
-          : "La ligne en pointillés est la moyenne des moyennes mensuelles sur " + (mode === "mobile3" ? 3 : 12)
-            + " mois consécutifs, en terminant par le mois affiché. Chaque mois doit contenir au moins une valeur dans la période sélectionnée ; sinon, le calcul reste absent.";
+          : "Les symboles pleins représentent les mesures. La ligne continue plus épaisse et les cercles blancs représentent le lissage : "
+            + "la moyenne des moyennes mensuelles sur 3 mois consécutifs, en terminant par le mois affiché. "
+            + "Chaque mois doit contenir au moins une valeur dans la période sélectionnée ; sinon, le calcul reste absent.";
       element.methode.textContent = explication + (indisponibles.length
         ? " Calcul indisponible pour " + indisponibles.join(", ") + " : "
           + (mode === "tendance" ? "au moins trois mois avec données sont nécessaires."
-            : "aucune fenêtre complète de " + (mode === "mobile3" ? 3 : 12) + " mois avec données.")
+            : "aucune fenêtre complète de 3 mois avec données.")
         : "");
       remplirReperes(element, series, numeroMois(au) - numeroMois(du) + 1);
       // Conserver l’ordre Salinité / Température / Oxygène.
