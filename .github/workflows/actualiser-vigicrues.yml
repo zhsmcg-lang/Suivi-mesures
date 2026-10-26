@@ -1,1 +1,45 @@
+name: Publier le portail et actualiser Vigicrues
 
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  preparer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Lire les fichiers du portail
+        uses: actions/checkout@v6
+      - name: Préparer le site et récupérer la vigilance
+        run: python3 .github/scripts/preparer_vigicrues.py --source . --destination _site
+      - name: Configurer GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Préparer les fichiers à publier
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  publier:
+    needs: preparer
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publier le portail
+        id: deployment
+        uses: actions/deploy-pages@v4
