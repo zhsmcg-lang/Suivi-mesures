@@ -680,4 +680,45 @@ footer p {
   font-variant-numeric: tabular-nums;
 }
 
+/* Comparaison des années : ajouter à la fin de styles.css. */
+.choix-vue-graphiques,
+.choix-station-comparaison {
+  display: grid;
+  gap: 7px;
+  max-width: 420px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+.choix-vue-graphiques select,
+.choix-station-comparaison select {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid #a8bfba;
+  border-radius: 6px;
+  background: var(--blanc);
+  color: var(--texte);
+  font: inherit;
+  font-weight: 400;
+}
+.commandes-comparaison {
+  margin: 0 0 18px;
+}
+.commandes-comparaison .choix-station-comparaison {
+  margin-top: 0;
+}
+#graphiques .annees-comparaison {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 4px 14px;
+  max-height: 240px;
+  padding: 4px;
+  overflow-y: auto;
+}
+#courbes-comparaison {
+  display: grid;
+  gap: 24px;
+  margin-top: 20px;
+}
+
 
