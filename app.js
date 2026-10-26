@@ -331,13 +331,31 @@ function creerFiche(station) {
   titre.textContent = station.nom;
   const structure = document.createElement("div");
   structure.textContent = organisme.nom;
+  if (station.suivi === "DCE") {
+    const suivi = document.createElement("div");
+    suivi.textContent = "SMCG · Suivi DCE des lagunes";
+    fiche.append(suivi);
+  }
   const mode = document.createElement("div");
-  mode.textContent = station.teletransmission
+  mode.textContent = station.suivi === "DCE" ? "Campagnes estivales — sans télétransmission" : station.teletransmission
     ? "Suivi par télétransmission"
     : "Relevés mensuels — sans télétransmission";
   const parametres = document.createElement("div");
-  parametres.textContent = "Paramètres : " + station.parametres.join(" · ");
-  fiche.append(titre, structure, mode, parametres);
+  parametres.textContent = "Paramètres : " + (station.parametresResume || station.parametres).join(" · ");
+  fiche.prepend(titre, structure);
+  fiche.append(mode, parametres);
+  if (station.suivi === "DCE") {
+    const periode = document.createElement("div");
+    periode.textContent = "Années disponibles : " + station.annees.join(", ");
+    const etat = document.createElement("div");
+    etat.textContent = "État actuel du suivi : à confirmer";
+    fiche.append(periode, etat);
+    if (station.positionsHistoriques) {
+      const historique = document.createElement("div");
+      historique.textContent = "Le point affiché correspond aux coordonnées les plus récentes. Les positions historiques sont conservées avec les relevés.";
+      fiche.append(historique);
+    }
+  }
 
   const publiques = station.donneesPubliques ?? organisme.donneesPubliques;
   if (publiques === false) {
@@ -363,8 +381,11 @@ function creerFiche(station) {
   if (station.structure === "SMCG" && publiques !== false) {
     const ligneGraphiques = document.createElement("div");
     const lienGraphiques = document.createElement("a");
-    lienGraphiques.href = "#graphiques?station=" + encodeURIComponent(station.nomDonnees || station.nom);
-    lienGraphiques.textContent = "Voir les graphiques de cette station";
+    lienGraphiques.href = station.suivi === "DCE"
+      ? "#graphiques?vue=dce&point=" + encodeURIComponent(station.id)
+      : "#graphiques?station=" + encodeURIComponent(station.nomDonnees || station.nom);
+    lienGraphiques.textContent = station.suivi === "DCE"
+      ? "Voir les analyses DCE de ce point" : "Voir les graphiques de cette station";
     ligneGraphiques.append(lienGraphiques);
     fiche.append(ligneGraphiques);
   }
@@ -384,18 +405,29 @@ function actualiserStations() {
   const structure = document.getElementById("filtre-structure")?.value || "";
   const parametre = document.getElementById("filtre-parametre")?.value || "";
   const mode = document.getElementById("filtre-mode")?.value || "";
+  const selectSuivi = document.getElementById("filtre-suivi-smcg");
+  const conteneurSuivi = document.getElementById("choix-suivi-smcg");
+  if (conteneurSuivi) conteneurSuivi.hidden = structure !== "SMCG";
+  if (selectSuivi && structure !== "SMCG") selectSuivi.value = "";
+  const suivi = selectSuivi?.value || "";
   const visibles = stations.filter(station =>
     (!structure || station.structure === structure)
     && (!parametre || station.parametres.includes(parametre))
+    && (!suivi || (station.structure === "SMCG" && (station.suivi || "FILMED") === suivi))
     && (!mode || (mode === "tt" && station.teletransmission)
-      || (mode === "mensuel" && !station.teletransmission))
+      || (mode === "mensuel" && !station.teletransmission && station.suivi !== "DCE")
+      || (mode === "campagne" && station.suivi === "DCE"))
   );
   carte.closePopup();
   coucheStations.clearLayers();
   visibles.forEach(station => {
     L.marker([station.latitude, station.longitude], {
       title: station.nom,
-      alt: station.nom
+      alt: station.nom,
+      ...(station.suivi === "DCE" ? { icon: L.divIcon({
+        className: "icone-station-dce", html: "<span></span>",
+        iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -10]
+      }) } : {})
     }).bindPopup(creerFiche(station)).addTo(coucheStations);
   });
   const message = document.getElementById("message-carte");
@@ -494,3 +526,49 @@ document.getElementById("reinitialiser-filtres")?.addEventListener("click", () =
 });
 window.addEventListener("hashchange", afficherRubrique);
 afficherRubrique();
+
+
+/* Les points DCE proviennent du fichier mesures_dce.csv chargé par dce.js.
+   Ils sont ajoutés une seule fois et restent indépendants des stations FILMED. */
+window.addEventListener("dce:stations", evenement => {
+  const nouvelles = evenement.detail;
+  if (!Array.isArray(nouvelles)) return;
+  for (const station of nouvelles) {
+    if (station.structure !== "SMCG" || station.suivi !== "DCE"
+        || !Number.isFinite(station.latitude) || !Number.isFinite(station.longitude)) continue;
+    const ancienne = stations.findIndex(s => s.id === station.id && s.suivi === "DCE");
+    if (ancienne >= 0) stations[ancienne] = station;
+    else stations.push(station);
+  }
+  const presents = [...new Set(stations.flatMap(station => station.parametres))];
+  remplirFiltre("filtre-parametre", "Tous les paramètres", [
+    ...ordreParametres.filter(p => presents.includes(p)),
+    ...presents.filter(p => !ordreParametres.includes(p)).sort((a,b) => a.localeCompare(b,"fr"))
+  ]);
+  const mode = document.getElementById("filtre-mode");
+  if (mode && !Array.from(mode.children).some(o => o.value === "campagne")) {
+    const option = document.createElement("option");
+    option.value = "campagne"; option.textContent = "Campagnes estivales DCE"; mode.append(option);
+  }
+  const filtres = document.querySelector(".filtres-carte");
+  if (filtres && !document.getElementById("filtre-suivi-smcg")) {
+    const label = document.createElement("label");
+    label.id = "choix-suivi-smcg"; label.hidden = true;
+    const texte = document.createElement("span"); texte.textContent = "Suivi du SMCG";
+    const select = document.createElement("select"); select.id = "filtre-suivi-smcg";
+    for (const [valeur, libelle] of [["", "Tous les suivis du SMCG"], ["FILMED", "FILMED"], ["DCE", "DCE"]]) {
+      const option = document.createElement("option"); option.value = valeur; option.textContent = libelle; select.append(option);
+    }
+    select.addEventListener("change", actualiserStations); label.append(texte, select);
+    const bouton = document.getElementById("reinitialiser-filtres");
+    if (bouton && bouton.parentElement === filtres) bouton.before(label);
+    else filtres.append(label);
+  }
+  const conteneur = document.getElementById("carte-stations");
+  if (conteneur && !document.getElementById("legende-dce-carte")) {
+    const legende = document.createElement("p"); legende.id = "legende-dce-carte";
+    legende.textContent = "Repères bleus : FILMED et réseaux partenaires. Cercles orange : points DCE du SMCG.";
+    conteneur.before(legende);
+  }
+  actualiserStations();
+});
