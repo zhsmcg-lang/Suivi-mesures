@@ -60,7 +60,7 @@
 <link rel="stylesheet" href="canaverier.css?v=1">
 <script src="canaverier.js?v=2" defer></script>
 <link rel="stylesheet" href="carte-marqueurs.css?v=2">
-<link rel="stylesheet" href="informations.css?v=1">
+<link rel="stylesheet" href="informations.css?v=2">
 </head>
 
 <body>
@@ -94,7 +94,7 @@
       <h2>Origine des données</h2>
       <p>Ce portail réunit deux types de suivis :</p>
       <ul class="liste-origines">
-        <li><strong>Les stations des organismes producteurs de données, partenaires du SMCG :</strong> ce site présente leur localisation, les paramètres suivis et l’organisme responsable. Les mesures peuvent être consultables sur les sites des structures concernées, accessibles depuis les liens proposés sur la carte. Si les données ne sont pas disponibles, vous pouvez contacter la structure concernée : des coordonnées ou des liens de contact sont fournis dans l’onglet « Comprendre les suivis ». La plupart de ces données sont recueillies en télétransmission.</li>
+        <li><strong>Les stations des organismes producteurs de données, partenaires du SMCG :</strong> ce site présente leur localisation, les paramètres suivis et l’organisme responsable. Les mesures peuvent être consultables sur les sites des structures concernées, accessibles depuis les liens proposés sur la carte. Si les données ne sont pas disponibles, vous pouvez vous rapprocher de la structure concernée à partir de son site web, présenté dans l’onglet « Comprendre les suivis ». La plupart de ces données sont recueillies en télétransmission.</li>
         <li><strong>Les stations du SMCG :</strong> ce site présente à un niveau plus précis les suivis du SMCG. Vous y trouverez les relevés mensuels de salinité, de température et d’oxygène dissous (FILMED), les données des campagnes DCE et certaines données localisées sur des sites en gestion du SMCG, comme le site du Canavérier. Ces données sont consultables dans l’onglet « Analyses des données ». Ces mesures sont réalisées manuellement, sans télétransmission.</li>
       </ul>
     </article>
@@ -230,62 +230,38 @@
       </article>
       <article class="bloc-informations">
         <h3>Accès aux données des partenaires</h3>
-        <p>Certaines données des stations présentées ne sont pas accessibles au public. Pour cela, vous pouvez vous rapprocher des structures compétentes à l’aide des contacts présentés ci-dessous.</p>
+        <p>Certaines données des stations présentées ne sont pas accessibles au public. Pour cela, vous pouvez vous rapprocher des structures compétentes à partir de leurs sites web, présentés ci-dessous.</p>
         <p>Pour les données issues du portail <strong>AGHyre de VNF</strong>, un mode d’emploi est consultable ci-dessous :</p>
         <p><a class="lien-guide-partenaire" href="https://www.vnf.fr/vnf/app/uploads/2019/12/20191125-Aghyre-Documentation-utilisateurs-Acc%C3%A8s-%C3%A0-aGHyre-sans-authentification.pdf" target="_blank" rel="noopener noreferrer">Afficher le mode d’emploi VNF (PDF)</a></p>
         <p class="source-producteur">Document publié par VNF : « Accéder à aGHyre sans authentification ». <a href="https://www.vnf.fr/vnf/services/gestion-de-leau-donnees-publiques-aghyre/" target="_blank" rel="noopener noreferrer">Page officielle du service AGHyre</a>.</p>
       </article>
       <article class="bloc-informations" id="producteurs-donnees">
         <h3>Informations sur les producteurs de données</h3>
-        <p>Ouvrez une fiche pour découvrir la structure et retrouver son site et ses contacts. Les présentations entre guillemets sont de courts extraits des sites officiels, cités sans reformulation.</p>
-        <details class="fiche-producteur" id="producteur-smcg">
-          <summary>SMCG — Syndicat Mixte Camargue Gardoise</summary>
-          <blockquote><p>« Le Syndicat Mixte de la Camargue Gardoise a la responsabilité de gérer et de protéger un espace naturel, un espace de vie »</p></blockquote>
-          <p class="source-producteur">Extrait de la <a href="https://www.camarguegardoise.com/index.php/Pr%C3%A9sentation?afficheMenuContextuel=true&amp;idpage=47" target="_blank" rel="noopener noreferrer">présentation officielle du SMCG</a>.</p>
-          <ul class="liens-producteur">
-            <li><a href="https://www.camarguegardoise.com/" target="_blank" rel="noopener noreferrer">Site du SMCG</a></li>
-            <li><a href="https://www.camarguegardoise.com/index.php/Nous-contacter?idpage=39" target="_blank" rel="noopener noreferrer">Coordonnées des services du SMCG</a></li>
-          </ul>
-        </details>
-        <details class="fiche-producteur" id="producteur-symadrem">
-          <summary>SYMADREM</summary>
-          <blockquote><p>« Gestion des milieux aquatiques et prévention des inondations sur le territoire du grand delta du Rhône »</p></blockquote>
-          <p class="source-producteur">Présentation issue du <a href="https://www.symadrem.fr/" target="_blank" rel="noopener noreferrer">site officiel du SYMADREM</a>.</p>
-          <ul class="liens-producteur">
-            <li><a href="https://www.symadrem.fr/" target="_blank" rel="noopener noreferrer">Site du SYMADREM</a></li>
-            <li><a href="https://www.symadrem.fr/contact/" target="_blank" rel="noopener noreferrer">Contacter le SYMADREM</a></li>
-          </ul>
-          <p><strong>Accès aux mesures :</strong> les données des stations SYMADREM répertoriées sur ce portail ne sont pas publiques.</p>
-        </details>
-        <details class="fiche-producteur" id="producteur-cen">
-          <summary>CEN Occitanie — Conservatoire d’espaces naturels d’Occitanie</summary>
-          <blockquote><p>« Le Conservatoire d’espaces naturels d’Occitanie est une association de protection de la nature active dans tous les départements de la région. »</p></blockquote>
-          <p class="source-producteur">Extrait de la <a href="https://www.cen-occitanie.org/wp-content/uploads/2025/11/Plaquette-Cen_VF_web-planche_diffusable.pdf" target="_blank" rel="noopener noreferrer">plaquette officielle du CEN Occitanie (PDF)</a>.</p>
-          <ul class="liens-producteur">
-            <li><a href="https://www.cen-occitanie.org/" target="_blank" rel="noopener noreferrer">Site du CEN Occitanie</a></li>
-            <li><a href="mailto:contact@cen-occitanie.org">Contacter le CEN Occitanie par courriel</a></li>
-          </ul>
-          <p><strong>Accès aux mesures :</strong> les données des stations CEN Occitanie répertoriées sur ce portail ne sont pas publiques.</p>
-        </details>
-        <details class="fiche-producteur" id="producteur-vnf">
-          <summary>VNF — Voies navigables de France</summary>
-          <blockquote><p>« Voies navigables de France (VNF) est un établissement public administratif (EPA) placé sous la tutelle du ministère des transports. »</p></blockquote>
-          <p class="source-producteur">Extrait de la <a href="https://www.vnf.fr/vnf/accueil/qui-sommes-nous-vnf/decouvrir-vnf/" target="_blank" rel="noopener noreferrer">présentation officielle de VNF</a>.</p>
-          <ul class="liens-producteur">
-            <li><a href="https://www.vnf.fr/vnf/regions/vnf-rhone-saone/" target="_blank" rel="noopener noreferrer">VNF Rhône Saône</a></li>
-            <li><a href="https://www.vnf.fr/vnf/accueil/contact/" target="_blank" rel="noopener noreferrer">Contacter VNF</a></li>
-            <li><a href="https://www.vnf.fr/aghyre/#!/displaySIG" target="_blank" rel="noopener noreferrer">Cartes et mesures du réseau VNF</a></li>
-          </ul>
-        </details>
-        <details class="fiche-producteur" id="producteur-etat">
-          <summary>État — Réseau Vigicrues</summary>
-          <blockquote><p>« Le service d'information sur le risque de crues des principaux cours d'eau en France »</p></blockquote>
-          <p class="source-producteur">Présentation issue du <a href="https://www.vigicrues.gouv.fr/" target="_blank" rel="noopener noreferrer">site officiel Vigicrues</a>.</p>
-          <ul class="liens-producteur">
-            <li><a href="https://www.vigicrues.gouv.fr/" target="_blank" rel="noopener noreferrer">Site Vigicrues</a></li>
-            <li><a href="https://www.vigicrues.gouv.fr/categorie/1" target="_blank" rel="noopener noreferrer">Questions et contact auprès des services de l’État</a></li>
-          </ul>
-        </details>
+        <section class="fiche-producteur" id="producteur-smcg" aria-labelledby="titre-producteur-smcg">
+          <h4 id="titre-producteur-smcg">SMCG — Syndicat Mixte Camargue Gardoise</h4>
+          <p>Le Syndicat Mixte Camargue Gardoise est un établissement public réunissant le Département du Gard et les communes de son territoire. Il œuvre à la protection et à la gestion des espaces naturels de Camargue gardoise. Ses actions portent notamment sur la biodiversité, les zones humides, la gestion de l’eau et la valorisation du patrimoine.</p>
+          <p><a href="https://www.camarguegardoise.com/" target="_blank" rel="noopener noreferrer">Site web du SMCG</a></p>
+        </section>
+        <section class="fiche-producteur" id="producteur-symadrem" aria-labelledby="titre-producteur-symadrem">
+          <h4 id="titre-producteur-symadrem">SYMADREM</h4>
+          <p>Le Syndicat mixte interrégional d’aménagement des digues du delta du Rhône et de la mer intervient dans le grand delta du Rhône. Il assure la gestion des milieux aquatiques et la prévention des inondations. Il surveille, entretient et renforce les ouvrages de protection contre les crues du Rhône et les submersions marines, et informe sur les risques.</p>
+          <p><a href="https://www.symadrem.fr/" target="_blank" rel="noopener noreferrer">Site web du SYMADREM</a></p>
+        </section>
+        <section class="fiche-producteur" id="producteur-cen" aria-labelledby="titre-producteur-cen">
+          <h4 id="titre-producteur-cen">CEN Occitanie — Conservatoire d’espaces naturels d’Occitanie</h4>
+          <p>Le Conservatoire d’espaces naturels d’Occitanie est une association à but non lucratif qui agit pour préserver la biodiversité régionale. Il étudie les milieux naturels, protège et gère des sites, et sensibilise le public. Il accompagne également les collectivités et les autres acteurs du territoire dans leurs projets de conservation du patrimoine naturel.</p>
+          <p><a href="https://www.cen-occitanie.org/" target="_blank" rel="noopener noreferrer">Site web du CEN Occitanie</a></p>
+        </section>
+        <section class="fiche-producteur" id="producteur-vnf" aria-labelledby="titre-producteur-vnf">
+          <h4 id="titre-producteur-vnf">VNF — Voies navigables de France</h4>
+          <p>Voies navigables de France est un établissement public chargé de gérer, d’exploiter et de développer une grande partie du réseau fluvial français. Ses missions concernent la navigation, l’entretien des infrastructures et la gestion de la ressource en eau. VNF accompagne également le transport fluvial, le tourisme et les projets de développement des territoires traversés par les voies d’eau.</p>
+          <p><a href="https://www.vnf.fr/vnf/regions/vnf-rhone-saone/" target="_blank" rel="noopener noreferrer">Site web de VNF Rhône Saône</a></p>
+        </section>
+        <section class="fiche-producteur" id="producteur-etat" aria-labelledby="titre-producteur-etat">
+          <h4 id="titre-producteur-etat">État — Réseau Vigicrues</h4>
+          <p>Le réseau Vigicrues regroupe les services de l’État chargés de la surveillance et de la prévision des crues sur les principaux cours d’eau surveillés. Il diffuse les informations de vigilance pour aider le public et les autorités à anticiper les risques. Son portail permet également de consulter des hauteurs d’eau et des débits aux stations du réseau.</p>
+          <p><a href="https://www.vigicrues.gouv.fr/" target="_blank" rel="noopener noreferrer">Site web de Vigicrues</a></p>
+        </section>
       </article>
     </section>
   </main>
