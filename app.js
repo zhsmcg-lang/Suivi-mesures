@@ -524,11 +524,35 @@ function initialiserCarte() {
   }
 
   ajouterLegendeStations(conteneur);
-  carte = L.map("carte-stations");
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  carte = L.map("carte-stations", { minZoom: 0, maxZoom: 19 });
+  const fondStandard = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(carte);
+
+  const serviceOrtho = "https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0"
+    + "&STYLE=normal&FORMAT=image/jpeg&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}";
+  const creditIGN = '&copy; <a href="https://www.ign.fr/">IGN</a> — Géoplateforme';
+  // Vue d’ensemble aux petites échelles ; orthophoto HR à partir du zoom 6.
+  // Les deux couches appartiennent au même fond : elles ne chargent que dans leur plage de zoom.
+  const fondOrtho = L.layerGroup([
+    L.tileLayer(serviceOrtho + "&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&TILEMATRIXSET=PM_0_19", {
+      minZoom: 0, maxZoom: 5, attribution: creditIGN
+    }),
+    L.tileLayer(serviceOrtho + "&LAYER=HR.ORTHOIMAGERY.ORTHOPHOTOS&TILEMATRIXSET=PM_6_19", {
+      minZoom: 6, maxZoom: 19, attribution: creditIGN
+    })
+  ]);
+  const choixFond = L.control.layers({
+    "Carte standard": fondStandard,
+    "Orthophoto IGN": fondOrtho
+  }, null, { collapsed: false, position: "topright" }).addTo(carte);
+  choixFond.getContainer().setAttribute("role", "group");
+  choixFond.getContainer().setAttribute("aria-label", "Fond de carte");
+  const titreFond = document.createElement("strong");
+  titreFond.textContent = "Fond de carte";
+  choixFond.getContainer().querySelector(".leaflet-control-layers-list").prepend(titreFond);
+  // Changer de fond ne touche ni aux stations, ni aux filtres, ni au cadrage.
   coucheStations = L.featureGroup().addTo(carte);
   L.control.scale({ imperial: false }).addTo(carte);
 
