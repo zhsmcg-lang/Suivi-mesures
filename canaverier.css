@@ -1,0 +1,49 @@
+/* Blocs d’études repliables et analyses Canaverier. */
+[hidden] { display:none !important; }
+.bloc-etude-repliable { margin:18px 0; min-width:0; }
+.bloc-etude-repliable > summary { cursor:pointer; font-size:21px; font-weight:600; line-height:1.4; padding:4px 0; }
+.bloc-etude-repliable > summary::marker { color:var(--vert,#167568); }
+.bloc-etude-repliable > summary:focus-visible { outline:3px solid #c28a2b; outline-offset:5px; }
+.panneau-canaverier { padding:24px; border:1px solid var(--bordure,#dce6e1); border-radius:12px; background:var(--vert-clair,#eaf3ed); }
+.commandes-canaverier { min-width:0; padding:20px; margin:22px 0; border:1px solid #a8bfba; border-radius:10px; background:#fff; }
+.commandes-canaverier legend { font-weight:600; padding:0 6px; }
+.commandes-canaverier fieldset { min-width:0; margin:18px 0; padding:12px 0 0; border:0; }
+.ligne-filtres-canaverier { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px 18px; }
+.ligne-filtres-canaverier label, .recherche-canaverier, .affichage-canaverier, .commandes-canaverier > label:has(select) { display:grid; gap:6px; font-weight:600; }
+.panneau-canaverier select, .panneau-canaverier input[type="date"], .panneau-canaverier input[type="search"] { min-width:0; width:100%; min-height:44px; padding:8px 10px; border:1px solid #a8bfba; border-radius:6px; background:#fff; color:var(--texte,#183d41); font:inherit; }
+.panneau-canaverier button { min-height:44px; padding:9px 14px; border:1px solid var(--vert,#167568); border-radius:6px; background:#fff; color:var(--texte,#183d41); font:inherit; cursor:pointer; }
+.panneau-canaverier button:disabled { opacity:.55; cursor:default; }
+.cases-canaverier { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px 18px; }
+.cases-canaverier label, .commandes-canaverier > label:has(input[type="checkbox"]) { display:flex; align-items:center; gap:8px; min-height:44px; cursor:pointer; }
+.cases-canaverier input, .commandes-canaverier input[type="checkbox"] { width:18px; height:18px; margin:0; flex:0 0 auto; accent-color:var(--vert,#167568); }
+.commandes-canaverier > button { margin-top:16px; }
+.panneau-canaverier .aide-canaverier, #message-canaverier { font-size:14px; }
+.outils-canaverier { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+#courbes-canaverier { display:grid; gap:24px; margin-top:20px; }
+.carte-graphique-canaverier { min-width:0; padding:24px; border:1px solid var(--bordure,#dce6e1); border-radius:12px; background:#fff; }
+.carte-graphique-canaverier h4 { font-size:22px; margin:0 0 14px; }
+.carte-graphique-canaverier .cadre-courbe { position:relative; height:390px; margin-top:16px; }
+.affichage-canaverier { max-width:420px; }
+.reperes-canaverier { margin-top:16px; }
+.reperes-canaverier > summary, .notes-canaverier > summary { cursor:pointer; padding:8px 0; font-weight:600; }
+.tableau-canaverier { max-width:100%; overflow-x:auto; }
+.tableau-canaverier table { width:100%; border-collapse:collapse; font-size:14px; font-variant-numeric:tabular-nums; }
+.tableau-canaverier th, .tableau-canaverier td { padding:10px 12px; border-bottom:1px solid #dce6e1; text-align:center; }
+.tableau-canaverier th:first-child { text-align:left; }
+.tableau-canaverier caption { padding:10px 0; }
+.icone-station-canaverier span { display:block; width:18px; height:18px; border:2px solid #fff; border-radius:3px; background:#6c4b9c; box-shadow:0 0 0 1px #422b63,0 2px 5px #0005; }
+.icone-piezo-canaverier span { transform:rotate(45deg); }
+.icone-station-canaverier:focus-visible { outline:3px solid #155e75; outline-offset:6px; }
+#legende-canaverier-carte { margin:8px 0; font-size:14px; }
+.panneau-canaverier button:focus-visible, .panneau-canaverier input:focus-visible, .panneau-canaverier select:focus-visible, .tableau-canaverier:focus-visible { outline:3px solid #c28a2b; outline-offset:3px; }
+@media(max-width:700px) {
+ .panneau-canaverier, .commandes-canaverier, .carte-graphique-canaverier { padding:16px; }
+ .ligne-filtres-canaverier, .cases-canaverier { grid-template-columns:1fr; }
+ .carte-graphique-canaverier .cadre-courbe { height:330px; }
+ .bloc-etude-repliable > summary { font-size:19px; }
+ .tableau-canaverier th, .tableau-canaverier td { padding:8px; }
+}
+
+.selection-stations-canaverier { margin:18px 0; }
+.selection-stations-canaverier > summary { padding:10px 0; font-weight:600; cursor:pointer; }
+.selection-stations-canaverier[open] > summary { margin-bottom:10px; }

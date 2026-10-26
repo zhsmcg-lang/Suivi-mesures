@@ -1,0 +1,11 @@
+/* Même forme de repère pour toutes les stations. */
+.repere-tt { color:#7b3fba; }
+.repere-manuel { color:#2474ac; }
+.repere-dce { color:#bd5b08; }
+.repere-station { background:transparent; border:0; }
+.repere-station svg { display:block; width:28px; height:38px; overflow:visible; filter:drop-shadow(0 1px 2px #0006); }
+.repere-station:focus-visible { outline:3px solid #183d41; outline-offset:4px; border-radius:6px; }
+#legende-stations-carte { display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; margin:14px 0 18px; padding:0; list-style:none; color:var(--texte,#183d41); font-size:14px; }
+#legende-stations-carte li { display:flex; align-items:center; gap:8px; margin:0; }
+.symbole-legende-station { display:inline-flex; flex:0 0 20px; width:20px; height:28px; }
+.symbole-legende-station svg { display:block; width:20px; height:28px; }

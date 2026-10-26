@@ -6,12 +6,12 @@
   const moisAnnee = new Intl.DateTimeFormat("fr-FR", { month: "short", year: "numeric", timeZone: "UTC" });
   const dateCourte = new Intl.DateTimeFormat("fr-FR", { day: "2-digit", month: "2-digit", year: "numeric", timeZone: "UTC" });
   const definitions = [
-    { id: "salinite", colonne: "Salinité (unité à confirmer)", nom: "Salinité", unite: "unité à confirmer", carte: "Salinité" },
+    { id: "salinite", colonne: "Salinité (unité à confirmer)", nom: "Salinité", unite: "PSU", carte: "Salinité" },
     { id: "temperature", colonne: "Température (°C)", nom: "Température", unite: "°C", carte: "Température" },
     { id: "oxygene", colonne: "Oxygène (mg/L)", nom: "Oxygène dissous", unite: "mg/L", carte: "Oxygène" },
     { id: "saturation", colonne: "Oxygène (% saturation)", nom: "Saturation en oxygène", unite: "%", carte: "Oxygène" },
     { id: "conductivite", colonne: "Conductivité (mS/cm)", nom: "Conductivité", unite: "mS/cm", carte: "Conductivité" },
-    { id: "ph", colonne: "pH", nom: "pH", unite: "sans unité", carte: "pH" },
+    { id: "ph", colonne: "pH", nom: "pH", unite: "", carte: "pH" },
     { id: "turbidite", colonne: "Turbidité (NTU)", nom: "Turbidité", unite: "NTU", carte: "Turbidité" },
     { id: "secchi", colonne: "Secchi (cm)", nom: "Transparence (Secchi)", unite: "cm", carte: "Transparence" },
     { id: "mes", colonne: "MES (mg/L)", nom: "Matières en suspension", unite: "mg/L", carte: "MES" },
@@ -19,18 +19,13 @@
     { id: "ammonium", colonne: "Ammonium (µmol/L)", nom: "Ammonium", unite: "µmol/L", carte: "Ammonium" },
     { id: "nitrite", colonne: "Nitrite (µmol/L)", nom: "Nitrites", unite: "µmol/L", carte: "Nitrites" },
     { id: "nitrate", colonne: "Nitrate (µmol/L)", nom: "Nitrates", unite: "µmol/L", carte: "Nitrates" },
-    { id: "nid", colonne: "NID (unité à confirmer)", nom: "Azote inorganique dissous", unite: "unité à confirmer", carte: "Nutriments" },
     { id: "phosphate", colonne: "Phosphate (µmol/L)", nom: "Phosphates", unite: "µmol/L", carte: "Phosphates" },
     { id: "azote", colonne: "Azote total (µmol N/L)", nom: "Azote total", unite: "µmol N/L", carte: "Azote total" },
     { id: "phosphore", colonne: "Phosphore total (µmol P/L)", nom: "Phosphore total", unite: "µmol P/L", carte: "Phosphore total" },
     { id: "chl", colonne: "Chlorophylle a (µg/L)", nom: "Chlorophylle a", unite: "µg/L", carte: "Chlorophylle a" },
-    { id: "chl-source", colonne: "Chlorophylle a (unité non précisée)", nom: "Chlorophylle a — autre mesure source", unite: "unité à confirmer", carte: "Chlorophylle a" },
-    { id: "pheo", colonne: "Phéopigment (µg/L)", nom: "Phéopigment", unite: "µg/L", carte: "Phéopigments" },
     { id: "chl-pheo", colonne: "Chlorophylle-a phéopigment (µg/L) — libellé source", nom: "Chlorophylle-a phéopigment — libellé source", unite: "µg/L", carte: "Phéopigments" },
-    { id: "profondeur", colonne: "Profondeur (unité source)", nom: "Profondeur", unite: "cm", condition: r => r["Unité profondeur"] === "cm", carte: "Profondeur" },
-    { id: "profondeur-source", colonne: "Profondeur (unité source)", nom: "Profondeur — unité source non précisée", unite: "unité à confirmer", condition: r => r["Unité profondeur"] !== "cm", carte: "Profondeur" },
-    { id: "vegetation", colonne: "Recouvrement végétal (unité à confirmer)", nom: "Recouvrement végétal", unite: "unité à confirmer", carte: "Végétation" }
   ];
+  const libelleParametre = p => p.nom + (p.unite ? " (" + p.unite + ")" : "");
   let donnees = [], points = [], disponibles = [], graphiques = [];
   let ui = null, dernierPoint = "";
   const creer = (tag, texte, classe) => {
@@ -129,12 +124,12 @@
     const boutonFilmed = creer("button", "Analyse des mesures FILMED"), boutonEtudes = creer("button", "Études et comparaisons complémentaires");
     for (const b of [boutonFilmed, boutonEtudes]) b.type = "button";
     boutonFilmed.addEventListener("click", () => { window.location.hash = "graphiques?vue=filmed"; appliquerVue(); });
-    boutonEtudes.addEventListener("click", () => { window.location.hash = "graphiques?vue=dce"; appliquerVue(); });
+    boutonEtudes.addEventListener("click", () => { window.location.hash = "graphiques?vue=etudes"; appliquerVue(); });
     choix.append(boutonFilmed, boutonEtudes);
     const etudes = creer("div"); etudes.id = "analyses-complementaires";
     etudes.append(creer("h3", "Études et comparaisons complémentaires"));
-    const panneau = creer("article", undefined, "panneau-dce"); panneau.id = "analyse-dce";
-    panneau.append(creer("h4", "Suivi DCE des lagunes"), creer("p", "Campagnes estivales du SMCG sur les étangs de Marette, Charnier, Crey et Scamandre. Ces données sont distinctes du suivi mensuel FILMED."));
+    const panneau = creer("details", undefined, "panneau-dce bloc-etude-repliable"); panneau.id = "analyse-dce";
+    panneau.append(creer("summary", "Suivi DCE des lagunes"), creer("p", "Campagnes estivales du SMCG sur les étangs de Marette, Charnier, Crey et Scamandre. Ces données sont distinctes du suivi mensuel FILMED."));
     const message = creer("p", "Chargement des données DCE…"); message.id = "message-dce"; message.setAttribute("role", "status"); message.setAttribute("aria-live", "polite");
     const controles = creer("fieldset", undefined, "commandes-dce"); controles.disabled = true; controles.append(creer("legend", "Choisir les données DCE"));
     const ligne = creer("div", undefined, "ligne-filtres-dce");
@@ -157,8 +152,9 @@
     const zone = creer("div"); zone.id = "courbes-dce";
     panneau.append(controles, message, aide, zone); etudes.append(panneau);
     section.append(choix, filmed, etudes);
-    ui = { section, filmed, etudes, boutonFilmed, boutonEtudes, etang, debut, fin, points: pointsZone,
+    ui = { section, filmed, etudes, panneau, boutonFilmed, boutonEtudes, etang, debut, fin, points: pointsZone,
       parametres: paramZone, inclure, controles, message, zone };
+    panneau.addEventListener("toggle", () => { if (panneau.open) actualiser(); });
     etang.addEventListener("change", () => { selectionPoints(); actualiser(); });
     controles.addEventListener("change", actualiser);
     debut.addEventListener("input", actualiser); fin.addEventListener("input", actualiser);
@@ -182,7 +178,7 @@
     const casesAutres = creer("div", undefined, "cases-dce"); autres.append(casesAutres);
     for (const p of disponibles) {
       const zone = ["salinite", "temperature", "oxygene"].includes(p.id) ? ui.parametres : casesAutres;
-      zone.append(caseACocher("parametre-dce", p.id, p.nom + " (" + p.unite + ")", p.id === "salinite"));
+      zone.append(caseACocher("parametre-dce", p.id, libelleParametre(p), p.id === "salinite"));
     }
     if (casesAutres.children.length) ui.parametres.append(autres);
     ui.inclure.checked = false; ui.controles.disabled = false;
@@ -190,11 +186,14 @@
   function appliquerVue() {
     if (!ui) return;
     const hash = window.location.hash.slice(1), [section, requete = ""] = hash.split("?");
-    const params = new URLSearchParams(requete), dce = params.get("vue") === "dce";
+    const params = new URLSearchParams(requete), vue = params.get("vue") || "filmed";
+    const dce = ["dce", "canaverier", "etudes"].includes(vue);
+    if (vue === "dce") ui.panneau.open = true;
+    else if (vue === "canaverier") ui.panneau.open = false;
     ui.filmed.hidden = dce; ui.etudes.hidden = !dce;
     ui.boutonFilmed.setAttribute("aria-pressed", String(!dce)); ui.boutonEtudes.setAttribute("aria-pressed", String(dce));
     const id = params.get("point") || "";
-    if (section === "graphiques" && dce && donnees.length && id && id !== dernierPoint) {
+    if (section === "graphiques" && vue === "dce" && donnees.length && id && id !== dernierPoint) {
       const point = points.find(p => p.id === id);
       if (point) {
         ui.etang.value = point.etang; selectionPoints(id);
@@ -217,7 +216,7 @@
   }
   function creerTableau(article, p, series) {
     const details = creer("details", undefined, "tableau-reperes"); details.append(creer("summary", "Repères sur la sélection"));
-    const table = creer("table"); table.append(creer("caption", p.nom + " — " + p.unite));
+    const table = creer("table"); table.append(creer("caption", p.nom + (p.unite ? " — " + p.unite : "")));
     const thead = creer("thead"), entetes = creer("tr");
     for (const titre of ["Point", "Nombre de valeurs", "Minimum", "Moyenne", "Maximum"]) {
       const th = creer("th", titre); th.scope = "col"; entetes.append(th);
@@ -235,7 +234,7 @@
     table.append(tbody); details.append(table); article.append(details);
   }
   function actualiser() {
-    if (!ui || ui.etudes.hidden || !donnees.length) return;
+    if (!ui || ui.section.hidden || ui.etudes.hidden || !ui.panneau.open || !donnees.length) return;
     vider();
     const selection = new Set(Array.from(ui.points.querySelectorAll('input:checked'), c => c.value));
     const parametres = disponibles.filter(p => Array.from(ui.parametres.querySelectorAll('input:checked')).some(c => c.value === p.id));
@@ -251,7 +250,7 @@
     let total = 0, ecartes = 0;
     for (const p of parametres) {
       const article = creer("article", undefined, "carte-graphique carte-graphique-dce");
-      article.append(creer("h4", p.nom + " (" + p.unite + ")"));
+      article.append(creer("h4", libelleParametre(p)));
       const series = [];
       for (const point of points.filter(point => selection.has(point.id))) {
         const color = couleur(point.id), data = releves.filter(r => r.id === point.id).map(r => {
@@ -286,7 +285,7 @@
             legend: { position: "bottom" },
             tooltip: { callbacks: {
               title: items => items[0]?.raw.dateTexte || "",
-              label: ctx => ctx.dataset.label + " : " + nombre.format(ctx.parsed.y) + " " + p.unite + (ctx.raw.aVerifier ? " — valeur à vérifier" : "")
+              label: ctx => ctx.dataset.label + " : " + nombre.format(ctx.parsed.y) + (p.unite ? " " + p.unite : "") + (ctx.raw.aVerifier ? " — valeur à vérifier" : "")
             } },
             zoom: { limits: { x: { min, max, minRange: JOUR } },
               pan: { enabled: false },
@@ -296,7 +295,7 @@
           scales: { x: { type: "linear", min, max,
             title: { display: true, text: "Campagne de prélèvement" },
             ticks: { maxTicksLimit: 9, callback: valeur => moisAnnee.format(valeur) } },
-            y: { title: { display: true, text: p.nom + " (" + p.unite + ")" } } }
+            y: { title: { display: true, text: libelleParametre(p) } } }
         }
       });
       graphiques.push(chart);

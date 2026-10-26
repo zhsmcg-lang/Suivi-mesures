@@ -336,8 +336,13 @@ function creerFiche(station) {
     suivi.textContent = "SMCG · Suivi DCE des lagunes";
     fiche.append(suivi);
   }
+  if (station.suivi === "CANAVERIER") {
+    const suivi = document.createElement("div");
+    suivi.textContent = "SMCG · Suivi Canaverier · " + station.typeSuivi;
+    fiche.append(suivi);
+  }
   const mode = document.createElement("div");
-  mode.textContent = station.suivi === "DCE" ? "Campagnes estivales — sans télétransmission" : station.teletransmission
+  mode.textContent = station.suivi === "CANAVERIER" ? "Relevés ponctuels — sans télétransmission" : station.suivi === "DCE" ? "Campagnes estivales — sans télétransmission" : station.teletransmission
     ? "Suivi par télétransmission"
     : "Relevés mensuels — sans télétransmission";
   const parametres = document.createElement("div");
@@ -357,6 +362,15 @@ function creerFiche(station) {
     }
   }
 
+  if (station.suivi === "CANAVERIER") {
+    const periode = document.createElement("div");
+    periode.textContent = "Années disponibles : " + station.annees.join(", ");
+    const hauteur = document.createElement("div");
+    hauteur.textContent = station.parametres.includes("Hauteur d’eau")
+      ? "Niveaux d’eau exprimés en m NGF."
+      : "Niveau d’eau NGF non renseigné dans les relevés disponibles.";
+    fiche.append(periode, hauteur);
+  }
   const publiques = station.donneesPubliques ?? organisme.donneesPubliques;
   if (publiques === false) {
     const acces = document.createElement("div");
@@ -381,10 +395,13 @@ function creerFiche(station) {
   if (station.structure === "SMCG" && publiques !== false) {
     const ligneGraphiques = document.createElement("div");
     const lienGraphiques = document.createElement("a");
-    lienGraphiques.href = station.suivi === "DCE"
+    lienGraphiques.href = station.suivi === "CANAVERIER"
+      ? "#graphiques?vue=canaverier&point=" + encodeURIComponent(station.id)
+      : station.suivi === "DCE"
       ? "#graphiques?vue=dce&point=" + encodeURIComponent(station.id)
       : "#graphiques?station=" + encodeURIComponent(station.nomDonnees || station.nom);
-    lienGraphiques.textContent = station.suivi === "DCE"
+    lienGraphiques.textContent = station.suivi === "CANAVERIER"
+      ? "Voir les analyses Canaverier de ce point" : station.suivi === "DCE"
       ? "Voir les analyses DCE de ce point" : "Voir les graphiques de cette station";
     ligneGraphiques.append(lienGraphiques);
     fiche.append(ligneGraphiques);
@@ -399,6 +416,47 @@ function creerFiche(station) {
 
 let carte = null;
 let coucheStations = null;
+
+// Une même forme ; la couleur indique le mode de mesure ou la campagne DCE.
+const categoriesMarqueurs = {
+  tt: { classe: "tt", libelle: "Télétransmission" },
+  manuel: { classe: "manuel", libelle: "Relevés manuels" },
+  dce: { classe: "dce", libelle: "Campagnes DCE" }
+};
+const dessinRepereStation = '<svg viewBox="0 0 28 38" aria-hidden="true" focusable="false">'
+  + '<path d="M14 1C7 1 1 6.6 1 13.5c0 9.4 13 23 13 23s13-13.6 13-23C27 6.6 21 1 14 1Z" fill="currentColor" stroke="white" stroke-width="2"/>'
+  + '<circle cx="14" cy="13" r="4" fill="white"/></svg>';
+
+function categorieStation(station) {
+  if (station.suivi === "DCE") return categoriesMarqueurs.dce;
+  return station.teletransmission ? categoriesMarqueurs.tt : categoriesMarqueurs.manuel;
+}
+
+function creerIconeStation(station) {
+  return L.divIcon({
+    className: "repere-station repere-" + categorieStation(station).classe,
+    html: dessinRepereStation,
+    iconSize: [28, 38], iconAnchor: [14, 37], popupAnchor: [0, -33]
+  });
+}
+
+function ajouterLegendeStations(conteneur) {
+  if (document.getElementById("legende-stations-carte")) return;
+  const legende = document.createElement("ul");
+  legende.id = "legende-stations-carte";
+  legende.setAttribute("aria-label", "Légende des stations");
+  for (const categorie of Object.values(categoriesMarqueurs)) {
+    const ligne = document.createElement("li");
+    const symbole = document.createElement("span");
+    symbole.className = "symbole-legende-station repere-" + categorie.classe;
+    symbole.innerHTML = dessinRepereStation;
+    symbole.setAttribute("aria-hidden", "true");
+    ligne.append(symbole, document.createTextNode(categorie.libelle));
+    legende.append(ligne);
+  }
+  conteneur.before(legende);
+}
+
 
 function actualiserStations() {
   if (carte === null || coucheStations === null) return;
@@ -415,20 +473,19 @@ function actualiserStations() {
     && (!parametre || station.parametres.includes(parametre))
     && (!suivi || (station.structure === "SMCG" && (station.suivi || "FILMED") === suivi))
     && (!mode || (mode === "tt" && station.teletransmission)
-      || (mode === "mensuel" && !station.teletransmission && station.suivi !== "DCE")
-      || (mode === "campagne" && station.suivi === "DCE"))
+      || (mode === "mensuel" && !station.teletransmission && station.suivi !== "DCE" && station.suivi !== "CANAVERIER")
+      || (mode === "campagne" && station.suivi === "DCE")
+      || (mode === "manuel-canaverier" && station.suivi === "CANAVERIER"))
   );
   carte.closePopup();
   coucheStations.clearLayers();
   visibles.forEach(station => {
     L.marker([station.latitude, station.longitude], {
-      title: station.nom,
-      alt: station.nom,
-      ...(station.suivi === "DCE" ? { icon: L.divIcon({
-        className: "icone-station-dce", html: "<span></span>",
-        iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -10]
-      }) } : {})
-    }).bindPopup(creerFiche(station)).addTo(coucheStations);
+      title: station.nom + " — " + categorieStation(station).libelle,
+      alt: station.nom + " — " + categorieStation(station).libelle,
+      icon: creerIconeStation(station)
+    }).bindPopup(creerFiche(station)).addTo(coucheStations)
+      .getElement().setAttribute("aria-label", station.nom + " — " + categorieStation(station).libelle);
   });
   const message = document.getElementById("message-carte");
   if (message) {
@@ -466,6 +523,7 @@ function initialiserCarte() {
     conteneur.before(information);
   }
 
+  ajouterLegendeStations(conteneur);
   carte = L.map("carte-stations");
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
@@ -556,7 +614,7 @@ window.addEventListener("dce:stations", evenement => {
     label.id = "choix-suivi-smcg"; label.hidden = true;
     const texte = document.createElement("span"); texte.textContent = "Suivi du SMCG";
     const select = document.createElement("select"); select.id = "filtre-suivi-smcg";
-    for (const [valeur, libelle] of [["", "Tous les suivis du SMCG"], ["FILMED", "FILMED"], ["DCE", "DCE"]]) {
+    for (const [valeur, libelle] of [["", "Tous les suivis du SMCG"], ["FILMED", "FILMED"], ["DCE", "DCE"], ["CANAVERIER", "Suivi Canaverier"]]) {
       const option = document.createElement("option"); option.value = valeur; option.textContent = libelle; select.append(option);
     }
     select.addEventListener("change", actualiserStations); label.append(texte, select);
@@ -564,11 +622,46 @@ window.addEventListener("dce:stations", evenement => {
     if (bouton && bouton.parentElement === filtres) bouton.before(label);
     else filtres.append(label);
   }
-  const conteneur = document.getElementById("carte-stations");
-  if (conteneur && !document.getElementById("legende-dce-carte")) {
-    const legende = document.createElement("p"); legende.id = "legende-dce-carte";
-    legende.textContent = "Repères bleus : FILMED et réseaux partenaires. Cercles orange : points DCE du SMCG.";
-    conteneur.before(legende);
+  actualiserStations();
+});
+
+/* Les points Canaverier proviennent de mesures_canaverier.csv.
+   Ce chargement conserve l’emprise de la carte et les autres réseaux. */
+window.addEventListener("canaverier:stations", evenement => {
+  const nouvelles = evenement.detail;
+  if (!Array.isArray(nouvelles)) return;
+  for (const station of nouvelles) {
+    if (station.structure !== "SMCG" || station.suivi !== "CANAVERIER"
+        || !Number.isFinite(station.latitude) || !Number.isFinite(station.longitude)) continue;
+    const ancienne = stations.findIndex(s => s.id === station.id && s.suivi === "CANAVERIER");
+    if (ancienne >= 0) stations[ancienne] = station;
+    else stations.push(station);
+  }
+  const presents = [...new Set(stations.flatMap(station => station.parametres))];
+  remplirFiltre("filtre-parametre", "Tous les paramètres", [
+    ...ordreParametres.filter(p => presents.includes(p)),
+    ...presents.filter(p => !ordreParametres.includes(p)).sort((a,b) => a.localeCompare(b,"fr"))
+  ]);
+  const mode = document.getElementById("filtre-mode");
+  if (mode && !Array.from(mode.options).some(o => o.value === "manuel-canaverier")) {
+    const option = document.createElement("option");
+    option.value = "manuel-canaverier"; option.textContent = "Relevés manuels Canaverier"; mode.append(option);
+  }
+  let select = document.getElementById("filtre-suivi-smcg");
+  const filtres = document.querySelector(".filtres-carte");
+  if (!select && filtres) {
+    const label = document.createElement("label"); label.id = "choix-suivi-smcg"; label.hidden = true;
+    const texte = document.createElement("span"); texte.textContent = "Suivi du SMCG";
+    select = document.createElement("select"); select.id = "filtre-suivi-smcg";
+    for (const [valeur, libelle] of [["", "Tous les suivis du SMCG"], ["FILMED", "FILMED"], ["DCE", "DCE"]]) {
+      const option = document.createElement("option"); option.value = valeur; option.textContent = libelle; select.append(option);
+    }
+    select.addEventListener("change", actualiserStations); label.append(texte, select);
+    const bouton = document.getElementById("reinitialiser-filtres");
+    if (bouton && bouton.parentElement === filtres) bouton.before(label); else filtres.append(label);
+  }
+  if (select && !Array.from(select.options).some(o => o.value === "CANAVERIER")) {
+    const option = document.createElement("option"); option.value = "CANAVERIER"; option.textContent = "Suivi Canaverier"; select.append(option);
   }
   actualiserStations();
 });

@@ -1,0 +1,888 @@
+﻿Date;Type_suivi;Station;Identifiant_station;Longitude_WGS84;Latitude_WGS84;Conductivite_mS_cm;Salinite_pour_mille;Temperature_C;Hauteur_eau_m_NGF;Controle
+20/07/2018;Piézométrique;Étang;CP02;4,271500887;43,56682944;9;5;21,2;-0,42;
+20/07/2018;Piézométrique;Hangar;CP03;4,243405688;43,54794627;4,72;2,5;25;-1,25;
+20/07/2018;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;9;5;21,2;-0,08;
+14/08/2018;Piézométrique;Paradis;CP01;4,240128366;43,56640851;3,64;1,9;19,2;-0,68;
+14/08/2018;Piézométrique;Étang;CP02;4,271500887;43,56682944;11,72;6,6;17,2;-0,41;
+14/08/2018;Piézométrique;Hangar;CP03;4,243405688;43,54794627;4,8;2,6;21,5;-1,31;
+14/08/2018;Piézométrique;Terres;CP04;4,23851474;43,56020554;5,24;2,8;19;-2,07;
+14/08/2018;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,31;2,3;21,5;-0,1;
+23/08/2018;Piézométrique;Paradis;CP01;4,240128366;43,56640851;;;;-0,85;
+23/08/2018;Piézométrique;Étang;CP02;4,271500887;43,56682944;;;;-0,43;
+23/08/2018;Piézométrique;Hangar;CP03;4,243405688;43,54794627;;;;-1,36;
+23/08/2018;Piézométrique;Terres;CP04;4,23851474;43,56020554;;;;-2,15;
+23/08/2018;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;;;;-0,11;
+07/09/2018;Piézométrique;Paradis;CP01;4,240128366;43,56640851;3,26;1,6;21,9;-0,88;
+07/09/2018;Piézométrique;Étang;CP02;4,271500887;43,56682944;12,54;7,2;18,4;-0,34;
+07/09/2018;Piézométrique;Hangar;CP03;4,243405688;43,54794627;4,85;2,5;22,3;-1,3;
+07/09/2018;Piézométrique;Terres;CP04;4,23851474;43,56020554;5,85;3,1;19;-2,27;
+07/09/2018;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,31;2,2;22,4;-0,05;
+21/09/2018;Piézométrique;Paradis;CP01;4,240128366;43,56640851;3,34;1,6;20,4;-0,96;
+21/09/2018;Piézométrique;Étang;CP02;4,271500887;43,56682944;11,08;6,3;19,1;-0,24;
+21/09/2018;Piézométrique;Hangar;CP03;4,243405688;43,54794627;5,05;2,7;21;-1,3;
+21/09/2018;Piézométrique;Terres;CP04;4,23851474;43,56020554;6,12;3,3;19,1;-2,29;
+21/09/2018;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,29;2,2;20,8;-0,08;
+04/10/2018;Piézométrique;Paradis;CP01;4,240128366;43,56640851;3,33;1,6;21,4;-1,08;
+04/10/2018;Piézométrique;Étang;CP02;4,271500887;43,56682944;17,29;10,1;18,2;-0,41;
+04/10/2018;Piézométrique;Hangar;CP03;4,243405688;43,54794627;5,26;2,8;22,9;-1,35;
+04/10/2018;Piézométrique;Terres;CP04;4,23851474;43,56020554;10,72;6,1;19,6;-2,29;
+04/10/2018;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;3,86;2;21,6;-0,15;
+19/10/2018;Piézométrique;Paradis;CP01;4,240128366;43,56640851;3,45;1,7;20;-0,63;
+19/10/2018;Piézométrique;Étang;CP02;4,271500887;43,56682944;13,6;7,8;18,2;-0,02;
+19/10/2018;Piézométrique;Hangar;CP03;4,243405688;43,54794627;5,45;2,9;20,3;-1,09;
+19/10/2018;Piézométrique;Terres;CP04;4,23851474;43,56020554;11,77;6,7;18,1;-1,96;
+19/10/2018;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,3;2,2;20;-0,11;
+02/11/2018;Piézométrique;Paradis;CP01;4,240128366;43,56640851;9,69;54;20,1;-0,47;
+02/11/2018;Piézométrique;Étang;CP02;4,271500887;43,56682944;7;3,8;18,5;0,07;
+02/11/2018;Piézométrique;Hangar;CP03;4,243405688;43,54794627;5,1;2,7;21,1;-0,9;
+02/11/2018;Piézométrique;Terres;CP04;4,23851474;43,56020554;5,51;2,9;18,6;-1,44;
+02/11/2018;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,31;2,2;19,2;-0,05;
+16/11/2018;Piézométrique;Paradis;CP01;4,240128366;43,56640851;8;4,4;17,6;-0,34;
+16/11/2018;Piézométrique;Étang;CP02;4,271500887;43,56682944;4,22;2,2;15,9;0,12;
+16/11/2018;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,22;1,6;20,2;-0,87;
+16/11/2018;Piézométrique;Terres;CP04;4,23851474;43,56020554;11,09;6,3;18,6;-1,05;
+16/11/2018;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,24;2,2;18,5;-0,16;
+03/12/2018;Piézométrique;Paradis;CP01;4,240128366;43,56640851;7,29;4;16,9;-0,3;
+03/12/2018;Piézométrique;Étang;CP02;4,271500887;43,56682944;4,42;2,3;15,7;0,15;
+03/12/2018;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,39;1,7;18,9;-0,82;
+03/12/2018;Piézométrique;Terres;CP04;4,23851474;43,56020554;8,66;4,8;17,7;-0,72;
+03/12/2018;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;3,57;1,8;17,6;-0,11;
+17/12/2018;Piézométrique;Paradis;CP01;4,240128366;43,56640851;6,78;3,7;14,6;-0,28;
+17/12/2018;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,72;2;13,5;0,1;
+17/12/2018;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,99;2,1;19,9;-0,97;
+17/12/2018;Piézométrique;Terres;CP04;4,23851474;43,56020554;9,132;5;16,2;-0,82;
+17/12/2018;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;3,38;1,7;16,2;-0,16;
+29/12/2018;Piézométrique;Paradis;CP01;4,240128366;43,56640851;6,91;3,7;13,6;-0,29;
+29/12/2018;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,32;1,7;13,1;-0,02;
+29/12/2018;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,1;1,6;16,3;-0,91;
+29/12/2018;Piézométrique;Terres;CP04;4,23851474;43,56020554;9,19;5,1;13,7;-0,89;
+29/12/2018;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,26;2,2;15,3;-0,13;
+14/01/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;7,28;3,9;10,8;-0,34;
+14/01/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,44;1,8;11,7;-0,1;
+14/01/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,46;1,8;15,2;-1,02;
+14/01/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;7,64;4,2;12,7;-0,85;
+14/01/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,8;2,5;12,4;-0,13;
+29/01/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;7,3;3,9;12,6;-0,35;
+29/01/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,7;1,8;11,4;-0,11;
+29/01/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,6;1,8;15,9;-1,07;
+29/01/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;6,78;3,6;12,5;-0,98;
+29/01/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,29;2,2;14,2;-0,13;
+01/02/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;7,88;4,3;10,8;-0,32;
+01/02/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,9;2;9,8;-0,04;
+01/02/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,36;1,7;13,9;-1,02;
+01/02/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;7,65;4,1;11,1;-1,01;
+01/02/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,54;2,4;12,3;-0,13;
+25/02/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;4,2;7,73;11,1;-0,35;
+25/02/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,53;1,8;9,9;-0,09;
+25/02/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;2,92;1,5;14,3;-1,05;
+25/02/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;7,49;4,1;11,1;-1;
+25/02/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4;2,1;12,6;-0,14;
+11/03/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;7,49;4,1;13,7;-0,38;
+11/03/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,31;1,7;12,8;-0,17;
+11/03/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,63;1,9;16,4;-0,86;
+11/03/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;8;4,4;13,7;-0,87;
+11/03/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;3,92;2;14,6;-0,24;
+26/03/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;7,16;3,9;12,7;-0,22;
+26/03/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,01;1,5;10,5;-0,19;
+26/03/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;4,29;2,3;14,9;-1,01;
+26/03/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;6,05;3,2;11,4;-0,67;
+26/03/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,23;2,2;13,6;-0,07;
+09/04/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;5,8;3,1;13,4;-0,2;
+09/04/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,96;2;11,1;-0,07;
+09/04/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;4,04;2,1;14,6;-0,87;
+09/04/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;5,69;3;11,8;-0,56;
+09/04/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,71;2,4;13,4;-0,06;
+23/04/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;5,13;2,7;14,2;-0,22;
+23/04/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;4,39;2,2;11,5;-0,14;
+23/04/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,16;1,5;16;-0,89;
+23/04/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;5,7;3;12,4;-0,68;
+23/04/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,24;2,2;14,6;-0,04;
+07/05/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;;;;-0,3;
+07/05/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;;;;-0,23;
+07/05/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;;;;-0,95;
+07/05/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;;;;-0,87;
+07/05/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;;;;-0,13;
+22/05/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;5,62;3;15,4;-0,33;
+22/05/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;4,66;2,5;14,3;-0,28;
+22/05/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;4,46;2,4;16,7;-0,9;
+22/05/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;6,29;3,4;14,1;-0,93;
+22/05/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;6,14;3,3;15;-0,13;
+05/06/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;5,77;3,1;16,9;-0,36;
+05/06/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;5,63;3;14,1;-0,44;
+05/06/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;4,6;2,4;16,7;-1,04;
+05/06/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;6,01;3,2;15,4;-1,05;
+05/06/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;6,02;3,2;15,8;-0,17;
+20/06/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;4,95;2,6;20,2;-0,33;
+20/06/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;8,59;4,7;18,9;-0,46;
+20/06/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;4,75;2,5;19,4;-1;
+20/06/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;6,19;3,3;20,2;-0,95;
+20/06/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;5,97;3,2;18,9;-0,14;
+02/07/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;3,84;2;21,6;-0,34;
+02/07/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;10,86;6,1;16,6;-0,44;
+02/07/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;5,03;2,7;19,1;-1;
+02/07/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;7,84;4,3;18,8;-0,99;
+02/07/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;6,67;3,6;19,5;-0,11;
+19/07/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;;;;-0,49;
+19/07/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;;;;-0,6;
+19/07/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;;;;-1,29;
+19/07/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;;;;-1,41;
+19/07/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;;;;-0,21;
+29/10/2019;Piézométrique;Paradis;CP01;4,240128366;43,56640851;2,83;1,5;24,6;-0,29;
+29/10/2019;Piézométrique;Étang;CP02;4,271500887;43,56682944;12,16;6,9;16,9;0,06;
+29/10/2019;Piézométrique;Hangar;CP03;4,243405688;43,54794627;5,55;3;20,2;-0,92;
+29/10/2019;Piézométrique;Terres;CP04;4,23851474;43,56020554;4,97;2,7;19,6;-0,66;
+29/10/2019;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;5,85;3,2;20,3;-0,1;
+28/01/2020;Piézométrique;Paradis;CP01;4,240128366;43,56640851;3,8;2;22,7;-0,29;
+28/01/2020;Piézométrique;Étang;CP02;4,271500887;43,56682944;7,72;4,3;26,7;0,09;
+28/01/2020;Piézométrique;Hangar;CP03;4,243405688;43,54794627;5,11;2,7;24;-0,72;
+28/01/2020;Piézométrique;Terres;CP04;4,23851474;43,56020554;4,15;2,2;23,4;-0,84;
+28/01/2020;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;5,8;3,1;21;-0,12;
+19/11/2020;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,92;2;10,5;-0,2;
+19/11/2020;Piézométrique;Hangar;CP03;4,243405688;43,54794627;2,6;1,3;13,4;-2,12;
+19/11/2020;Piézométrique;Terres;CP04;4,23851474;43,56020554;5,64;3;12,6;-1,1;
+03/01/2021;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;;;;-0,16;
+27/01/2021;Piézométrique;Paradis;CP01;4,240128366;43,56640851;5,72;3;13;-0,29;
+27/01/2021;Piézométrique;Étang;CP02;4,271500887;43,56682944;7,46;4,1;15,4;-0,15;
+27/01/2021;Piézométrique;Hangar;CP03;4,243405688;43,54794627;5,74;3,1;19,6;-0,95;
+27/01/2021;Piézométrique;Terres;CP04;4,23851474;43,56020554;7,21;3,9;16,9;-0,94;
+27/01/2021;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;5,12;2,7;13,1;-0,21;
+09/04/2021;Piézométrique;Paradis;CP01;4,240128366;43,56640851;6,9;3,7;18,26666667;-0,39;
+09/04/2021;Piézométrique;Étang;CP02;4,271500887;43,56682944;4,79;2,5;9,5;-0,31;
+09/04/2021;Piézométrique;Hangar;CP03;4,243405688;43,54794627;4,92;2,6;16,6;-2,03;
+09/04/2021;Piézométrique;Terres;CP04;4,23851474;43,56020554;7,07;3,8;12,2;-0,82;
+09/04/2021;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;5,23;2,8;13,1;-0,1;
+16/10/2021;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;1,602;0,6;15,3;0,22;
+16/10/2021;Limnimétrique;Bourgidou Alim les Rampes;CL02;4,226426222;43,56324308;1,693;0,7;14,5;-0,27;
+16/10/2021;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,01;1,4;14,4;-0,26;
+16/10/2021;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;6,38;0,1;13,7;0,13;
+16/10/2021;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;2,91;1,4;15;;
+16/10/2021;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;19,07;11,1;15,5;;
+16/10/2021;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;10,25;5,7;13;-0,36;
+16/10/2021;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;1,323;0,4;14,3;;
+16/10/2021;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;2,91;1,4;14,9;;
+16/10/2021;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;4,34;0,3;15,5;;
+16/10/2021;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;4,12;2,1;14,1;;
+14/11/2021;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;7,98;4,3;5,7;;
+16/11/2021;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;2,7;1,2;12,7;-0,06;
+16/11/2021;Limnimétrique;Bourgidou Alim les Rampes;CL02;4,226426222;43,56324308;1,984;0,8;10;-0,21;
+16/11/2021;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,12;1,5;10,6;-0,18;
+16/11/2021;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1,883;0,8;10,4;-0,135;
+16/11/2021;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;2,78;1,3;9,9;;
+16/11/2021;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;8,8;4,8;8,5;;
+16/11/2021;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;10,92;6,1;9,7;-0,19;
+16/11/2021;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;2,55;1,2;11;;
+16/11/2021;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;3,19;1,5;9,5;;
+16/11/2021;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;3,65;1,8;10,2;;
+16/11/2021;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;3,68;1,8;10,4;;
+14/12/2021;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;3,41;1,6;5,5;-0,02;
+14/12/2021;Limnimétrique;Bourgidou Alim les Rampes;CL02;4,226426222;43,56324308;2,88;1,3;2,1;-0,22;
+14/12/2021;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,22;1,5;3,9;-0,16;
+14/12/2021;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1,399;0,4;5,3;-0,13;
+14/12/2021;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;3,1;1,4;4,6;;
+14/12/2021;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;11,47;6,6;5,1;-0,15;
+14/12/2021;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;2,88;1,3;4,3;;
+14/12/2021;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;4,14;2;4;;
+14/12/2021;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;3,96;1,9;5,9;;
+14/12/2021;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;3,3;1,6;6;;
+15/12/2021;Piézométrique;Paradis;CP01;4,240128366;43,56640851;7,75;4,2;12,1;-0,55;
+15/12/2021;Piézométrique;Étang;CP02;4,271500887;43,56682944;5,99;3,1;10,3;-0,08;
+15/12/2021;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,64;1,8;16;-0,87;
+15/12/2021;Piézométrique;Terres;CP04;4,23851474;43,56020554;7,11;3,8;13,5;-0,96;
+15/12/2021;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;7,23;3,9;14,1;-0,1;
+03/01/2022;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;3,43;1,6;4;;
+13/01/2022;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;10,34;5,7;4,3;0,245;
+13/01/2022;Limnimétrique;Bourgidou Alim les Rampes;CL02;4,226426222;43,56324308;10,34;5,7;4,3;-0,24;
+13/01/2022;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;5,22;2,6;2,1;-0,06;
+13/01/2022;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;2,72;1,3;4,5;0,11;
+13/01/2022;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;10,91;5,9;8,1;;
+13/01/2022;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;14,17;7,3;1;-0,16;
+13/01/2022;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;8,68;4,7;2,4;;
+13/01/2022;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;3,6;1,7;2,2;;
+13/01/2022;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;3,86;1,8;2,3;;
+13/01/2022;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;3,99;1,5;3,7;;
+12/02/2022;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;13,04;7,3;8,3;0,22;
+12/02/2022;Limnimétrique;Bourgidou Alim les Rampes;CL02;4,226426222;43,56324308;14,9;8,7;8,7;-0,27;
+12/02/2022;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;4,4;2,2;7,2;-0,2;
+12/02/2022;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,77;0,4;7,1;0,15;
+12/02/2022;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;3,19;1,7;10;;
+12/02/2022;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;9,18;5;8,8;;
+12/02/2022;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;16,53;9,4;6,7;-0,19;
+12/02/2022;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;14,29;7,9;11,5;;
+12/02/2022;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;5,44;2,7;7,7;;
+14/02/2022;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;4,26;2,2;11;;
+14/02/2022;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;5,21;2,6;9,1;;
+17/03/2022;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;9,18;5;11,4;0,24;
+17/03/2022;Limnimétrique;Bourgidou Alim les Rampes;CL02;4,226426222;43,56324308;9,49;5,2;11,6;-0,24;
+17/03/2022;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;6,31;2,7;11,8;-0,18;
+17/03/2022;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1;0,3;11,6;0,12;
+17/03/2022;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;4,4;2,1;11,4;;
+17/03/2022;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;9,82;5,5;11,8;;
+17/03/2022;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;16,2;9,2;12,6;-0,18;
+17/03/2022;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;7,29;4;12,1;;
+17/03/2022;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;6,31;3,4;10,01;;
+17/03/2022;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;4,29;2,2;11,3;;
+17/03/2022;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;7,4;3,7;11,4;;
+31/03/2022;Piézométrique;Paradis;CP01;4,240128366;43,56640851;6,21;3,2;12,8;-0,27;
+31/03/2022;Piézométrique;Étang;CP02;4,271500887;43,56682944;4,38;2,2;13,7;-0,07;
+31/03/2022;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,59;1,7;14,8;-0,93;
+31/03/2022;Piézométrique;Terres;CP04;4,23851474;43,56020554;10,4;5,6;13,5;-0,85;
+31/03/2022;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;5,9;3;13;-0,18;
+13/04/2022;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,588;0;15,6;0,39;
+13/04/2022;Limnimétrique;Bourgidou Alim les Rampes;CL02;4,226426222;43,56324308;0,605;0;14,7;-0,22;
+13/04/2022;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;6,13;3,2;14,6;-0,21;
+13/04/2022;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,503;0;16,6;0,29;
+13/04/2022;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;4,3;2,2;16;;ngf : référence NGF inconnue dans la source
+13/04/2022;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;16,5;9,4;15;;ngf : référence NGF inconnue dans la source
+13/04/2022;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;18,6;10,7;16,9;-0,22;
+13/04/2022;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;0,78;0,1;18;;ngf : référence NGF inconnue dans la source
+13/04/2022;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,835;0,2;15;;ngf : référence NGF inconnue dans la source
+13/04/2022;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;10,91;6,3;16,2;;ngf : référence NGF inconnue dans la source
+16/05/2022;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,494;0;23,3;0,45;
+16/05/2022;Limnimétrique;Bourgidou Alim les Rampes;CL02;4,226426222;43,56324308;0,5;0;22,6;-0,18;
+16/05/2022;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;4,31;2,2;22,1;-0,19;
+16/05/2022;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,493;0;22,4;0,34;
+16/05/2022;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;5,01;2,2;20,8;;
+16/05/2022;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;9,82;5,5;19,6;;
+16/05/2022;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;16,25;9,5;21;-0,19;
+16/05/2022;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;0,672;0,1;23,2;;
+16/05/2022;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;4,08;2,1;20,9;;
+16/05/2022;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;3,62;1,7;22,3;;
+16/05/2022;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;3,56;1,8;20;;
+13/06/2022;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,623;0,1;24,9;0,36;
+13/06/2022;Limnimétrique;Bourgidou Alim les Rampes;CL02;4,226426222;43,56324308;0,618;0;25;-0,19;
+13/06/2022;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;2,7;1,3;25,5;-0,23;
+13/06/2022;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,453;0;25;0,24;
+13/06/2022;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;4,4;2,3;25;;
+13/06/2022;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;16,4;9,7;24,3;;
+13/06/2022;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;10,27;5,8;25;-0,19;
+13/06/2022;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;2,32;1,1;24,6;;
+13/06/2022;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;5,97;3,2;23;;
+13/06/2022;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;7,82;4,3;24,3;;
+13/06/2022;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;5,44;2,9;24,3;;
+27/06/2022;Piézométrique;Paradis;CP01;4,240128366;43,56640851;4,21;2,2;22,6;-0,21;
+27/06/2022;Piézométrique;Étang;CP02;4,271500887;43,56682944;6,21;3,4;19,6;-0,11;
+27/06/2022;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,25;1,5;25;-0,79;
+27/06/2022;Piézométrique;Terres;CP04;4,23851474;43,56020554;6,81;3,7;21,5;-0,87;
+27/06/2022;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;7,4;3,9;17,7;-0,14;
+13/07/2022;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,631;0,1;28,2;0,39;
+13/07/2022;Limnimétrique;Bourgidou Alim les Rampes;CL02;4,226426222;43,56324308;0,645;0,1;27,3;-0,19;
+13/07/2022;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;19,91;0,9;26,9;-0,275;
+13/07/2022;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;52,5;0;27,2;0,165;
+13/07/2022;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;16,68;0,7;25,8;;
+13/07/2022;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;11,29;6,5;28;;
+13/07/2022;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;0,859;4,8;28;-0,205;
+13/07/2022;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;0,645;1,5;27;;
+13/07/2022;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;12,93;0,4;25,8;;
+13/07/2022;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;7,41;4,1;26;;
+13/07/2022;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;3,94;2;24,2;;
+19/08/2022;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;1,218;0,4;23,3;0,29;
+19/08/2022;Limnimétrique;Bourgidou Alim les Rampes;CL02;4,226426222;43,56324308;1,308;0,5;22,4;-0,21;
+19/08/2022;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;1,553;0,6;22,3;-0,28;
+19/08/2022;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1,646;0,4;23,1;0,27;
+19/08/2022;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;8,639;0,1;22,3;;
+19/08/2022;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;5,5;4,7;23,7;;
+19/08/2022;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;7,66;4,2;24,3;-0,17;
+19/08/2022;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;1,719;0,7;26;;
+19/08/2022;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;2,89;1,4;22,9;;
+19/08/2022;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;6,01;2,2;24,2;;
+19/08/2022;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;0,334;1,7;23,5;;
+13/09/2022;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,978;0,4;24,3;0,28;
+13/09/2022;Limnimétrique;Bourgidou Alim les Rampes;CL02;4,226426222;43,56324308;0,977;0,4;24,1;-0,24;
+13/09/2022;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;2,64;1,3;23,4;-0,28;
+13/09/2022;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1,156;0,5;23,4;0,16;
+13/09/2022;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;1,083;0,5;23,2;;
+13/09/2022;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;7,06;3,8;24,4;;
+13/09/2022;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;10,22;5,8;23;-0,22;
+13/09/2022;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;1,556;0,7;25,9;;
+13/09/2022;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;5,36;2,9;22,9;;
+13/09/2022;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;5,64;3,1;23,7;;
+13/09/2022;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;4,79;2,6;23,3;;
+17/10/2022;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,639;0,1;19;0,28;
+17/10/2022;Limnimétrique;Bourgidou Alim les Rampes;CL02;4,226426222;43,56324308;0,62;0,1;18,5;-0,24;
+17/10/2022;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;2,67;1,2;20,5;-0,28;
+17/10/2022;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1,756;0,7;18;0,12;
+17/10/2022;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;1,887;0,8;17,4;;ngf : référence NGF inconnue dans la source
+17/10/2022;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;1,174;6,7;19,8;;
+17/10/2022;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;10,7;6;18,9;-0,23;
+17/10/2022;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;1,197;2,4;21,8;;ngf : référence NGF inconnue dans la source
+17/10/2022;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;5,12;3;18,5;;ngf : référence NGF inconnue dans la source
+17/10/2022;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;4,71;0,4;2,5;;
+17/10/2022;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;4,63;0,1;17,2;;ngf : référence NGF inconnue dans la source
+09/11/2022;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;5,92;0;17,3;0,31;
+09/11/2022;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3;1,4;18,2;-0,23;
+09/11/2022;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;2,39;1;14,2;0,12;
+09/11/2022;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;3,58;1,8;16,4;;ngf : référence NGF inconnue dans la source
+09/11/2022;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;11,21;6,3;17,3;;ngf : référence NGF inconnue dans la source
+09/11/2022;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;11,27;6,4;18,3;-0,26;
+09/11/2022;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;0,711;0,1;19;;
+09/11/2022;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;4,75;2,4;15,4;;ngf : référence NGF inconnue dans la source
+09/11/2022;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;4,18;2,1;20,1;;
+09/11/2022;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;4,12;2,1;16,4;;ngf : référence NGF inconnue dans la source
+09/11/2022;Piézométrique;Paradis;CP01;4,240128366;43,56640851;5,21;2,7;18,7;-0,51;
+09/11/2022;Piézométrique;Étang;CP02;4,271500887;43,56682944;4,33;2,2;18,8;-0,17;
+09/11/2022;Piézométrique;Hangar;CP03;4,243405688;43,54794627;4,83;2,5;21,2;-0,97;
+09/11/2022;Piézométrique;Terres;CP04;4,23851474;43,56020554;6,21;3,3;19,7;-1,06;
+09/11/2022;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;5,25;2,7;19,7;-0,09;
+12/12/2022;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;2,88;1,3;5,7;0,24;
+12/12/2022;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;2,66;1,2;2,1;-0,13;
+12/12/2022;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1,375;0,4;2,9;0,15;
+12/12/2022;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;2,8;1,3;3,7;;ngf : référence NGF inconnue dans la source
+12/12/2022;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;6,12;3,4;3,2;;ngf : référence NGF inconnue dans la source
+12/12/2022;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;8,13;4,3;1,8;-0,07;
+12/12/2022;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;2,85;1,3;4,6;;ngf : référence NGF inconnue dans la source
+12/12/2022;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;3,51;1,7;3,4;;ngf : référence NGF inconnue dans la source
+12/12/2022;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;3,78;1,8;4,1;;
+12/12/2022;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;2,23;1,6;2,1;;ngf : référence NGF inconnue dans la source
+18/01/2023;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;4,56;2,3;8,4;0,2;
+18/01/2023;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;2,77;1,2;7,3;-0,09;
+18/01/2023;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;2,72;1,2;7,3;0,06;
+18/01/2023;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;2,85;1,3;7;;ngf : référence NGF inconnue dans la source
+18/01/2023;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;9,97;5,5;8,3;;ngf : référence NGF inconnue dans la source
+18/01/2023;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;9,63;5,2;7,1;-0,2;
+18/01/2023;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;4,4;2,2;7,9;;ngf : référence NGF inconnue dans la source
+18/01/2023;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;4,63;2,3;8,1;;ngf : référence NGF inconnue dans la source
+18/01/2023;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;3,63;1,8;7,8;;
+18/01/2023;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;5,27;2,7;8;;ngf : référence NGF inconnue dans la source
+18/01/2023;Piézométrique;Paradis;CP01;4,240128366;43,56640851;7,2;3;12,7;-0,43;
+18/01/2023;Piézométrique;Étang;CP02;4,271500887;43,56682944;4,1;2,1;11,1;-0,06;
+18/01/2023;Piézométrique;Hangar;CP03;4,243405688;43,54794627;2,6;1,2;14;-0,87;
+18/01/2023;Piézométrique;Terres;CP04;4,23851474;43,56020554;7,93;4,3;12;-0,56;
+18/01/2023;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;7,2;4;13,1;-0,03;
+14/02/2023;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;10,82;5,9;8;0,14;
+14/02/2023;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,21;1,5;7;-0,13;
+14/02/2023;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;17,15;0,7;6,6;-0,02;
+14/02/2023;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;3,16;1,5;8,2;;ngf : référence NGF inconnue dans la source
+14/02/2023;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;12,61;6,8;10;;ngf : référence NGF inconnue dans la source
+14/02/2023;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;10,75;5,8;9,9;-0,16;
+14/02/2023;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;7,8;4,3;8,7;;ngf : référence NGF inconnue dans la source
+14/02/2023;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;5,49;2,7;5,1;;ngf : référence NGF inconnue dans la source
+14/02/2023;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;3,55;1,6;7,5;;
+14/02/2023;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;4,12;1,9;5,9;;ngf : référence NGF inconnue dans la source
+16/03/2023;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,983;0,2;14,3;0,4;
+16/03/2023;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,49;1,7;13,4;-0,15;
+16/03/2023;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,782;0,1;14,2;0,29;
+16/03/2023;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;3,55;1,7;11,2;;ngf : référence NGF inconnue dans la source
+16/03/2023;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;11,4;6,6;13,9;;ngf : référence NGF inconnue dans la source
+16/03/2023;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;11,25;6,2;13,9;-0,19;
+16/03/2023;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;5,71;3;11,8;;ngf : référence NGF inconnue dans la source
+16/03/2023;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;2,98;;13,5;;"sal : valeur non numérique « 1;4 » laissée vide / ngf : référence NGF inconnue dans la source"
+16/03/2023;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;3,48;1,7;14,5;;
+16/03/2023;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;4,99;2,6;11,8;;ngf : référence NGF inconnue dans la source
+05/04/2023;Piézométrique;Paradis;CP01;4,240128366;43,56640851;5,93;3,1;15,3;-0,3;
+05/04/2023;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,97;2;13;-0,16;
+05/04/2023;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,55;1,7;15,9;-1,32;
+05/04/2023;Piézométrique;Terres;CP04;4,23851474;43,56020554;9,65;5,5;15,6;-0,83;
+05/04/2023;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;5,57;3;16,7;-0,08;
+12/04/2023;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,615;0;18,1;0,34;
+12/04/2023;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;4,21;2,1;18,2;-0,23;
+12/04/2023;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,471;0;18;0,23;
+12/04/2023;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;3,78;1,9;15,6;;ngf : référence NGF inconnue dans la source
+12/04/2023;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;11,19;6,4;17,3;;ngf : référence NGF inconnue dans la source
+12/04/2023;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;14,66;7,5;18;-0,24;
+12/04/2023;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;5,25;2,89;15,4;;ngf : référence NGF inconnue dans la source
+12/04/2023;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;2,38;1,1;15,9;;ngf : référence NGF inconnue dans la source
+12/04/2023;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;4,75;2,49;15,2;;ngf : référence NGF inconnue dans la source
+15/05/2023;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,466;0,1;21,4;0,38;
+15/05/2023;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;4,05;2,1;19;-0,34;
+15/05/2023;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,955;0,2;19,2;0,24;
+15/05/2023;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;2,41;1,1;17,7;;ngf : référence NGF inconnue dans la source
+15/05/2023;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;8,46;4,7;19,6;;ngf : référence NGF inconnue dans la source
+15/05/2023;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;13,19;7,5;16,9;-0,18;
+15/05/2023;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;3;2;24,5;;ngf : référence NGF inconnue dans la source
+15/05/2023;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,465;0;19;;ngf : référence NGF inconnue dans la source
+15/05/2023;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;4,02;0,8;22;;
+15/05/2023;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;2,91;1,4;17,3;;ngf : référence NGF inconnue dans la source
+14/06/2023;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;2,44;1,1;24,9;0,45;
+14/06/2023;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;2,64;1,2;23,7;-0,33;
+14/06/2023;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,424;0;24,1;0,29;
+14/06/2023;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;1,232;0,4;24,8;;ngf : référence NGF inconnue dans la source
+14/06/2023;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;6,53;3,6;24,2;;ngf : référence NGF inconnue dans la source
+14/06/2023;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;7,06;3,9;24,2;-0,17;
+14/06/2023;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;2,6;1,2;24,6;;ngf : référence NGF inconnue dans la source
+14/06/2023;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;2,74;1,1;24,9;;ngf : référence NGF inconnue dans la source
+14/06/2023;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;5,16;2,4;29,7;;
+14/06/2023;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;2,44;1,1;25,3;;ngf : référence NGF inconnue dans la source
+14/06/2023;Piézométrique;Paradis;CP01;4,240128366;43,56640851;6,35;3,4;21,9;-0,35;
+14/06/2023;Piézométrique;Étang;CP02;4,271500887;43,56682944;5,38;2,8;22;-0,25;
+14/06/2023;Piézométrique;Hangar;CP03;4,243405688;43,54794627;4,6;2,4;20;-1,38;
+14/06/2023;Piézométrique;Terres;CP04;4,23851474;43,56020554;8,74;4,9;21,8;-0,75;
+14/06/2023;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;5,15;2,8;21,8;-0,14;
+18/07/2023;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,432;0;28,3;0,3;
+18/07/2023;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;;;;-0,59;
+18/07/2023;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,426;0;26,9;0,22;
+18/07/2023;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;2,74;1,3;27,8;;ngf : référence NGF inconnue dans la source
+18/07/2023;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;3,05;1,5;27,6;;ngf : référence NGF inconnue dans la source
+18/07/2023;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;12,47;7,2;26,2;-0,31;
+18/07/2023;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;2,92;1,4;30;;ngf : référence NGF inconnue dans la source
+18/07/2023;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,426;0;28,2;;ngf : référence NGF inconnue dans la source
+18/07/2023;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;0,267;1,3;26;;ngf : référence NGF inconnue dans la source
+16/08/2023;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,532;0;27,2;0,33;
+16/08/2023;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;;;;-0,64;
+16/08/2023;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,522;0;25,2;0,2;
+16/08/2023;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,259;0;26,3;;ngf : référence NGF inconnue dans la source
+16/08/2023;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;;;;;temp : valeur non numérique « AN » laissée vide / ngf : valeur non numérique « recalé côte NGF le 22 et replacer le 28-08-2023 » laissée vide / Aucune valeur disponible pour les quatre paramètres retenus
+16/08/2023;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;12,95;7,5;1;-0,32;
+16/08/2023;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;;;;;ngf : référence NGF inconnue dans la source / Aucune valeur disponible pour les quatre paramètres retenus
+16/08/2023;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,512;0;26,4;;ngf : référence NGF inconnue dans la source
+16/08/2023;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;1,824;0,8;22;;ngf : référence NGF inconnue dans la source
+19/09/2023;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,475;0;23,5;0,34;
+19/09/2023;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;;;;-0,64;
+19/09/2023;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,53;0;23,1;0,19;
+19/09/2023;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,466;0;29,2;;ngf : référence NGF inconnue dans la source
+19/09/2023;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;8,52;4,8;24,2;0,28;
+19/09/2023;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;6,78;3,5;21,6;-0,19;
+19/09/2023;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;;;;;ngf : référence NGF inconnue dans la source / Aucune valeur disponible pour les quatre paramètres retenus
+19/09/2023;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,518;0;23,9;;ngf : référence NGF inconnue dans la source
+19/09/2023;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;0,951;0,3;22,2;;ngf : référence NGF inconnue dans la source
+13/10/2023;Piézométrique;Paradis;CP01;4,240128366;43,56640851;4,88;2,6;20,3;-0,56;
+13/10/2023;Piézométrique;Étang;CP02;4,271500887;43,56682944;9,66;5,4;18,5;-0,21;
+13/10/2023;Piézométrique;Hangar;CP03;4,243405688;43,54794627;6,03;3,3;22;-1,2;
+13/10/2023;Piézométrique;Terres;CP04;4,23851474;43,56020554;14,37;8,4;21,6;-0,7;
+13/10/2023;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;3,66;1,8;20,7;-0,14;
+18/10/2023;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,56;0;17,6;0,32;
+18/10/2023;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;1,56;0,2;19,6;-0,36;
+18/10/2023;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,456;0;19;-0,38544;
+18/10/2023;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,549;0;19,6;;ngf : référence NGF inconnue dans la source
+18/10/2023;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;19,06;8,3;19,6;0,46;
+18/10/2023;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;6,14;3,3;19;-0,25;
+18/10/2023;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;0,538;0,1;19;;ngf : référence NGF inconnue dans la source
+18/10/2023;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,512;0;19,6;;ngf : référence NGF inconnue dans la source
+18/10/2023;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;1,587;0,6;18;;ngf : référence NGF inconnue dans la source
+13/11/2023;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,486;0;13,8;0,31;
+13/11/2023;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;0,48;0,9;13,2;-0,29;
+13/11/2023;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,534;0;13,1;0,15;
+13/11/2023;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,481;0;13,5;;ngf : référence NGF inconnue dans la source
+13/11/2023;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;0,481;0;13,5;-0,07;
+13/11/2023;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;0,355;1,7;13,7;-0,14;
+13/11/2023;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;0,356;0,2;13,2;;ngf : référence NGF inconnue dans la source
+13/11/2023;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,48;0;13,2;;ngf : référence NGF inconnue dans la source
+13/11/2023;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;3,04;1,2;13,7;;
+13/11/2023;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;1,595;0,6;13,6;;ngf : référence NGF inconnue dans la source
+13/12/2023;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,301;1,4;10,2;0,31;
+13/12/2023;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;0,269;1,2;10,7;-0,29;
+13/12/2023;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,433;0;9,1;0,2;
+13/12/2023;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,224;0,9;10,1;;ngf : référence NGF inconnue dans la source
+13/12/2023;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;0,531;2,7;10,1;0,2;
+13/12/2023;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;0,276;1,3;10,6;-0,11;
+13/12/2023;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;6,62;3,4;12,8;;ngf : référence NGF inconnue dans la source
+13/12/2023;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,389;1,9;9,7;;ngf : référence NGF inconnue dans la source
+13/12/2023;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;2,04;1,7;13,9;;
+13/12/2023;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;2,33;1,4;10,2;;ngf : référence NGF inconnue dans la source
+08/01/2024;Piézométrique;Paradis;CP01;4,240128366;43,56640851;3,79;1,9;12,1;-0,3;
+08/01/2024;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,42;1,7;10,8;-0,14;
+08/01/2024;Piézométrique;Hangar;CP03;4,243405688;43,54794627;6,08;3,2;15,5;-1,78;
+08/01/2024;Piézométrique;Terres;CP04;4,23851474;43,56020554;7,07;8,7;11,6;-0,71;
+08/01/2024;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;8;4,4;14,1;-0,15;
+22/01/2024;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;5,14;5,8;7,3;0,3;
+22/01/2024;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,74;1,3;7,4;-0,25;
+22/01/2024;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;17,53;0,8;6;0,16;
+22/01/2024;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;4,02;2;6,4;;ngf : référence NGF inconnue dans la source
+22/01/2024;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;14,52;8,1;6,7;-0,04;
+22/01/2024;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;3,25;1,7;7;-0,06;
+22/01/2024;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;7,7;4;9,3;;ngf : référence NGF inconnue dans la source
+22/01/2024;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;4,91;2,5;7,5;;ngf : référence NGF inconnue dans la source
+22/01/2024;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;1,04;2,2;14,1;;
+22/01/2024;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;3,33;1,7;7,2;;ngf : référence NGF inconnue dans la source
+16/02/2024;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,588;0,2;12,3;0,42;
+16/02/2024;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,21;1,6;11,7;-0,27;
+16/02/2024;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,433;0,4;11,5;0,29;
+16/02/2024;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;2,73;1,4;10,5;;ngf : référence NGF inconnue dans la source
+16/02/2024;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;19,7;11,8;13,6;0,05;
+16/02/2024;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;0,433;2,3;11,9;-0,1;
+16/02/2024;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;6,31;3,4;13,4;;ngf : référence NGF inconnue dans la source
+16/02/2024;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;1,049;0,9;11,6;;ngf : référence NGF inconnue dans la source
+16/02/2024;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;0,04;2,7;14,3;;
+16/02/2024;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;4,3;2,2;11,1;;ngf : référence NGF inconnue dans la source
+12/03/2024;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;4,33;2,3;12,1;0,44;
+12/03/2024;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,58;1,8;11,9;-0,19;
+12/03/2024;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,976;0,4;12,1;0,34;
+12/03/2024;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;1,942;0,9;11,5;;ngf : référence NGF inconnue dans la source
+12/03/2024;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;5,56;3;11,6;-0,01;
+12/03/2024;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;4,66;2,4;11,3;-0,05;
+12/03/2024;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;6,8;3,7;13,2;;ngf : référence NGF inconnue dans la source
+12/03/2024;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;2,22;1,1;13,3;;ngf : référence NGF inconnue dans la source
+12/03/2024;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;4,46;2,3;11,1;;
+12/03/2024;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;3,25;1,7;11,9;;ngf : référence NGF inconnue dans la source
+12/03/2024;Piézométrique;Paradis;CP01;4,240128366;43,56640851;5,56;3;14,8;-0,18;
+12/03/2024;Piézométrique;Étang;CP02;4,271500887;43,56682944;4,63;2,5;12,6;0,21;
+12/03/2024;Piézométrique;Hangar;CP03;4,243405688;43,54794627;7,19;1,6;14,8;-0,62;
+12/03/2024;Piézométrique;Terres;CP04;4,23851474;43,56020554;8,87;4,9;12;-0,38;
+12/03/2024;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;10,3;5,6;15;0,02;
+11/04/2024;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;1,658;0,8;14,8;0,41;
+11/04/2024;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;5,5;2,6;13,5;-0,215;
+11/04/2024;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,989;0,4;14,6;0,3;
+11/04/2024;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;2,64;3;15;;ngf : référence NGF inconnue dans la source
+11/04/2024;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;13,44;10;15,5;-0,15;
+11/04/2024;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;6,65;3,6;11,4;-0,14;
+11/04/2024;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;8,57;4,8;16;;ngf : référence NGF inconnue dans la source
+11/04/2024;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;3,5;1,8;14,6;;ngf : référence NGF inconnue dans la source
+11/04/2024;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;4,39;2,3;15,6;;
+11/04/2024;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;4,49;2,3;14,5;;ngf : référence NGF inconnue dans la source
+16/05/2024;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,439;0,1;20,6;0,55;
+16/05/2024;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,9;2;19,5;-0,195;
+16/05/2024;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,445;0,1;19,3;0,42;
+16/05/2024;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;98,5;0,4;18,4;;ngf : référence NGF inconnue dans la source
+16/05/2024;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;21,9;14,3;20,3;0,35;
+16/05/2024;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;8,6;4,8;18,4;-0,11;
+16/05/2024;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;6,63;3,6;20,3;;ngf : référence NGF inconnue dans la source
+16/05/2024;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,623;0,2;19,5;;ngf : référence NGF inconnue dans la source
+16/05/2024;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;6,63;3,6;20,3;;
+16/05/2024;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;4,42;2,4;17,5;;ngf : référence NGF inconnue dans la source
+17/06/2024;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;4,31;0,1;22,5;0,46;
+17/06/2024;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;44,5;0,1;22,2;-0,28;
+17/06/2024;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;4,48;0,1;21,8;0,26;
+17/06/2024;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;5,11;0,2;22,4;;ngf : référence NGF inconnue dans la source
+17/06/2024;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;21;12,6;23,2;-0,26;
+17/06/2024;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;9,51;5,3;22,5;-0,15;
+17/06/2024;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;6,46;3,4;21,2;;ngf : référence NGF inconnue dans la source
+17/06/2024;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,428;0,1;22,2;;ngf : référence NGF inconnue dans la source
+17/06/2024;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;6,58;3,6;21,4;;
+17/06/2024;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;2,39;1,2;21,9;;ngf : référence NGF inconnue dans la source
+17/06/2024;Piézométrique;Paradis;CP01;4,240128366;43,56640851;8,34;4,7;21,4;-0,39;
+17/06/2024;Piézométrique;Étang;CP02;4,271500887;43,56682944;5,52;2,9;16,3;-0,23;
+17/06/2024;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,64;1,9;18,4;-1,3;
+17/06/2024;Piézométrique;Terres;CP04;4,23851474;43,56020554;11,09;6,4;19,5;-0,63;
+17/06/2024;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,56;2,4;18,4;-0,11;
+25/07/2024;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;4,05;0,1;25,4;0,46;
+25/07/2024;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;2,36;1,9;23,5;-0,54;
+25/07/2024;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;4,25;0,1;24,8;0,32;
+25/07/2024;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;6,2;0,2;24,1;;ngf : référence NGF inconnue dans la source
+25/07/2024;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;6,11;3,3;26;0,4;
+25/07/2024;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;6,61;3,6;23,5;-0,19;
+25/07/2024;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;2,34;1,2;27,4;;ngf : référence NGF inconnue dans la source
+25/07/2024;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;4,09;0,1;25,1;;ngf : référence NGF inconnue dans la source
+25/07/2024;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;6,86;3,8;24,3;;ngf : référence NGF inconnue dans la source
+26/07/2024;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;11,48;6,4;25,8;;
+13/08/2024;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,419;0,1;28,4;0,4;
+13/08/2024;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;0,467;0,1;26,5;-0,64;
+13/08/2024;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,426;0,1;27,9;0,26;
+13/08/2024;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,826;0,3;26,6;;ngf : référence NGF inconnue dans la source
+13/08/2024;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;1,902;1;28,3;0,16;
+13/08/2024;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;11,16;6,4;28,9;-0,2;
+13/08/2024;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;1,51;0,7;29,7;;ngf : référence NGF inconnue dans la source
+13/08/2024;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,431;0,1;28,2;;ngf : référence NGF inconnue dans la source
+13/08/2024;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;1,254;0,6;26,4;;ngf : référence NGF inconnue dans la source
+13/09/2024;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,637;0,2;17,6;0,4;
+13/09/2024;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;0,512;0,2;15,8;-0,64;
+13/09/2024;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,499;0,2;17,2;0,27;
+13/09/2024;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,987;0,4;15,9;;ngf : référence NGF inconnue dans la source
+13/09/2024;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;3,08;1,6;17,2;-0,16;
+13/09/2024;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;4,66;2,5;13,7;-0,2;
+13/09/2024;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;1,619;0,7;11,5;;ngf : référence NGF inconnue dans la source
+13/09/2024;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,472;0,1;18,8;;ngf : référence NGF inconnue dans la source
+13/09/2024;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;3,07;1,6;15,1;;ngf : référence NGF inconnue dans la source
+18/09/2024;Piézométrique;Étang;CP02;4,271500887;43,56682944;7,78;4,3;19,2;-0,3;
+18/09/2024;Piézométrique;Hangar;CP03;4,243405688;43,54794627;7,11;3,8;21,6;-2,17;
+18/09/2024;Piézométrique;Terres;CP04;4,23851474;43,56020554;5,54;3;22,5;-1,11;
+18/09/2024;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,58;2,5;20,3;0,02;
+14/10/2024;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,8;0,3;17,8;0,25;
+14/10/2024;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;0,15;0,7;17,4;-0,64;
+14/10/2024;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;2,27;1,1;17,2;0,21;
+14/10/2024;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,66;0,2;17,3;;ngf : référence NGF inconnue dans la source
+14/10/2024;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;14;8;17,1;0,56;
+14/10/2024;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;7,27;4;17,8;-0,22;
+14/10/2024;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;1,45;0,7;18,7;;ngf : référence NGF inconnue dans la source
+14/10/2024;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;1,2;0,6;17,8;;ngf : référence NGF inconnue dans la source
+14/10/2024;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;4,75;2,5;17;;ngf : référence NGF inconnue dans la source
+14/11/2024;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;1,923;0,9;11,5;0,38;
+14/11/2024;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;1,812;0,9;8,7;-0,34;
+14/11/2024;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,873;0,3;12,4;0,26;
+14/11/2024;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;1,96;0,9;9,4;;ngf : référence NGF inconnue dans la source
+14/11/2024;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;12,28;7,1;12,6;0,38;
+14/11/2024;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;5,21;2,8;8,5;-0,19;
+14/11/2024;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;2,43;1,4;11,2;;ngf : référence NGF inconnue dans la source
+14/11/2024;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;1,451;0,7;11,2;;ngf : référence NGF inconnue dans la source
+14/11/2024;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;6,36;4,2;10,1;;
+14/11/2024;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;2,17;1,1;10,7;;ngf : référence NGF inconnue dans la source
+18/12/2024;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;2,63;1,3;7,2;0,28;
+18/12/2024;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;2,34;1,2;7,8;-0,28;
+18/12/2024;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,94;0,4;7,1;0,13;
+18/12/2024;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;1,94;1;7,4;;ngf : référence NGF inconnue dans la source
+18/12/2024;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;5,49;2,8;9;-0,14;
+18/12/2024;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;6,63;3,4;8,6;-0,13;
+18/12/2024;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;2,93;1,5;10,2;;ngf : référence NGF inconnue dans la source
+18/12/2024;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;2,78;1,4;8,3;;ngf : référence NGF inconnue dans la source
+18/12/2024;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;4,65;2,3;10;;
+18/12/2024;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;5,06;2,6;8,6;;ngf : référence NGF inconnue dans la source
+15/01/2025;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,557;0,2;3,3;0,35;
+15/01/2025;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;2,98;1,5;0,4;-0,3;
+15/01/2025;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1,013;0,4;2,4;0,11;
+15/01/2025;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;2,27;1,1;3,6;;ngf : référence NGF inconnue dans la source
+15/01/2025;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;10,06;5,4;1,6;0,12;
+15/01/2025;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;8,32;4,4;1,5;-0,18;
+15/01/2025;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;2,88;1,4;4,8;;ngf : référence NGF inconnue dans la source
+15/01/2025;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;3,03;1,5;4,8;;ngf : référence NGF inconnue dans la source
+15/01/2025;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;5,04;2,7;2,5;;
+15/01/2025;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;2,71;1,3;3,6;;ngf : référence NGF inconnue dans la source
+20/02/2025;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;3,05;1,4;11;0,18;
+20/02/2025;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;2,8;1,3;11,3;-0,17;
+20/02/2025;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1,495;0,5;10,7;0,12;
+20/02/2025;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;2,21;0,9;9,9;;ngf : référence NGF inconnue dans la source
+20/02/2025;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;10,25;6;11,4;0,4;
+20/02/2025;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;8,4;4,4;11,7;-0,09;
+20/02/2025;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;5,45;2,6;11,7;;ngf : référence NGF inconnue dans la source
+20/02/2025;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;2,59;1,2;10,02;;ngf : référence NGF inconnue dans la source
+20/02/2025;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;4,82;2,6;9,9;;
+20/02/2025;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;2,38;1;9,5;;ngf : référence NGF inconnue dans la source
+20/02/2025;Piézométrique;Paradis;CP01;4,240128366;43,56640851;6,92;3,7;12;-0,7;
+20/02/2025;Piézométrique;Étang;CP02;4,271500887;43,56682944;5,36;2,7;11,1;0,04;
+20/02/2025;Piézométrique;Hangar;CP03;4,243405688;43,54794627;3,93;1,9;14,1;-1,12;
+20/02/2025;Piézométrique;Terres;CP04;4,23851474;43,56020554;7,25;2,6;11,5;-0,59;
+20/02/2025;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;6,71;3,6;14,14;-0,2;
+19/03/2025;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;3,63;1,9;11,8;0,17;
+19/03/2025;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,62;1,9;10,8;-0,175;
+19/03/2025;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1,57;0,7;9,9;0,01;
+19/03/2025;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;2,45;1,2;10,4;;ngf : référence NGF inconnue dans la source
+19/03/2025;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;20,7;12,1;12,7;0,25;
+19/03/2025;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;9,12;5;10,7;-0,11;
+19/03/2025;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;7,24;3,9;10,4;;ngf : référence NGF inconnue dans la source
+19/03/2025;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;2,98;1,5;10,7;;ngf : référence NGF inconnue dans la source
+19/03/2025;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;1,85;0,9;10,6;;
+19/03/2025;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;3,1;1,6;10,9;;ngf : référence NGF inconnue dans la source
+22/04/2025;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;1,449;0,7;17,6;0,3;
+22/04/2025;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,49;1,8;17,5;-0,17;
+22/04/2025;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1,146;0,5;17,5;0,19;
+22/04/2025;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;2,58;1,3;15,2;;ngf : référence NGF inconnue dans la source
+22/04/2025;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;18,05;10,6;19,5;-0,13;
+22/04/2025;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;12,11;6,9;16,4;-0,155;
+22/04/2025;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;9,51;5,3;17;;ngf : référence NGF inconnue dans la source
+22/04/2025;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,7;0,3;17,7;;ngf : référence NGF inconnue dans la source
+22/04/2025;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;9,54;2,9;13,6;;
+22/04/2025;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;4,78;2,5;16,3;;ngf : référence NGF inconnue dans la source
+13/05/2025;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,508;0,2;24,4;0,4;
+13/05/2025;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,57;1,9;24,9;-0,18;
+13/05/2025;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,555;0,2;19,3;0,33;
+13/05/2025;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;1,41;0,7;20,3;;ngf : référence NGF inconnue dans la source
+13/05/2025;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;9,58;5,3;22,7;-0,14;
+13/05/2025;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;11,7;6,7;25,9;-0,135;
+13/05/2025;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;7,62;4,2;26,3;;
+13/05/2025;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,485;0,2;23,3;;ngf : référence NGF inconnue dans la source
+13/05/2025;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;4,66;2,5;23,8;;
+13/05/2025;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;2,58;1,3;21,9;;ngf : référence NGF inconnue dans la source
+13/05/2025;Piézométrique;Paradis;CP01;4,240128366;43,56640851;9,47;5,4;17,4;-0,14;
+13/05/2025;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,35;1,7;13,4;0,03;
+13/05/2025;Piézométrique;Hangar;CP03;4,243405688;43,54794627;2,58;1,3;17,1;-0,31;
+13/05/2025;Piézométrique;Terres;CP04;4,23851474;43,56020554;8,48;4,6;16,6;-0,59;
+13/05/2025;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;6,87;3,7;15,4;-0,07;
+18/06/2025;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,477;0,2;26,7;0,36;
+18/06/2025;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;4,83;2,6;31,6;-0,41;
+18/06/2025;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,468;0,1;28,2;0,23;
+18/06/2025;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,516;0,2;25,9;;ngf : référence NGF inconnue dans la source
+18/06/2025;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;17,64;10,4;30,9;-0,14;
+18/06/2025;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;13,97;8;32,2;-0,18;
+18/06/2025;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;3,63;1,9;28,8;;
+18/06/2025;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,478;0,2;27,3;;ngf : référence NGF inconnue dans la source
+18/06/2025;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;8,7;4,9;30,8;;
+18/06/2025;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;0,563;0,2;27;;ngf : référence NGF inconnue dans la source
+23/07/2025;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,462;0,1;26,5;0,3;
+23/07/2025;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;0,508;0,2;28;-0,64;
+23/07/2025;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,459;0,1;25,8;0,16;
+23/07/2025;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,503;0,2;24,6;;ngf : référence NGF inconnue dans la source
+23/07/2025;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;5,65;3,2;27,5;-0,19;
+23/07/2025;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;10,56;6;29,2;-0,22;
+23/07/2025;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;2,63;1,3;31,8;;
+23/07/2025;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,468;0,1;26,8;;ngf : référence NGF inconnue dans la source
+23/07/2025;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;1,985;1;26,4;;ngf : référence NGF inconnue dans la source
+02/09/2025;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,511;0,2;23,6;0,35;
+02/09/2025;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;;;;-0,64;
+02/09/2025;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,523;0,2;23,3;0,25;
+02/09/2025;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,865;0,4;21;;ngf : référence NGF inconnue dans la source
+02/09/2025;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;1,27;0,6;20,8;-0,23;
+02/09/2025;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;7,77;4,3;22,2;-0,29;
+02/09/2025;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,455;0,2;23,8;;ngf : référence NGF inconnue dans la source
+02/09/2025;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;1,258;0,6;21;;ngf : référence NGF inconnue dans la source
+02/09/2025;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;2;1;24,7;;
+02/09/2025;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;1,857;0,9;23,2;;
+05/09/2025;Piézométrique;Paradis;CP01;4,240128366;43,56640851;5,97;3,2;20,6;-1,3;
+05/09/2025;Piézométrique;Étang;CP02;4,271500887;43,56682944;11,04;6,1;18,9;-0,29;
+05/09/2025;Piézométrique;Hangar;CP03;4,243405688;43,54794627;7,36;4;19,9;-1,77;
+05/09/2025;Piézométrique;Terres;CP04;4,23851474;43,56020554;2,23;1,1;23,6;-0,94;
+05/09/2025;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;3,18;1,6;19,2;-0,27;
+22/09/2025;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,465;0,1;23,2;0,28;
+22/09/2025;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;0,58;0,2;24,7;-0,64;
+22/09/2025;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,547;0,2;21,3;0,16;
+22/09/2025;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,957;0,4;22;;ngf : référence NGF inconnue dans la source
+22/09/2025;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;7,32;4,1;26,5;0,26;
+22/09/2025;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;12,12;6;24,3;-0,35;
+22/09/2025;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,459;0,1;24,1;;ngf : référence NGF inconnue dans la source
+22/09/2025;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;1,472;0,7;23;;
+22/09/2025;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;4,8;2,6;27,4;;
+22/09/2025;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;7,14;4;27;;
+21/10/2025;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,47;0,1;18,8;0,36;
+21/10/2025;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;0,746;0,3;20,3;-0,49;
+21/10/2025;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,471;0,1;18;0,21;
+21/10/2025;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,473;0,1;18,7;;ngf : référence NGF inconnue dans la source
+21/10/2025;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;2,11;1;19,3;-0,14;"Nouvelle échelle : lecture 10.0 cm ; conversion NGF en attente de confirmation"
+21/10/2025;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;11,45;6,3;22,4;-0,35;
+21/10/2025;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;1,576;0,7;24,1;;
+21/10/2025;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,485;0,2;18,4;;ngf : référence NGF inconnue dans la source
+21/10/2025;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;0,525;0,2;18;;
+21/10/2025;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;;;;-1,18;NGF converti de cm en m
+21/10/2025;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;9,37;5,3;22,7;-1,185;"NGF converti de cm en m : unité déduite de Niveau règle (cm) + cote ; à confirmer"
+11/11/2025;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,423;0,1;12,6;0,3;
+11/11/2025;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;0,528;0,2;11;-0,42;
+11/11/2025;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,544;0,2;11,5;0,17;
+11/11/2025;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,482;0,1;10,9;;ngf : référence NGF inconnue dans la source
+11/11/2025;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;1,751;0,8;11,9;0,095;"Nouvelle échelle : lecture 23.0 cm ; conversion NGF en attente de confirmation"
+11/11/2025;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;8,59;4,7;8,7;-0,31;
+11/11/2025;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;1,381;0,6;12,4;;
+11/11/2025;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,427;0,1;12,4;;ngf : référence NGF inconnue dans la source
+11/11/2025;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;0,915;0,4;10,4;;
+11/11/2025;Limnimétrique;Roubine neuve;CL12;4,261606;43,5562659;1,751;0,8;11,9;;"Nouvelle échelle : lecture 35.0 cm ; conversion NGF en attente de confirmation"
+11/11/2025;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;4,54;2,5;13;-0,95;NGF converti de cm en m
+11/11/2025;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;7,34;4;12;-0,945;"NGF converti de cm en m : unité déduite de Niveau règle (cm) + cote ; à confirmer"
+11/11/2025;Piézométrique;Paradis;CP01;4,240128366;43,56640851;9,33;5,1;15,7;-0,4;
+11/11/2025;Piézométrique;Étang;CP02;4,271500887;43,56682944;5,98;3,2;15;-0,07;
+11/11/2025;Piézométrique;Hangar;CP03;4,243405688;43,54794627;7,32;4,1;18,6;-0,97;
+11/11/2025;Piézométrique;Terres;CP04;4,23851474;43,56020554;1,944;1;17,4;-0,53;
+11/11/2025;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,94;2,7;17;-0,18;
+18/12/2025;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,428;0,1;10,8;0,29;
+18/12/2025;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;2,29;1,1;11,2;-0,35;
+18/12/2025;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,56;0,2;9,5;0,16;
+18/12/2025;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;1,3;0,6;10,2;;ngf : référence NGF inconnue dans la source
+18/12/2025;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;6,05;3,7;11,8;0,28;"Nouvelle échelle : lecture 43.0 cm ; conversion NGF en attente de confirmation"
+18/12/2025;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;8,8;4,7;11,5;-0,25;
+18/12/2025;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;4,1;2,1;12,2;;
+18/12/2025;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,403;0,1;11,1;;ngf : référence NGF inconnue dans la source
+18/12/2025;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;1,754;0,8;11;;
+18/12/2025;Limnimétrique;Roubine neuve;CL12;4,261606;43,5562659;4,03;2,1;10,9;;"Nouvelle échelle : lecture 43.0 cm ; conversion NGF en attente de confirmation"
+18/12/2025;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;5,29;2,8;11,3;-0,72;NGF converti de cm en m
+18/12/2025;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;8,84;4,8;10,8;-0,745;"NGF converti de cm en m : unité déduite de Niveau règle (cm) + cote ; à confirmer"
+14/01/2026;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;4,2;2,3;9,9;-0,02;
+14/01/2026;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,62;1,9;10,9;-0,22;
+14/01/2026;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1,97;0,9;8,5;-0,01;
+14/01/2026;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;2,8;1,4;9,1;;ngf : référence NGF inconnue dans la source
+14/01/2026;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;10,05;5,5;7,2;0,23;"Nouvelle échelle : lecture 37.0 cm ; conversion NGF en attente de confirmation"
+14/01/2026;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;9,23;4,8;10,1;-0,09;
+14/01/2026;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;5,74;3,1;11,2;;
+14/01/2026;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;3,51;1,8;10,3;;ngf : référence NGF inconnue dans la source
+14/01/2026;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;5,86;3;10,5;;
+14/01/2026;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;3,29;1,6;7;;
+14/01/2026;Limnimétrique;Roubine neuve;CL12;4,261606;43,5562659;6,4;3,4;7,4;;"Nouvelle échelle : lecture 66.0 cm ; conversion NGF en attente de confirmation"
+14/01/2026;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;3,61;1,9;10,8;-0,46;NGF converti de cm en m
+14/01/2026;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;5;2,6;10,9;-0,455;"NGF converti de cm en m : unité déduite de Niveau règle (cm) + cote ; à confirmer"
+16/02/2026;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;6,86;2,1;10;0,21;
+16/02/2026;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;3,82;2;10,8;-0,08;
+16/02/2026;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1,268;0,6;10,4;0,22;
+16/02/2026;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;3,44;1,8;10,3;;ngf : référence NGF inconnue dans la source
+16/02/2026;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;5,46;2,9;9,8;;"Nouvelle échelle : lecture 92.5 cm ; conversion NGF en attente de confirmation"
+16/02/2026;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;5,81;0,9;13,5;0,04;
+16/02/2026;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;3,98;2,1;10,3;;
+16/02/2026;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;5,6;3,7;11,3;;ngf : référence NGF inconnue dans la source
+16/02/2026;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;2,5;1,2;10,7;;
+16/02/2026;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;3,37;1,7;10,1;;
+16/02/2026;Limnimétrique;Roubine neuve;CL12;4,261606;43,5562659;4,1;2,2;10,5;;"Nouvelle échelle : lecture 92.0 cm ; conversion NGF en attente de confirmation"
+16/02/2026;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;3,58;1,8;10,8;-0,2;NGF converti de cm en m
+16/02/2026;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;3,99;2,1;12,1;-0,185;"NGF converti de cm en m : unité déduite de Niveau règle (cm) + cote ; à confirmer"
+18/02/2026;Piézométrique;Paradis;CP01;4,240128366;43,56640851;4,38;2,4;11,4;-0,03;
+18/02/2026;Piézométrique;Étang;CP02;4,271500887;43,56682944;3,24;1,6;10,3;0,3;
+18/02/2026;Piézométrique;Hangar;CP03;4,243405688;43,54794627;2,95;1,4;13,5;-0,27;
+18/02/2026;Piézométrique;Terres;CP04;4,23851474;43,56020554;2,95;1,5;11,9;-0,19;
+18/02/2026;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;3,88;2;13,6;-0,05;
+23/03/2026;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;4,48;2,4;15;0,14;
+23/03/2026;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;4,04;2,1;15,3;-0,09;
+23/03/2026;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;1,956;0,9;13,5;0,21;
+23/03/2026;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;3,63;1,9;14,6;;ngf : référence NGF inconnue dans la source
+23/03/2026;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;3,94;2;13,9;;"Nouvelle échelle : lecture 62.0 cm ; conversion NGF en attente de confirmation"
+23/03/2026;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;6,09;3,4;18,6;-0,03;
+23/03/2026;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;4,55;2,4;15,8;;
+23/03/2026;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;4,9;2,6;16,6;;ngf : référence NGF inconnue dans la source
+23/03/2026;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;4,03;2,1;14,1;;
+23/03/2026;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;3,69;1,9;13,8;;
+23/03/2026;Limnimétrique;Roubine neuve;CL12;4,261606;43,5562659;3,86;2;14;;"Nouvelle échelle : lecture 70.0 cm ; conversion NGF en attente de confirmation"
+23/03/2026;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;3,76;2;18,9;-0,38;NGF converti de cm en m
+23/03/2026;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;3,92;2,1;20,4;-0,375;"NGF converti de cm en m : unité déduite de Niveau règle (cm) + cote ; à confirmer"
+15/04/2026;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,555;0,2;16,3;0,4;
+15/04/2026;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;5,03;2,6;18,7;-0,29;
+15/04/2026;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,745;0,3;19,1;0,35;
+15/04/2026;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;4,33;2,3;14,2;;ngf : référence NGF inconnue dans la source
+15/04/2026;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;4,9;2,6;16,2;;"Nouvelle échelle : lecture 18.0 cm ; conversion NGF en attente de confirmation"
+15/04/2026;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;7,91;4,4;19,5;-0,14;
+15/04/2026;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;5,37;2,8;16;;
+15/04/2026;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,536;0,2;19,6;;ngf : référence NGF inconnue dans la source
+15/04/2026;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;7,27;4;16,9;;
+15/04/2026;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;3,95;2;13,7;;
+15/04/2026;Limnimétrique;Roubine neuve;CL12;4,261606;43,5562659;4,89;2,6;16,7;;"Nouvelle échelle : lecture 23.0 cm ; conversion NGF en attente de confirmation"
+15/04/2026;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;4,78;2,5;14,5;-0,53;NGF converti de cm en m
+15/04/2026;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;5,46;2,9;14,3;-0,585;"NGF converti de cm en m : unité déduite de Niveau règle (cm) + cote ; à confirmer"
+19/05/2026;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,526;0,2;19;0,46;
+19/05/2026;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;6,22;3,4;24,4;-0,34;
+19/05/2026;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,623;0,2;21,2;0,37;
+19/05/2026;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;3,21;1,7;18;;ngf : référence NGF inconnue dans la source
+19/05/2026;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;13,9;8,1;23,1;;"Nouvelle échelle : lecture -5.0 cm ; conversion NGF en attente de confirmation"
+19/05/2026;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;10,24;5,9;25;-0,19;
+19/05/2026;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;5,29;2,8;26,2;;
+19/05/2026;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,514;0,2;19;;ngf : référence NGF inconnue dans la source
+19/05/2026;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;6;3,3;22,3;;
+19/05/2026;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;4,57;2,4;19,2;;
+19/05/2026;Limnimétrique;Roubine neuve;CL12;4,261606;43,5562659;6,6;3,6;19,9;;"Nouvelle échelle : lecture 41.0 cm ; conversion NGF en attente de confirmation"
+19/05/2026;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;5,06;2,7;25,6;-0,64;NGF converti de cm en m
+19/05/2026;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;6,54;3,7;23;-0,665;"NGF converti de cm en m : unité déduite de Niveau règle (cm) + cote ; à confirmer"
+19/05/2026;Piézométrique;Paradis;CP01;4,240128366;43,56640851;5,44;2,9;18,7;-0,2;
+19/05/2026;Piézométrique;Étang;CP02;4,271500887;43,56682944;1,4;2,7;15,2;0,03;
+19/05/2026;Piézométrique;Hangar;CP03;4,243405688;43,54794627;2,41;1,2;18,6;-1,26;
+19/05/2026;Piézométrique;Terres;CP04;4,23851474;43,56020554;2,73;1,4;17,6;-0,59;
+19/05/2026;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;5,61;3,1;16,7;-0,12;
+16/06/2026;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,448;0,1;24,6;0,35;
+16/06/2026;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;2,28;1,1;25,2;-0,48;
+16/06/2026;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,473;0,1;23,4;0,21;
+16/06/2026;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;1,256;0,6;23,2;;ngf : référence NGF inconnue dans la source
+16/06/2026;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;19,54;11,7;25,5;;"Nouvelle échelle : lecture 23.0 cm ; conversion NGF en attente de confirmation"
+16/06/2026;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;12,78;7,3;23,8;-0,27;
+16/06/2026;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;2,81;1,4;28,8;;
+16/06/2026;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,45;0,1;25,1;;ngf : référence NGF inconnue dans la source
+16/06/2026;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;1,399;0,7;23,5;;
+16/06/2026;Limnimétrique;Roubine neuve;CL12;4,261606;43,5562659;12,75;7,4;25,5;;"Nouvelle échelle : lecture -10.0 cm ; conversion NGF en attente de confirmation"
+16/06/2026;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;6,37;3,5;25,3;-0,74;NGF converti de cm en m
+16/06/2026;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;3,92;2,1;25,4;-0,99;"NGF converti de cm en m : unité déduite de Niveau règle (cm) + cote ; à confirmer"
+20/07/2026;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,476;0,1;27,7;0,36;
+20/07/2026;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;;;;-0,64;
+20/07/2026;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,458;0,1;26,3;0,19;
+20/07/2026;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,688;0,3;26,3;;ngf : référence NGF inconnue dans la source
+20/07/2026;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;9,87;5,5;29,5;;"Nouvelle échelle : lecture 33.0 cm ; conversion NGF en attente de confirmation"
+20/07/2026;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;11,26;6,4;28;-0,23;
+20/07/2026;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,473;0,1;28,4;;ngf : référence NGF inconnue dans la source
+20/07/2026;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;0,663;0,3;27,3;;
+20/07/2026;Limnimétrique;Roubine neuve;CL12;4,261606;43,5562659;14,76;8,6;28,7;;"Nouvelle échelle : lecture -25.0 cm ; conversion NGF en attente de confirmation"
+20/07/2026;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;;;;-1,18;NGF converti de cm en m
+20/07/2026;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;;;;-1,315;"NGF converti de cm en m : unité déduite de Niveau règle (cm) + cote ; à confirmer"
+18/08/2026;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,51;0,2;27,2;0,3;
+18/08/2026;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;1,242;0,6;25,2;-0,64;
+18/08/2026;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,489;0,2;26,9;0,2;
+18/08/2026;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,667;0,3;25,9;;ngf : référence NGF inconnue dans la source
+18/08/2026;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;12,5;7,2;28,3;;"Nouvelle échelle : lecture 44.0 cm ; conversion NGF en attente de confirmation"
+18/08/2026;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;12,05;6,9;25;-0,25;
+18/08/2026;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,488;0,2;27,4;;ngf : référence NGF inconnue dans la source
+18/08/2026;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;0,695;0,3;26,3;;
+18/08/2026;Limnimétrique;Roubine neuve;CL12;4,261606;43,5562659;2,4;1,2;27,3;;"Nouvelle échelle : lecture 30.0 cm ; conversion NGF en attente de confirmation"
+18/08/2026;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;21,3;12,8;25,6;-1,23;NGF converti de cm en m
+18/08/2026;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;21,2;12,8;25,4;-1,265;"NGF converti de cm en m : unité déduite de Niveau règle (cm) + cote ; à confirmer"
+18/08/2026;Piézométrique;Paradis;CP01;4,240128366;43,56640851;6,53;3,5;21,9;-1,42;
+18/08/2026;Piézométrique;Étang;CP02;4,271500887;43,56682944;8,52;4,8;19,2;-0,43;
+18/08/2026;Piézométrique;Hangar;CP03;4,243405688;43,54794627;7,16;3,9;23,4;-1,19;
+18/08/2026;Piézométrique;Terres;CP04;4,23851474;43,56020554;5,96;3,3;26,4;-0,69;
+18/08/2026;Piézométrique;Les Rampes;CP05;4,226400024;43,56326416;4,85;2,6;20,6;-0,23;
+15/09/2026;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;0,462;0,1;24,9;0,27;
+15/09/2026;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;0,456;0,1;25,5;-0,47;
+15/09/2026;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,453;0,1;24,4;0,18;
+15/09/2026;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,605;0,2;22,9;;ngf : référence NGF inconnue dans la source
+15/09/2026;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;9,56;5,4;27,7;;"Nouvelle échelle : lecture 48.0 cm ; conversion NGF en attente de confirmation"
+15/09/2026;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;15,47;9,1;29,5;-0,36;
+15/09/2026;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;0,456;0,1;24,3;;ngf : référence NGF inconnue dans la source
+15/09/2026;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;1,097;0,5;23,2;;
+15/09/2026;Limnimétrique;Roubine neuve;CL12;4,261606;43,5562659;6,18;3,4;26,1;;"Nouvelle échelle : lecture -3.0 cm ; conversion NGF en attente de confirmation"
+15/09/2026;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;;;;-1,18;NGF converti de cm en m
+15/09/2026;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;;;;-1,315;"NGF converti de cm en m : unité déduite de Niveau règle (cm) + cote ; à confirmer"
+14/10/2026;Limnimétrique;Bourgidou-Pont ciment;CL01;4,226156127;43,56328115;2,55;1,2;18,6;0,42;
+14/10/2026;Limnimétrique;Rigole B Alim Rampes Claires;CL03;4,240257172;43,56638055;1,36;1;18;-0,16;
+14/10/2026;Limnimétrique;Divisoire - Alim Rigole C;CL04;4,259668544;43,57064092;0,885;0,4;16,5;0,29;
+14/10/2026;Limnimétrique;Evac Rigole C;CL05;4,251386165;43,56150706;0,941;0,4;16,9;;ngf : référence NGF inconnue dans la source
+14/10/2026;Limnimétrique;Quatre Canaux;CL06;4,261654038;43,5561932;4,34;2,3;18,3;;"Nouvelle échelle : lecture 61.0 cm ; conversion NGF en attente de confirmation"
+14/10/2026;Limnimétrique;Étang du Canavérier;CL07;4,269194712;43,56410407;3,19;1,6;18;0,08;
+14/10/2026;Limnimétrique;Rampes;CL08;4,227904971;43,56935607;4,23;10,2;18,6;;
+14/10/2026;Limnimétrique;Bourgidou Alim Rigole B;CL09;4,23291056;43,5596358;2,01;1;19;;ngf : référence NGF inconnue dans la source
+14/10/2026;Limnimétrique;Ilot des Claire (sal);CL10;4,251260579;43,56730608;1,39;0,6;16,1;;
+14/10/2026;Limnimétrique;Vieux Marais;CL11;4,250644775;43,56119266;2,13;1,1;17,3;;
+14/10/2026;Limnimétrique;Roubine neuve;CL12;4,261606;43,5562659;2,7;1,4;18,6;;"Nouvelle échelle : lecture 86.0 cm ; conversion NGF en attente de confirmation"
+14/10/2026;Limnimétrique;Mare Nord;CL13;4,2553326;43,5587362;2,7;1,4;17,4;-0,26;NGF converti de cm en m
+14/10/2026;Limnimétrique;Mare Sud;CL14;4,2570526;43,5579748;2,9;1,5;17,4;-0,265;"NGF converti de cm en m : unité déduite de Niveau règle (cm) + cote ; à confirmer"
