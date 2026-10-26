@@ -33,6 +33,7 @@
   let nomsStations = [];
   let chargement = null;
   let stationSansDonnees = "";
+  let comparaisonAnneesActive = false;
   const graphiques = new Map();
   const modesAffichage = new Map();
 
@@ -207,6 +208,7 @@
       caseACocher.checked = caseACocher.value === demandee;
     });
     if (!nomsStations.includes(demandee)) stationSansDonnees = demandee;
+    window.dispatchEvent(new CustomEvent("filmed:station-carte", { detail: demandee }));
   }
 
   function viderGraphiques() {
@@ -236,6 +238,7 @@
   // Les changements de filtres mettent à jour les graphiques existants.
   function actualiser() {
     if (!mesures.length || section.hidden) return;
+    if (comparaisonAnneesActive) return;
     const choisies = valeursCochees("station-graphe");
     const cles = valeursCochees("parametre-graphe");
     const du = dateChoisie(debut);
@@ -553,7 +556,7 @@
     document.getElementById("retablir-graphiques").addEventListener("click", () => {
       stationSansDonnees = "";
       modesAffichage.clear();
-      controles.querySelectorAll('input[type="checkbox"]').forEach(c => { c.checked = true; });
+      controles.querySelectorAll('input[name="station-graphe"], input[name="parametre-graphe"]').forEach(c => { c.checked = true; });
       debut.value = debut.min;
       fin.value = fin.max;
       actualiser();
@@ -570,6 +573,7 @@
       mesures = lireMesures(await reponse.text());
       if (!mesures.length) throw new Error("Le fichier mesures.csv ne contient aucun relevé.");
       preparerControles();
+      window.dispatchEvent(new CustomEvent("filmed:mesures", { detail: mesures }));
       preselectionnerStation();
       message.textContent = "Données chargées.";
       actualiser();
@@ -595,6 +599,13 @@
     }
   }
 
+  window.addEventListener("filmed:vue-annees", evenement => {
+    comparaisonAnneesActive = Boolean(evenement.detail);
+    if (!comparaisonAnneesActive) actualiser();
+  });
+  window.addEventListener("filmed:demander-mesures", () => {
+    if (mesures.length) window.dispatchEvent(new CustomEvent("filmed:mesures", { detail: mesures }));
+  });
   window.addEventListener("hashchange", () => requestAnimationFrame(afficherSiNecessaire));
   afficherSiNecessaire();
 })();
