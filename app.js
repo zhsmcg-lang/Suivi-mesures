@@ -462,7 +462,7 @@ function initialiserCarte() {
       .map(station => structures[station.structure]?.nom || station.structure))];
     information.textContent = "Accès aux mesures : les données des réseaux "
       + producteursPrives.join(" et ") + " ne sont pas publiques. "
-      + "Leur localisation et les paramètres suivis sont présentés sur ce portail.";
+      + "Seules leur localisation et leurs paramètres sont présentés sur ce portail.";
     conteneur.before(information);
   }
 
