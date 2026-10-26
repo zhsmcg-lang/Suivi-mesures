@@ -16,6 +16,18 @@ const structures = {
     texteLien: "Cartes et mesures du réseau VNF",
     donneesPubliques: true
   },
+  CEN: {
+    nom: "CEN Occitanie",
+    libelleFiltre: "CEN Occitanie",
+    site: null,
+    donneesPubliques: false
+  },
+  VIGICRUES: {
+    nom: "Vigicrues",
+    libelleFiltre: "Vigicrues",
+    texteLien: "Consulter les mesures sur Vigicrues",
+    donneesPubliques: true
+  },
   SYMADREM: {
     nom: "SYMADREM",
     site: "http://195.101.247.177:88/WebServ2/?PageType=Mimic&PageId=2",
@@ -100,6 +112,7 @@ const stations = [
   },
   {
     nom: "Crey",
+    nomDonnees: "Crey Centre",
     latitude: 43.624404777462,
     longitude: 4.317870045912599,
     structure: "SMCG",
@@ -223,6 +236,52 @@ const stations = [
     parametres: ["Hauteur d’eau"]
   },
 
+  // CEN Occitanie — Télétransmission ; données non publiques.
+  {
+    nom: "Nord Étang Médard",
+    latitude: 43.55093262739895,
+    longitude: 4.157107222559436,
+    structure: "CEN",
+    teletransmission: true,
+    parametres: ["Salinité", "Hauteur d’eau", "Température", "Conductivité"]
+  },
+  {
+    nom: "Vieux Vistre",
+    latitude: 43.62501226913735,
+    longitude: 4.2423201124067,
+    structure: "CEN",
+    teletransmission: true,
+    parametres: ["Salinité", "Hauteur d’eau", "Température", "Conductivité"]
+  },
+  {
+    nom: "Prairie au Cailar",
+    latitude: 43.63389438762363,
+    longitude: 4.249970999690099,
+    structure: "CEN",
+    teletransmission: true,
+    parametres: ["Salinité", "Hauteur d’eau", "Température", "Conductivité"]
+  },
+
+  // Vigicrues — Les liens ouvrent directement la station concernée.
+  {
+    nom: "Port Camargue",
+    latitude: 43.52032663219912,
+    longitude: 4.1264028024815005,
+    structure: "VIGICRUES",
+    teletransmission: true,
+    parametres: ["Hauteur d’eau"],
+    site: "https://www.vigicrues.gouv.fr/station/Y354000101"
+  },
+  {
+    nom: "Le Cailar — Vieux Vistre (lit mineur)",
+    latitude: 43.67054316126651,
+    longitude: 4.244486775520346,
+    structure: "VIGICRUES",
+    teletransmission: true,
+    parametres: ["Hauteur d’eau", "Débit"],
+    site: "https://www.vigicrues.gouv.fr/station/Y353401001"
+  },
+
   // AJOUTER LES NOUVELLES STATIONS JUSTE AU-DESSUS DE CETTE LIGNE.
 ];
 
@@ -231,7 +290,7 @@ const stations = [
    FILTRES : LES OPTIONS SONT CRÉÉES AUTOMATIQUEMENT
    ========================================= */
 
-function remplirFiltre(id, libelleTous, valeurs) {
+function remplirFiltre(id, libelleTous, valeurs, libelle = valeur => valeur) {
   const select = document.getElementById(id);
   if (!select) return;
   const ancienChoix = select.value;
@@ -243,16 +302,17 @@ function remplirFiltre(id, libelleTous, valeurs) {
   valeurs.forEach(valeur => {
     const option = document.createElement("option");
     option.value = valeur;
-    option.textContent = valeur;
+    option.textContent = libelle(valeur);
     select.append(option);
   });
   select.value = valeurs.includes(ancienChoix) ? ancienChoix : "";
 }
 
 remplirFiltre("filtre-structure", "Toutes les structures",
-  [...new Set(stations.map(station => station.structure))].sort());
+  [...new Set(stations.map(station => station.structure))].sort(),
+  valeur => structures[valeur]?.libelleFiltre || valeur);
 
-const ordreParametres = ["Salinité", "Température", "Oxygène", "Conductivité", "Hauteur d’eau"];
+const ordreParametres = ["Salinité", "Température", "Oxygène", "Conductivité", "Hauteur d’eau", "Débit"];
 const parametresPresents = [...new Set(stations.flatMap(station => station.parametres))];
 remplirFiltre("filtre-parametre", "Tous les paramètres", [
   ...ordreParametres.filter(parametre => parametresPresents.includes(parametre)),
@@ -289,11 +349,12 @@ function creerFiche(station) {
     detail.textContent = "Seules la localisation et les informations descriptives sont présentées sur ce portail.";
     fiche.append(acces, detail);
   }
-  if (organisme.site) {
+  const site = station.site || organisme.site;
+  if (site) {
     const ligneLien = document.createElement("div");
     const lien = document.createElement("a");
-    lien.href = organisme.site;
-    lien.textContent = organisme.texteLien || "Site de la structure";
+    lien.href = site;
+    lien.textContent = station.texteLien || organisme.texteLien || "Site de la structure";
     lien.target = "_blank";
     lien.rel = "noopener noreferrer";
     ligneLien.append(lien);
@@ -302,7 +363,7 @@ function creerFiche(station) {
   if (station.structure === "SMCG" && publiques !== false) {
     const ligneGraphiques = document.createElement("div");
     const lienGraphiques = document.createElement("a");
-    lienGraphiques.href = "#graphiques?station=" + encodeURIComponent(station.nom);
+    lienGraphiques.href = "#graphiques?station=" + encodeURIComponent(station.nomDonnees || station.nom);
     lienGraphiques.textContent = "Voir les graphiques de cette station";
     ligneGraphiques.append(lienGraphiques);
     fiche.append(ligneGraphiques);
@@ -364,8 +425,12 @@ function initialiserCarte() {
     const information = document.createElement("p");
     information.id = "information-acces-carte";
     information.setAttribute("role", "note");
-    information.textContent = "Accès aux mesures : les données des stations SYMADREM ne sont pas publiques. "
-      + "Ces stations sont présentées à titre de localisation et de description du suivi.";
+    const producteursPrives = [...new Set(stations
+      .filter(station => (station.donneesPubliques ?? structures[station.structure]?.donneesPubliques) === false)
+      .map(station => structures[station.structure]?.nom || station.structure))];
+    information.textContent = "Accès aux mesures : les données des réseaux "
+      + producteursPrives.join(" et ") + " ne sont pas publiques. "
+      + "Leur localisation et les paramètres suivis sont présentés sur ce portail.";
     conteneur.before(information);
   }
 
