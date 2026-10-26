@@ -116,7 +116,12 @@
     const annees=[...new Set(donnees.filter(r=>r.id===ui.stationAnnuelle.value).map(r=>r.annee))].sort((a,b)=>a-b);ui.annees.replaceChildren();
     for(const a of annees)ui.annees.append(caseACocher("annee-canaverier",String(a),String(a),annees.slice(-3).includes(a)));
   }
-  function remplirPresentation(){const annuelle=ui.vue.value==="annees";ui.choixStations.hidden=annuelle;ui.stationAnnuelleLabel.hidden=!annuelle;ui.anneesBox.hidden=!annuelle;}
+  function remplirPresentation(){
+    const annuelle=ui.vue.value==="annees";
+    ui.choixStations.hidden=annuelle;ui.stationAnnuelleLabel.hidden=!annuelle;ui.anneesBox.hidden=!annuelle;
+    // La comparaison annuelle utilise les années cochées, sans filtre de dates caché.
+    for(const champ of [ui.debut,ui.fin]){champ.parentElement.hidden=annuelle;champ.disabled=annuelle;if(annuelle)champ.setCustomValidity("");}
+  }
   function initialiserControles(){
     ui.type.value="Limnimétrique";ui.vue.value="chronologie";ui.recherche.value="";
     const min=jourISO(donnees[0].date),max=jourISO(donnees.at(-1).date);
@@ -179,11 +184,13 @@
     const coches=Array.from(ui.stations.querySelectorAll("input:checked"));ui.resumeStations.textContent=coches.length===1?"Station sélectionnée : "+points.find(p=>p.id===coches[0].value)?.nom:"Stations à comparer : "+coches.length+" sélectionnées";
     const annuelle=ui.vue.value==="annees",selection=new Set(annuelle?[ui.stationAnnuelle.value]:Array.from(ui.stations.querySelectorAll("input:checked"),c=>c.value));
     const parametres=definitions.filter(p=>ui.parametres.querySelector('input[value="'+p.id+'"]')?.checked);
-    const du=ui.debut.value?Date.parse(ui.debut.value+"T00:00:00Z"):NaN,au=ui.fin.value?Date.parse(ui.fin.value+"T00:00:00Z"):NaN,annees=new Set(Array.from(ui.annees.querySelectorAll("input:checked"),c=>Number(c.value)));
-    const erreur=!selection.size?"Choisissez au moins une station.":!parametres.length?"Choisissez au moins un paramètre.":!Number.isFinite(du)||!Number.isFinite(au)?"Renseignez les deux dates.":du>au?"La date de début doit précéder ou être égale à la date de fin.":annuelle&&!annees.size?"Choisissez au moins une année.":"";
-    vider();ui.notes.hidden=true;ui.debut.setCustomValidity(du>au?"Vérifiez l’ordre des dates.":"");if(erreur){ui.message.textContent=erreur;return;}
-    const releves=donnees.filter(r=>selection.has(r.id)&&r.date>=du&&r.date<=au&&(!annuelle||annees.has(r.annee)));
-    if(!releves.length){ui.message.textContent="Aucun relevé pour cette sélection. Élargissez la période ou choisissez d’autres stations.";return;}
+    const annees=new Set(Array.from(ui.annees.querySelectorAll("input:checked"),c=>Number(c.value)));
+    const du=annuelle?(annees.size?Date.UTC(Math.min(...annees),0,1):NaN):(ui.debut.value?Date.parse(ui.debut.value+"T00:00:00Z"):NaN);
+    const au=annuelle?(annees.size?Date.UTC(Math.max(...annees),11,31):NaN):(ui.fin.value?Date.parse(ui.fin.value+"T00:00:00Z"):NaN);
+    const erreur=!selection.size?"Choisissez au moins une station.":!parametres.length?"Choisissez au moins un paramètre.":!annuelle&&(!Number.isFinite(du)||!Number.isFinite(au))?"Renseignez les deux dates.":!annuelle&&du>au?"La date de début doit précéder ou être égale à la date de fin.":annuelle&&!annees.size?"Choisissez au moins une année.":"";
+    vider();ui.notes.hidden=true;ui.debut.setCustomValidity(!annuelle&&du>au?"Vérifiez l’ordre des dates.":"");if(erreur){ui.message.textContent=erreur;return;}
+    const releves=donnees.filter(r=>selection.has(r.id)&&(annuelle?annees.has(r.annee):r.date>=du&&r.date<=au));
+    if(!releves.length){ui.message.textContent=annuelle?"Aucun relevé pour cette sélection. Choisissez d’autres années ou une autre station.":"Aucun relevé pour cette sélection. Élargissez la période ou choisissez d’autres stations.";return;}
     if(typeof Chart==="undefined"){ui.message.textContent="L’outil graphique n’est pas chargé. Vérifiez les scripts de la page.";return;}
     let total=0,ecartes=0;
     for(const p of parametres){
@@ -198,7 +205,7 @@
         select.value=mode;select.addEventListener("change",()=>{modes.set(p.id,select.value);actualiser();});label.append(creer("span","Affichage"),select);article.append(label);}
       for(const serie of series){
         if(!serie.stats.n)continue;
-        const color=couleur(serie.cle),mensuels=moyenneMensuelle(serie.releves,p,du,au);
+        const color=couleur(serie.cle),mensuels=annuelle?[]:moyenneMensuelle(serie.releves,p,du,au);
         const data=annuelle?Array.from({length:12},(_,m)=>{const valeurs=serie.releves.filter(r=>new Date(r.date).getUTCMonth()===m).map(r=>valeur(r,p)).filter(v=>v!==null);return{x:m+1,y:valeurs.length?valeurs.reduce((a,b)=>a+b,0)/valeurs.length:null,info:nomsMois[m]+" "+serie.label+" — moyenne de "+valeurs.length+" relevé(s)"};}):pointsBruts(serie.releves,p);
         datasets.push({label:serie.label,data,borderColor:color,backgroundColor:color,borderWidth:2,pointRadius:3.5,pointHoverRadius:6,pointHitRadius:8,spanGaps:false,tension:0});
         if(!annuelle&&mode!=="mesures"){
@@ -206,16 +213,17 @@
           if(complement.some(d=>d.y!==null)){courbesAjoutees++;datasets.push({label:serie.label+(mode==="mobile3"?" — lissage 3 mois":" — tendance"),data:complement,borderColor:color,backgroundColor:"#fff",pointBackgroundColor:"#fff",pointBorderColor:color,pointBorderWidth:2.5,borderWidth:2.5,borderDash:mode==="mobile3"?[7,4]:[12,5],pointRadius:mode==="mobile3"?4:0,spanGaps:false,tension:0});}
         }
       }
-      const methode=annuelle?"Chaque point est la moyenne des relevés d’un mois, dans la période sélectionnée. Une couleur représente une année. Les mois sans donnée restent vides.":mode==="mobile3"?"Le lissage est la moyenne des moyennes mensuelles du mois affiché et des deux mois précédents. Les trois mois doivent contenir des données. Les mesures sont pleines ; les points lissés sont blancs."+(courbesAjoutees?"":" Aucun groupe de trois mois consécutifs n’est disponible : seules les mesures sont affichées."):mode==="tendance"?"La droite de tendance est calculée sur les moyennes mensuelles disponibles, avec au moins trois mois renseignés. Elle décrit l’évolution de la période et ne constitue pas une prévision."+(courbesAjoutees?"":" Pas assez de mois pour calculer une tendance."):"Les points représentent les mesures aux dates réelles. Les mois sans valeur interrompent les lignes.";
+      const methode=annuelle?"Chaque point est la moyenne des relevés d’un mois. La comparaison utilise les années cochées en entier, indépendamment des dates de la chronologie. Une couleur représente une année. Les mois sans donnée restent vides.":mode==="mobile3"?"Le lissage est la moyenne des moyennes mensuelles du mois affiché et des deux mois précédents. Les trois mois doivent contenir des données. Les mesures sont pleines ; les points lissés sont blancs."+(courbesAjoutees?"":" Aucun groupe de trois mois consécutifs n’est disponible : seules les mesures sont affichées."):mode==="tendance"?"La droite de tendance est calculée sur les moyennes mensuelles disponibles, avec au moins trois mois renseignés. Elle décrit l’évolution de la période et ne constitue pas une prévision."+(courbesAjoutees?"":" Pas assez de mois pour calculer une tendance."):"Les points représentent les mesures aux dates réelles. Les mois sans valeur interrompent les lignes.";
       article.append(creer("p",methode,"aide-canaverier"));
-      const cadre=creer("div",undefined,"cadre-courbe"),canvas=creer("canvas");canvas.setAttribute("role","img");canvas.setAttribute("aria-label",p.nom+", suivi Canaverier, du "+dateCourte.format(du)+" au "+dateCourte.format(au));cadre.append(canvas);article.append(cadre);ui.zone.append(article);
+      const periodeAffichee=annuelle?"Années : "+[...annees].sort((a,b)=>a-b).join(", "):dateCourte.format(du)+" – "+dateCourte.format(au);
+      const cadre=creer("div",undefined,"cadre-courbe"),canvas=creer("canvas");canvas.setAttribute("role","img");canvas.setAttribute("aria-label",p.nom+", suivi Canaverier, "+periodeAffichee);cadre.append(canvas);article.append(cadre);ui.zone.append(article);
       const min=annuelle?1:du,max=annuelle?12:(au===du?au+JOUR:au+JOUR-1);
       const chart=new Chart(canvas,{type:"line",data:{datasets},plugins:[fondBlanc],options:{responsive:true,maintainAspectRatio:false,animation:false,locale:"fr-FR",interaction:{mode:"nearest",intersect:false},
-        plugins:{title:{display:true,text:[p.nom+" ("+p.unite+") — SMCG / Suivi Canaverier",dateCourte.format(du)+" – "+dateCourte.format(au)+(annuelle?" · comparaison annuelle":"")]},legend:{position:"bottom",labels:{usePointStyle:true,padding:16}},tooltip:{callbacks:{title:items=>items[0]?.raw.info||"",label:ctx=>ctx.dataset.label+" : "+nombre.format(ctx.parsed.y)+" "+p.unite}},zoom:{limits:{x:{min,max,minRange:annuelle?1:JOUR}},pan:{enabled:false},zoom:{mode:"x",wheel:{enabled:true,modifierKey:"ctrl"},pinch:{enabled:true},drag:{enabled:true,modifierKey:"shift",threshold:10}}}},
+        plugins:{title:{display:true,text:[p.nom+" ("+p.unite+") — SMCG / Suivi Canaverier",periodeAffichee+(annuelle?" · comparaison annuelle":"")]},legend:{position:"bottom",labels:{usePointStyle:true,padding:16}},tooltip:{callbacks:{title:items=>items[0]?.raw.info||"",label:ctx=>ctx.dataset.label+" : "+nombre.format(ctx.parsed.y)+" "+p.unite}},zoom:{limits:{x:{min,max,minRange:annuelle?1:JOUR}},pan:{enabled:false},zoom:{mode:"x",wheel:{enabled:true,modifierKey:"ctrl"},pinch:{enabled:true},drag:{enabled:true,modifierKey:"shift",threshold:10}}}},
         scales:{x:{type:"linear",min,max,title:{display:true,text:annuelle?"Mois de l’année":"Date de mesure"},ticks:{maxTicksLimit:annuelle?12:8,stepSize:annuelle?1:undefined,callback:(v,i,ticks)=>annuelle?(Number.isInteger(v)?nomsMois[v-1]||"":""):(i>0&&moisAnnee.format(ticks[i-1].value)===moisAnnee.format(v)?"":moisAnnee.format(v))}},y:{beginAtZero:false,title:{display:true,text:p.nom+" ("+p.unite+")"}}}}});
       graphiques.set(p.id,chart);const outils=creer("div",undefined,"outils-canaverier");
       for(const [texte,action]of [["Agrandir",()=>chart.zoom({x:1.5})],["Réduire",()=>chart.zoom({x:0.67})],["Vue complète",()=>chart.resetZoom()]]){const b=creer("button",texte);b.type="button";b.disabled=typeof chart.zoom!=="function";b.addEventListener("click",action);outils.append(b);}
-      const image=creer("button","Enregistrer en image");image.type="button";image.addEventListener("click",()=>{const nom="canaverier-"+p.id+"-"+ui.debut.value+"-"+ui.fin.value+".png";canvas.toBlob(blob=>{if(!blob){ui.message.textContent="L’image n’a pas pu être préparée. Réessayez après l’affichage du graphique.";return;}const url=URL.createObjectURL(blob),a=creer("a");a.download=nom;a.href=url;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);},"image/png");});outils.append(image);
+      const image=creer("button","Enregistrer en image");image.type="button";image.addEventListener("click",()=>{const nom="canaverier-"+p.id+"-"+(annuelle?"annees-"+[...annees].sort((a,b)=>a-b).join("-"):ui.debut.value+"-"+ui.fin.value)+".png";canvas.toBlob(blob=>{if(!blob){ui.message.textContent="L’image n’a pas pu être préparée. Réessayez après l’affichage du graphique.";return;}const url=URL.createObjectURL(blob),a=creer("a");a.download=nom;a.href=url;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);},"image/png");});outils.append(image);
       article.append(outils,creer("p","Zoom : Ctrl + molette, ou Maj + glisser dans le graphique. Sur écran tactile, pincez avec deux doigts.","aide-canaverier"));creerReperes(article,p,series);
     }
     afficherNotes(releves,parametres);ui.message.textContent=releves.length+" relevés sélectionnés · "+total+" valeurs affichées."+(ecartes?" "+ecartes+" conductivité(s) à vérifier masquée(s).":"");
