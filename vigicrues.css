@@ -1,19 +1,30 @@
-/* Vigilance crues : complément indépendant des styles et filtres des stations. */
-.bloc-vigicrues { margin:20px 0; padding:20px 24px; border:1px solid var(--bordure,#dce6e1); border-radius:10px; background:var(--vert-clair,#eaf3ed); }
-.bloc-vigicrues h3 { margin:0 0 12px; font-size:21px; line-height:1.4; }
+/* Vigilance crues : panneau compact sous la carte. */
+.bloc-vigicrues { margin:20px 0 0; padding:18px 24px; border:1px solid var(--bordure,#dce6e1); border-radius:10px; background:var(--vert-clair,#eaf3ed); }
+.bloc-vigicrues h3 { margin:0 0 8px; font-size:21px; line-height:1.4; }
+.outils-vigicrues { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 18px; margin:0 0 8px; }
 .choix-vigicrues { display:flex; align-items:center; gap:10px; min-height:44px; font-weight:600; cursor:pointer; }
 .choix-vigicrues input { width:19px; height:19px; margin:0; flex:0 0 auto; accent-color:var(--vert,#167568); }
-.outils-vigicrues { display:flex; flex-wrap:wrap; align-items:center; gap:12px 18px; margin:12px 0; }
 .outils-vigicrues button { min-height:44px; padding:8px 16px; border:1px solid var(--vert,#167568); border-radius:6px; background:#fff; color:var(--texte,#183d41); font:inherit; cursor:pointer; }
 .outils-vigicrues button:disabled { opacity:.55; cursor:default; }
-.outils-vigicrues a { color:var(--vert,#167568); text-underline-offset:3px; }
-.bloc-vigicrues p { margin:8px 0; }
-.dates-vigicrues, .aide-vigicrues, #statut-vigicrues { font-size:14px; }
-.legende-vigicrues { display:flex; flex-wrap:wrap; gap:8px 20px; margin:14px 0 8px; }
-.legende-vigicrues > span, .liste-vigicrues li { display:flex; align-items:center; gap:8px; }
-.pastille-vigicrues { display:inline-block; width:13px; height:13px; border:1px solid #455257; border-radius:50%; flex:0 0 auto; }
-.bloc-vigicrues .liste-vigicrues { list-style:none; padding:0; margin:10px 0; }
-.bloc-vigicrues .liste-vigicrues li { margin:6px 0; }
+.bloc-vigicrues a { color:var(--vert,#167568); text-underline-offset:3px; }
+.bloc-vigicrues p { margin:8px 0 0; }
+.bloc-vigicrues .dates-vigicrues { margin:0 0 10px; font-size:13px; }
+.bloc-vigicrues .aide-vigicrues { margin-top:10px; font-size:13px; line-height:1.6; }
+.bloc-vigicrues .liste-vigicrues { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; list-style:none; padding:0; margin:0; }
+.bloc-vigicrues .liste-vigicrues li { display:flex; flex-direction:column; justify-content:space-between; gap:4px; min-width:0; margin:0; padding:10px 12px; border:1px solid var(--bordure,#dce6e1); border-radius:7px; background:rgba(255,255,255,.65); line-height:1.4; }
+.nom-troncon-vigicrues { font-size:14px; overflow-wrap:anywhere; }
+.etat-troncon-vigicrues { display:flex; align-items:center; gap:8px; font-size:14px; }
+.legende-vigicrues { display:flex; flex-wrap:wrap; gap:5px 16px; margin:10px 0 0; font-size:13px; font-style:italic; }
+.legende-vigicrues > span { display:inline-flex; align-items:center; gap:6px; }
+.pastille-vigicrues { display:inline-block; width:12px; height:12px; border:1px solid #455257; border-radius:50%; flex:0 0 auto; }
+.bloc-vigicrues .dates-vigicrues:empty, .bloc-vigicrues .liste-vigicrues:empty, .bloc-vigicrues [hidden] { display:none !important; }
 .bloc-vigicrues[data-etat="indisponible"] { border-left:4px solid #8a6519; }
 .bloc-vigicrues input:focus-visible, .bloc-vigicrues button:focus-visible, .bloc-vigicrues a:focus-visible { outline:3px solid #c28a2b; outline-offset:3px; }
-@media(max-width:700px) { .bloc-vigicrues { padding:16px; } .bloc-vigicrues h3 { font-size:19px; } }
+@media(max-width:700px) {
+  .bloc-vigicrues { padding:16px; }
+  .bloc-vigicrues h3 { font-size:19px; }
+  .bloc-vigicrues .liste-vigicrues { grid-template-columns:1fr; gap:6px; }
+  .bloc-vigicrues .liste-vigicrues li { flex-direction:row; align-items:center; gap:10px; }
+  .nom-troncon-vigicrues { flex:1; }
+  .etat-troncon-vigicrues { flex:0 0 auto; }
+}

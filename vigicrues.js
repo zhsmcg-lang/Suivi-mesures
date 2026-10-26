@@ -30,22 +30,24 @@
   choix.append(caseACocher, creer("span", "Afficher la vigilance sur les cours d’eau"));
   const outils = creer("div", undefined, "outils-vigicrues");
   const actualiser = creer("button", "Actualiser"); actualiser.type = "button"; actualiser.disabled = true;
-  const officiel = creer("a", "Consulter Vigicrues"); officiel.href = SOURCE; officiel.target = "_blank"; officiel.rel = "noopener noreferrer";
-  outils.append(actualiser, officiel);
-  const statut = creer("p", "Activez la couche pour consulter le Vidourle, le Vistre et le Rhône d’Avignon à la mer.");
+  outils.append(choix, actualiser);
+  const statut = creer("span", "Activez la couche pour consulter le Vidourle, le Vistre et le Rhône d’Avignon à la mer.");
   statut.id = "statut-vigicrues"; statut.setAttribute("role", "status"); statut.setAttribute("aria-live", "polite");
   const dates = creer("p", undefined, "dates-vigicrues"); dates.id = "dates-vigicrues";
   const legende = creer("div", undefined, "legende-vigicrues"); legende.hidden = true;
   legende.setAttribute("aria-label", "Niveaux de vigilance crues");
+  legende.append(creer("span", "Légende :"));
   for (const niveau of Object.values(NIVEAUX)) {
     const item = creer("span"), pastille = creer("span", undefined, "pastille-vigicrues");
     pastille.style.backgroundColor = niveau.couleur; pastille.setAttribute("aria-hidden", "true");
     item.append(pastille, creer("span", niveau.nom)); legende.append(item);
   }
   const liste = creer("ul", undefined, "liste-vigicrues"); liste.id = "troncons-vigicrues";
-  const aide = creer("p", "La vigilance concerne des tronçons de cours d’eau. Pour les bulletins et les consignes, consultez Vigicrues.", "aide-vigicrues");
-  bloc.append(titre, choix, outils, statut, dates, legende, liste, aide);
-  conteneur.before(bloc);
+  const aide = creer("p", undefined, "aide-vigicrues");
+  const officiel = creer("a", "Vigicrues"); officiel.href = SOURCE; officiel.target = "_blank"; officiel.rel = "noopener noreferrer";
+  aide.append(statut, document.createTextNode(" La vigilance concerne des tronçons de cours d’eau. Pour les bulletins et les consignes, consultez "), officiel, document.createTextNode("."));
+  bloc.append(titre, outils, dates, liste, legende, aide);
+  conteneur.after(bloc);
 
   function obtenirCarte() { return typeof carte !== "undefined" ? carte : null; }
   function retirerCouche() { if (couche) { couche.remove(); couche = null; } }
@@ -76,9 +78,8 @@
     return { publication, verification };
   }
   function afficherDates(flux) {
-    const publication = instant(flux?.publication), verification = instant(flux?.verifieLe);
-    dates.textContent = (Number.isFinite(publication) ? "Publication Vigicrues : " + date.format(publication) + ". " : "")
-      + (Number.isFinite(verification) ? "Source vérifiée par GitHub : " + date.format(verification) + "." : "");
+    const publication = instant(flux?.publication);
+    dates.textContent = Number.isFinite(publication) ? "Publication Vigicrues : " + date.format(publication) + "." : "";
   }
   function indisponible(message) {
     retirerNiveaux(); bloc.dataset.etat = "indisponible";
@@ -110,7 +111,10 @@
       for (const feature of flux.features) {
         const p = feature.properties, niveau = NIVEAUX[p.niveau], item = creer("li");
         const puce = creer("span", undefined, "pastille-vigicrues"); puce.style.backgroundColor = niveau?.couleur || "#68777a"; puce.setAttribute("aria-hidden", "true");
-        item.append(puce, creer("span", (p.nom || p.code) + " : " + (niveau?.nom || "niveau non renseigné"))); liste.append(item);
+        const nom = creer("span", p.nom || p.code, "nom-troncon-vigicrues");
+        const etat = creer("span", undefined, "etat-troncon-vigicrues");
+        etat.append(puce, creer("strong", niveau?.nom || "niveau non renseigné"));
+        item.append(nom, etat); liste.append(item);
       }
       legende.hidden = false; bloc.dataset.etat = "disponible";
       statut.textContent = "Trois tronçons affichés. Source : Vigicrues. La vigilance est indépendante des filtres des stations.";
