@@ -60,6 +60,7 @@
 <link rel="stylesheet" href="canaverier.css?v=1">
 <script src="canaverier.js?v=1" defer></script>
 <link rel="stylesheet" href="carte-marqueurs.css?v=2">
+<link rel="stylesheet" href="informations.css?v=1">
 </head>
 
 <body>
@@ -71,69 +72,39 @@
     <nav aria-label="Navigation principale">
       <a href="#accueil">Accueil</a>
       <a href="#carte">Carte des suivis</a>
-      <a href="#graphiques">Graphiques</a>
+      <a href="#graphiques">Analyses des données</a>
       <a href="#informations">Comprendre les suivis</a>
     </nav>
   </header>
 
   <main>
-   <section id="accueil">
-
-  <article class="bandeau-bienvenue">
-    <h2>
-      Bienvenue sur le portail des suivis de mesures
-      hydrologiques en Camargue Gardoise
-    </h2>
-
-    <p>
-      Cet outil facilite la présentation et éventuellement l'accès aux mesures hydrologiques
-      réalisées en Camargue Gardoise. Il rassemble les informations
-      disponibles sur les stations de suivi et les paramètres
-      mesurés, notamment :
-    </p>
-
-    <ul>
-      <li>la salinité ;</li>
-      <li>la température ;</li>
-      <li>l’oxygène dissous dans l’eau ;</li>
-      <li>d’autres paramètres selon les stations.</li>
-    </ul>
-
-    <p>
-      L’onglet <strong>« Carte des suivis »</strong> permet de
-      localiser les stations, d’identifier les organismes responsables
-      et d’accéder à leurs sites de consultation.
-    </p>
-
-    <p>
-      L’onglet <strong>« Graphiques »</strong> permet d’explorer
-      les données disponibles dans ce portail, en sélectionnant
-      les stations, les paramètres et la période souhaités.
-    </p>
-  </article>
-
-  <article class="bandeau-origine">
-    <h2>Origine des données</h2>
-
-    <p>Ce portail réunit deux types de suivis.</p>
-
-    <p>
-      Pour les <strong>stations des structures partenaires</strong> du SMCG, il présente
-      leur localisation, les paramètres suivis et l’organisme
-      responsable. Les mesures peuvent être consultables sur les sites
-      des structures concernées (accessibles depuis les liens
-      proposés sur la carte). Si les données s'avèrent ne pas être disponibles, vous pouvez contacter la structure concernée : un contact vous est fourni dans l'onglet XXX.
-    </p>
-
-    <p>
-      Pour les <strong>stations du SMCG</strong>, les relevés
-      mensuels de salinité, de température et d’oxygène dissous
-      sont consultables dans l’onglet « Graphiques ».
-      Ces mesures sont réalisées ponctuellement, sans télétransmission.
-    </p>
-  </article>
-
-</section>
+     <section id="accueil">
+    <article class="bandeau-bienvenue">
+      <h2>Bienvenue sur le portail des suivis de mesures hydrologiques en Camargue Gardoise</h2>
+      <p>Cet outil a pour objectif de vous présenter de manière simple et visuelle les mesures de paramètres hydrologiques réalisées en Camargue Gardoise. Pourquoi ? Afin d’avoir une vue d’ensemble de ce qui se fait : où, comment et par qui.</p>
+      <p>Cet outil rassemble donc les informations disponibles sur les stations de suivi et les paramètres qui y sont mesurés, dont principalement :</p>
+      <ul>
+        <li>la salinité ;</li>
+        <li>la température ;</li>
+        <li>l’oxygène dissous dans l’eau ;</li>
+        <li>et d’autres paramètres selon les stations.</li>
+      </ul>
+    </article>
+    <article class="bandeau-origine">
+      <h2>Origine des données</h2>
+      <p>Ce portail réunit deux types de suivis :</p>
+      <ul class="liste-origines">
+        <li><strong>Les stations des organismes producteurs de données, partenaires du SMCG :</strong> ce site présente leur localisation, les paramètres suivis et l’organisme responsable. Les mesures peuvent être consultables sur les sites des structures concernées, accessibles depuis les liens proposés sur la carte. Si les données ne sont pas disponibles, vous pouvez contacter la structure concernée : des coordonnées ou des liens de contact sont fournis dans l’onglet « Comprendre les suivis ». La plupart de ces données sont recueillies en télétransmission.</li>
+        <li><strong>Les stations du SMCG :</strong> ce site présente à un niveau plus précis les suivis du SMCG. Vous y trouverez les relevés mensuels de salinité, de température et d’oxygène dissous (FILMED), les données des campagnes DCE et certaines données localisées sur des sites en gestion du SMCG, comme le site du Canavérier. Ces données sont consultables dans l’onglet « Analyses des données ». Ces mesures sont réalisées manuellement, sans télétransmission.</li>
+      </ul>
+    </article>
+    <article class="bandeau-origine">
+      <h2>Les différents onglets à votre disposition</h2>
+      <p>L’onglet <strong>« Carte des suivis »</strong> vous présente l’ensemble des stations répertoriées dans ce portail. Vous pouvez y identifier les organismes producteurs de données et accéder à leurs sites de consultation, selon les conditions d’accès aux données. Plusieurs niveaux de filtres, par structure, par paramètre ou par mode de suivi, vous permettent de naviguer facilement.</p>
+      <p>L’onglet <strong>« Analyses des données »</strong> permet de visualiser sous forme de courbes certaines données publiques disponibles dans ce portail, en sélectionnant les stations, les paramètres et la période souhaités.</p>
+      <p>L’onglet <strong>« Comprendre les suivis »</strong> présente les modes de suivi, les paramètres mesurés, les producteurs de données et les informations utiles pour accéder à leurs mesures.</p>
+    </article>
+  </section>
 
    <section id="carte">
   <h2>Carte des suivis</h2>
@@ -238,72 +209,85 @@
 </section>
 
 
-    <section id="informations">
-  <h2>Comprendre les suivis</h2>
-
-  <article class="bloc-informations">
-    <h3>Deux modes de suivi</h3>
-
-    <p>
-      Les stations du Syndicat Mixte Camargue Gardoise
-      (SMCG) font l’objet de relevés mensuels sur le terrain,
-      sans télétransmission.
-    </p>
-
-    <p>
-      Les stations des structures partenaires présentées
-      sur la carte sont suivies par télétransmission.
-      Les liens proposés permettent de consulter les mesures
-      directement sur les sites des structures concernées.
-    </p>
-  </article>
-
-  <article class="bloc-informations">
-    <h3>Quels paramètres sont mesurés ?</h3>
-
-    <p>
-      Sur les stations du SMCG, les mesures sont réalisées
-      une fois par mois avec une sonde multiparamètre.
-      Elles portent sur la salinité, la conductivité,
-      l’oxygène dissous dans l’eau en mg/L, la saturation
-      en oxygène en %, la turbidité, la température et le pH.
-    </p>
-
-    <p>
-      Pour faciliter la consultation, ce portail présente
-      volontairement trois paramètres de notre réseau
-      dans l’onglet « Graphiques » :
-    </p>
-
-    <ul>
-      <li>la salinité, en PSU ;</li>
-      <li>la température de l’eau, en °C ;</li>
-      <li>l’oxygène dissous dans l’eau, en mg/L.</li>
-    </ul>
-
-    <p>
-      Les stations partenaires peuvent notamment proposer
-      des mesures de salinité, de conductivité, de température
-      et de hauteur d’eau. Les paramètres disponibles varient
-      selon les stations et les structures.
-    </p>
-  </article>
-
-  <article class="bloc-informations">
-    <h3>Consulter les données des partenaires</h3>
-
-    <p>
-      Cette rubrique accueillera des modes d’emploi pour
-      retrouver les mesures sur les sites partenaires,
-      notamment sur le portail de VNF.
-    </p>
-
-    <p>
-      Des explications pas à pas, accompagnées au besoin
-      de captures d’écran, seront ajoutées ultérieurement.
-    </p>
-  </article>
-</section>
+        <section id="informations">
+      <h2>Comprendre les suivis</h2>
+      <article class="bloc-informations">
+        <h3>Deux modes de suivi</h3>
+        <p>Comme expliqué dans la page d’accueil, les stations du réseau FILMED du Syndicat Mixte Camargue Gardoise (SMCG) font l’objet de relevés mensuels manuels sur le terrain, sans télétransmission. Les campagnes DCE et les suivis des sites en gestion, comme le Canavérier, sont également réalisés manuellement, selon leur propre calendrier.</p>
+        <p>Les stations des organismes partenaires présentées sur la carte sont suivies par télétransmission. Les liens proposés permettent de consulter les mesures directement sur les sites des structures concernées, selon les conditions d’accès aux données.</p>
+      </article>
+      <article class="bloc-informations">
+        <h3>Précisions sur les paramètres mesurés</h3>
+        <p>Sur les stations FILMED du SMCG, les mesures sont réalisées une fois par mois avec des sondes multiparamètres. Elles portent sur la salinité, la conductivité, l’oxygène dissous dans l’eau en mg/L, la saturation en oxygène en %, la turbidité, la température et le pH.</p>
+        <p>Pour faciliter la consultation, dans l’onglet « Analyses des données », la partie <strong>« Analyse des mesures FILMED »</strong> n’affiche que trois paramètres :</p>
+        <ul>
+          <li>la salinité, en PSU : à titre indicatif, 1 PSU correspond approximativement à 1 g de sel dissous dans 1 kg d’eau ;</li>
+          <li>la température de l’eau, en °C ;</li>
+          <li>l’oxygène dissous dans l’eau, en mg/L.</li>
+        </ul>
+        <p>La partie <strong>« Études et comparaisons complémentaires »</strong> présente les données des campagnes DCE et du suivi Canavérier, avec leurs paramètres et leurs unités propres.</p>
+        <p>Les stations des organismes partenaires peuvent notamment proposer des mesures de salinité, de conductivité, de température et de hauteur d’eau. Les paramètres disponibles varient selon les stations et les structures.</p>
+      </article>
+      <article class="bloc-informations">
+        <h3>Accès aux données des partenaires</h3>
+        <p>Certaines données des stations présentées ne sont pas accessibles au public. Pour cela, vous pouvez vous rapprocher des structures compétentes à l’aide des contacts présentés ci-dessous.</p>
+        <p>Pour les données issues du portail <strong>AGHyre de VNF</strong>, un mode d’emploi est consultable ci-dessous :</p>
+        <p><a class="lien-guide-partenaire" href="https://www.vnf.fr/vnf/app/uploads/2019/12/20191125-Aghyre-Documentation-utilisateurs-Acc%C3%A8s-%C3%A0-aGHyre-sans-authentification.pdf" target="_blank" rel="noopener noreferrer">Afficher le mode d’emploi VNF (PDF)</a></p>
+        <p class="source-producteur">Document publié par VNF : « Accéder à aGHyre sans authentification ». <a href="https://www.vnf.fr/vnf/services/gestion-de-leau-donnees-publiques-aghyre/" target="_blank" rel="noopener noreferrer">Page officielle du service AGHyre</a>.</p>
+      </article>
+      <article class="bloc-informations" id="producteurs-donnees">
+        <h3>Informations sur les producteurs de données</h3>
+        <p>Ouvrez une fiche pour découvrir la structure et retrouver son site et ses contacts. Les présentations entre guillemets sont de courts extraits des sites officiels, cités sans reformulation.</p>
+        <details class="fiche-producteur" id="producteur-smcg">
+          <summary>SMCG — Syndicat Mixte Camargue Gardoise</summary>
+          <blockquote><p>« Le Syndicat Mixte de la Camargue Gardoise a la responsabilité de gérer et de protéger un espace naturel, un espace de vie »</p></blockquote>
+          <p class="source-producteur">Extrait de la <a href="https://www.camarguegardoise.com/index.php/Pr%C3%A9sentation?afficheMenuContextuel=true&amp;idpage=47" target="_blank" rel="noopener noreferrer">présentation officielle du SMCG</a>.</p>
+          <ul class="liens-producteur">
+            <li><a href="https://www.camarguegardoise.com/" target="_blank" rel="noopener noreferrer">Site du SMCG</a></li>
+            <li><a href="https://www.camarguegardoise.com/index.php/Nous-contacter?idpage=39" target="_blank" rel="noopener noreferrer">Coordonnées des services du SMCG</a></li>
+          </ul>
+        </details>
+        <details class="fiche-producteur" id="producteur-symadrem">
+          <summary>SYMADREM</summary>
+          <blockquote><p>« Gestion des milieux aquatiques et prévention des inondations sur le territoire du grand delta du Rhône »</p></blockquote>
+          <p class="source-producteur">Présentation issue du <a href="https://www.symadrem.fr/" target="_blank" rel="noopener noreferrer">site officiel du SYMADREM</a>.</p>
+          <ul class="liens-producteur">
+            <li><a href="https://www.symadrem.fr/" target="_blank" rel="noopener noreferrer">Site du SYMADREM</a></li>
+            <li><a href="https://www.symadrem.fr/contact/" target="_blank" rel="noopener noreferrer">Contacter le SYMADREM</a></li>
+          </ul>
+          <p><strong>Accès aux mesures :</strong> les données des stations SYMADREM répertoriées sur ce portail ne sont pas publiques.</p>
+        </details>
+        <details class="fiche-producteur" id="producteur-cen">
+          <summary>CEN Occitanie — Conservatoire d’espaces naturels d’Occitanie</summary>
+          <blockquote><p>« Le Conservatoire d’espaces naturels d’Occitanie est une association de protection de la nature active dans tous les départements de la région. »</p></blockquote>
+          <p class="source-producteur">Extrait de la <a href="https://www.cen-occitanie.org/wp-content/uploads/2025/11/Plaquette-Cen_VF_web-planche_diffusable.pdf" target="_blank" rel="noopener noreferrer">plaquette officielle du CEN Occitanie (PDF)</a>.</p>
+          <ul class="liens-producteur">
+            <li><a href="https://www.cen-occitanie.org/" target="_blank" rel="noopener noreferrer">Site du CEN Occitanie</a></li>
+            <li><a href="mailto:contact@cen-occitanie.org">Contacter le CEN Occitanie par courriel</a></li>
+          </ul>
+          <p><strong>Accès aux mesures :</strong> les données des stations CEN Occitanie répertoriées sur ce portail ne sont pas publiques.</p>
+        </details>
+        <details class="fiche-producteur" id="producteur-vnf">
+          <summary>VNF — Voies navigables de France</summary>
+          <blockquote><p>« Voies navigables de France (VNF) est un établissement public administratif (EPA) placé sous la tutelle du ministère des transports. »</p></blockquote>
+          <p class="source-producteur">Extrait de la <a href="https://www.vnf.fr/vnf/accueil/qui-sommes-nous-vnf/decouvrir-vnf/" target="_blank" rel="noopener noreferrer">présentation officielle de VNF</a>.</p>
+          <ul class="liens-producteur">
+            <li><a href="https://www.vnf.fr/vnf/regions/vnf-rhone-saone/" target="_blank" rel="noopener noreferrer">VNF Rhône Saône</a></li>
+            <li><a href="https://www.vnf.fr/vnf/accueil/contact/" target="_blank" rel="noopener noreferrer">Contacter VNF</a></li>
+            <li><a href="https://www.vnf.fr/aghyre/#!/displaySIG" target="_blank" rel="noopener noreferrer">Cartes et mesures du réseau VNF</a></li>
+          </ul>
+        </details>
+        <details class="fiche-producteur" id="producteur-etat">
+          <summary>État — Réseau Vigicrues</summary>
+          <blockquote><p>« Le service d'information sur le risque de crues des principaux cours d'eau en France »</p></blockquote>
+          <p class="source-producteur">Présentation issue du <a href="https://www.vigicrues.gouv.fr/" target="_blank" rel="noopener noreferrer">site officiel Vigicrues</a>.</p>
+          <ul class="liens-producteur">
+            <li><a href="https://www.vigicrues.gouv.fr/" target="_blank" rel="noopener noreferrer">Site Vigicrues</a></li>
+            <li><a href="https://www.vigicrues.gouv.fr/categorie/1" target="_blank" rel="noopener noreferrer">Questions et contact auprès des services de l’État</a></li>
+          </ul>
+        </details>
+      </article>
+    </section>
   </main>
 
   <footer>

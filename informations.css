@@ -1,0 +1,14 @@
+/* Accueil et fiches des producteurs : présentation et contacts. */
+.liste-origines > li + li { margin-top:18px; }
+.fiche-producteur { min-width:0; margin-top:14px; border:1px solid var(--bordure,#dce6e1); border-radius:8px; padding:14px 18px; background:var(--fond,#f3f6f4); }
+.fiche-producteur > summary { cursor:pointer; color:var(--texte,#183d41); font-size:17px; font-weight:600; line-height:1.5; }
+.fiche-producteur > summary::marker { color:var(--vert,#167568); }
+.fiche-producteur > summary:focus-visible { outline:3px solid #c28a2b; outline-offset:5px; }
+.fiche-producteur blockquote { margin:16px 0; padding-left:14px; border-left:3px solid #8eaea5; }
+.fiche-producteur blockquote p { font-style:italic; }
+#informations .source-producteur { font-size:14px; }
+#informations .liens-producteur { display:flex; flex-wrap:wrap; gap:8px 20px; padding-left:18px; }
+#informations a { overflow-wrap:anywhere; }
+.lien-guide-partenaire { display:inline-block; padding:10px 16px; border:1px solid var(--vert,#167568); border-radius:6px; color:var(--vert,#167568); text-decoration:none; }
+.lien-guide-partenaire:hover { background:var(--vert-clair,#eaf3ed); text-decoration:underline; }
+@media(max-width:700px) { .fiche-producteur { padding:14px; } #informations .liens-producteur { display:block; } }
