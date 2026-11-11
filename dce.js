@@ -1,4 +1,4 @@
-/* Suivi DCE du SMCG : charger ce fichier après app.js et les modules FILMED. */
+/* Campagnes DCE : Tour du Valat pour l’Agence de l’eau Rhône Méditerranée Corse. */
 (() => {
   "use strict";
   const JOUR = 86400000;
@@ -56,7 +56,7 @@
       const ligne = index + 2, annee = lireNombre(r["Année"], ligne), mois = lireNombre(r.Mois, ligne);
       if (!Number.isInteger(annee) || annee < 1900 || annee > 2200 || !Number.isInteger(mois) || mois < 1 || mois > 12) throw new Error("Année ou mois invalide à la ligne " + ligne + ".");
       const id = r["Identifiant point"]?.trim(), station = r.Station?.trim(), etang = r["Étang"]?.trim();
-      if (r.Structure !== "SMCG" || r.Suivi !== "DCE" || !id || !station || !etang) throw new Error("Identification du point invalide à la ligne " + ligne + ".");
+      if (!["SMCG", "TDV", "Tour du Valat"].includes(r.Structure) || r.Suivi !== "DCE" || !id || !station || !etang) throw new Error("Identification du point invalide à la ligne " + ligne + ".");
       const longitude = lireNombre(r["Longitude WGS84"], ligne), latitude = lireNombre(r["Latitude WGS84"], ligne);
       if (longitude === null || latitude === null || Math.abs(longitude) > 180 || Math.abs(latitude) > 90) throw new Error("Coordonnées absentes ou invalides à la ligne " + ligne + ".");
       let temps = Date.UTC(annee, mois - 1, 15);
@@ -72,7 +72,7 @@
       vus.add(cle);
       const valeurs = {};
       for (const p of definitions) valeurs[p.id] = p.condition && !p.condition(r) ? null : lireNombre(r[p.colonne], p.nom + ", ligne " + ligne);
-      return { id, station, etang, annee, mois, numeroMois: annee * 12 + mois - 1, temps, precision, longitude, latitude,
+      return { id, station, etang, structure: "TDV", structureSource: r.Structure, annee, mois, numeroMois: annee * 12 + mois - 1, temps, precision, longitude, latitude,
         valeurs, aVerifier: Boolean(r["Valeurs à vérifier"]?.trim()), source: r["Fichier source"], brut: r };
     }).sort((a, b) => a.temps - b.temps || a.id.localeCompare(b.id));
   }
@@ -86,7 +86,7 @@
       const dernier = groupe.reduce((a, b) => a.temps > b.temps ? a : b);
       const parametres = [...new Set(definitions.filter(p => groupe.some(r => r.valeurs[p.id] !== null)).map(p => p.carte))];
       return { id, nom: dernier.etang + " — " + dernier.station, code: dernier.station, etang: dernier.etang,
-        latitude: dernier.latitude, longitude: dernier.longitude, structure: "SMCG", suivi: "DCE", teletransmission: false,
+        latitude: dernier.latitude, longitude: dernier.longitude, structure: "TDV", commanditaire: "Agence de l’eau Rhône Méditerranée Corse", suivi: "DCE", teletransmission: false,
         etatSuivi: "a_confirmer", parametres, parametresResume: parametres.slice(0, 7).concat(parametres.length > 7 ? ["Autres paramètres dans les analyses"] : []),
         annees: [...new Set(groupe.map(r => r.annee))].sort((a,b) => a-b),
         positionsHistoriques: new Set(groupe.map(r => r.longitude.toFixed(6) + "," + r.latitude.toFixed(6))).size > 1,
@@ -116,7 +116,7 @@
     const titre = section.querySelector("h2");
     const filmed = creer("div"); filmed.id = "analyse-filmed";
     for (const enfant of Array.from(section.children)) if (enfant !== titre) filmed.append(enfant);
-    filmed.prepend(creer("h3", "FILMED — Tournées Nord et Sud"));
+    filmed.prepend(creer("h3", "Mesures FILMED du SMCG — Tournées Nord et Sud"));
     if (titre) titre.textContent = "Analyses des données";
     const navSite = document.querySelector('nav a[href="#graphiques"]');
     if (navSite) navSite.textContent = "Analyses des données";
@@ -129,7 +129,7 @@
     const etudes = creer("div"); etudes.id = "analyses-complementaires";
     etudes.append(creer("h3", "Études et comparaisons complémentaires"));
     const panneau = creer("details", undefined, "panneau-dce bloc-etude-repliable"); panneau.id = "analyse-dce";
-    panneau.append(creer("summary", "Suivi DCE des lagunes"), creer("p", "Campagnes estivales du SMCG sur les étangs de Marette, Charnier, Crey et Scamandre. Ces données sont distinctes du suivi mensuel FILMED."));
+    panneau.append(creer("summary", "Suivi DCE des lagunes"), creer("p", "Campagnes estivales réalisées par la Tour du Valat pour l’Agence de l’eau Rhône Méditerranée Corse, sur les étangs de Marette, Charnier, Crey et Scamandre. Ces données sont distinctes du suivi mensuel FILMED du SMCG."));
     const message = creer("p", "Chargement des données DCE…"); message.id = "message-dce"; message.setAttribute("role", "status"); message.setAttribute("aria-live", "polite");
     const controles = creer("fieldset", undefined, "commandes-dce"); controles.disabled = true; controles.append(creer("legend", "Choisir les données DCE"));
     const ligne = creer("div", undefined, "ligne-filtres-dce");

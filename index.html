@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Suivi des mesures — FILMED Sud</title>
+  <title>Suivi des mesures hydrologiques — Camargue Gardoise</title>
 
   <!-- Présentation de la carte Leaflet -->
   <link
@@ -48,13 +48,13 @@
   defer
 ></script>
 <!-- Navigation et carte -->
-<script src="app.js?v=ortho1" defer></script>
+<script src="app.js?v=retours20261111" defer></script>
 
 <!-- Lecture des mesures et graphiques interactifs -->
 <script src="graphiques.js" defer></script>
 <script src="comparaison-annees.js" defer></script>
 <link rel="stylesheet" href="dce.css?v=1">
-<script src="dce.js?v=dce2" defer></script>
+<script src="dce.js?v=retours20261111" defer></script>
 <link rel="stylesheet" href="vigicrues.css?v=2">
 <script src="vigicrues.js?v=2" defer></script>
 <link rel="stylesheet" href="canaverier.css?v=1">
@@ -67,7 +67,7 @@
 <body>
   <header>
     <h1>Suivi des mesures hydrologiques en Camargue Gardoise</h1>
-    <p>FILMED — Suivis Nord et Sud</p>
+    <p>Données du Syndicat Mixte Camargue Gardoise et de ses partenaires</p>
     <p>SITE EN PHASE DE DEVELOPPEMENT</p>
 
     <nav aria-label="Navigation principale">
@@ -89,6 +89,7 @@
         <li>la salinité ;</li>
         <li>la température ;</li>
         <li>l’oxygène dissous dans l’eau ;</li>
+        <li>la hauteur d’eau ;</li>
         <li>et d’autres paramètres selon les stations.</li>
       </ul>
     </article>
@@ -96,8 +97,8 @@
       <h2>Origine des données</h2>
       <p>Ce portail réunit deux types de suivis :</p>
       <ul class="liste-origines">
-        <li><strong>Les stations des organismes producteurs de données, partenaires du SMCG :</strong> ce site présente leur localisation, les paramètres suivis et l’organisme responsable. Les mesures peuvent être consultables sur les sites des structures concernées, accessibles depuis les liens proposés sur la carte. Si les données ne sont pas disponibles, vous pouvez vous rapprocher de la structure concernée à partir de son site web, présenté dans l’onglet « Comprendre les suivis ». La plupart de ces données sont recueillies en télétransmission.</li>
-        <li><strong>Les stations du SMCG :</strong> ce site présente à un niveau plus précis les suivis du SMCG. Vous y trouverez les relevés mensuels de salinité, de température et d’oxygène dissous (FILMED), les données des campagnes DCE et certaines données localisées sur des sites en gestion du SMCG, comme le site du Canavérier. Ces données sont consultables dans l’onglet « Analyses des données ». Ces mesures sont réalisées manuellement, sans télétransmission.</li>
+        <li><strong>Les stations des organismes producteurs de données, partenaires du SMCG :</strong> ce site présente leur localisation, les paramètres suivis et l’organisme responsable. La plupart des réseaux présentés recueillent leurs mesures en télétransmission. Ces mesures peuvent être consultées sur les sites des structures concernées, selon leurs conditions d’accès. Les sites web de ces organismes sont présentés dans l’onglet « Comprendre les suivis ». Les <strong>campagnes DCE des lagunes</strong>, réalisées manuellement par la <strong>Tour du Valat pour l’Agence de l’eau Rhône Méditerranée Corse</strong>, font également partie des suivis partenaires. Leurs données disponibles dans ce portail sont consultables dans « Analyses des données », puis « Études et comparaisons complémentaires ».</li>
+        <li><strong>Les stations du SMCG :</strong> ce site présente à un niveau plus précis les suivis du SMCG. Vous y trouverez les relevés mensuels de salinité, de température et d’oxygène dissous (FILMED) et certaines données localisées sur des sites en gestion du SMCG, comme le site du Canavérier. Ces données sont consultables dans l’onglet « Analyses des données ». Ces mesures sont réalisées manuellement, sans télétransmission.</li>
       </ul>
     </article>
     <article class="bandeau-origine">
@@ -170,6 +171,9 @@
     Les graphiques s’actualisent automatiquement à chaque modification.
   </p>
   <p id="resume-donnees"></p>
+  <p class="aide-graphiques" id="explication-psu"><strong>Que signifie PSU ?</strong> La salinité indique à quel point l’eau est salée. La salinité pratique est sans unité, même si la notation PSU est couramment utilisée. Pour donner un ordre de grandeur, une eau de mer à 35 PSU contient environ 35 grammes de sels par kilogramme d’eau. Il ne s’agit pas d’une équivalence exacte avec les grammes par litre (g/L).</p>
+  <p><a id="lien-filmed-cen" class="lien-guide-partenaire" href="https://dashboards.cen-occitanie.org/public/dashboards/KuS0pg0Uu8IaiihpnDDNxGeYHvBPdHL05F3stX8r?org_slug=default&amp;p_annee_debut=1999&amp;p_annee_fin=2026&amp;p_lagune=8174334" target="_blank" rel="noopener noreferrer">Explorer les suivis FILMED sur le portail du CEN Occitanie</a></p>
+  <p class="aide-graphiques">Cet outil externe permet de consulter les suivis par lagune. Le lien s’ouvre avec une lagune et la période 1999–2026 présélectionnées ; ces choix sont modifiables dans le tableau de bord du CEN.</p>
 
   <fieldset id="commandes-graphiques" class="commandes-graphiques" disabled>
     <legend>Choisir les mesures à afficher</legend>
@@ -207,7 +211,7 @@
     Survolez ou touchez un point pour consulter la date et la valeur du relevé.
     Chaque station conserve sa couleur et son symbole dans les différents graphiques.
     Les lignes relient les relevés disponibles et ne représentent pas une mesure continue.
-    Les mesures des stations partenaires sont consultables depuis la carte.
+    Les mesures des réseaux partenaires sont consultables depuis la carte ; les campagnes DCE disposent également de graphiques dans « Études et comparaisons complémentaires ».
   </p>
 </section>
 
@@ -216,20 +220,28 @@
       <h2>Comprendre les suivis</h2>
       <article class="bloc-informations">
         <h3>Deux modes de suivi</h3>
-        <p>Comme expliqué dans la page d’accueil, les stations du réseau FILMED du Syndicat Mixte Camargue Gardoise (SMCG) font l’objet de relevés mensuels manuels sur le terrain, sans télétransmission. Les campagnes DCE et les suivis des sites en gestion, comme le Canavérier, sont également réalisés manuellement, selon leur propre calendrier.</p>
-        <p>Les stations des organismes partenaires présentées sur la carte sont suivies par télétransmission. Les liens proposés permettent de consulter les mesures directement sur les sites des structures concernées, selon les conditions d’accès aux données.</p>
+        <p>Comme expliqué dans la page d’accueil, les stations du réseau FILMED du Syndicat Mixte Camargue Gardoise (SMCG) font l’objet de relevés mensuels manuels sur le terrain, sans télétransmission. Les suivis des sites en gestion du SMCG, comme le Canavérier, sont également réalisés manuellement, selon leur propre calendrier.</p>
+        <p>La plupart des stations des organismes partenaires présentées sur la carte sont suivies par télétransmission. Les campagnes DCE des lagunes sont réalisées manuellement par la Tour du Valat pour l’Agence de l’eau Rhône Méditerranée Corse. Les fiches de la carte précisent le mode de suivi et l’accès aux données.</p>
       </article>
       <article class="bloc-informations">
         <h3>Précisions sur les paramètres mesurés</h3>
         <p>Sur les stations FILMED du SMCG, les mesures sont réalisées une fois par mois avec des sondes multiparamètres. Elles portent sur la salinité, la conductivité, l’oxygène dissous dans l’eau en mg/L, la saturation en oxygène en %, la turbidité, la température et le pH.</p>
         <p>Pour faciliter la consultation, dans l’onglet « Analyses des données », la partie <strong>« Analyse des mesures FILMED »</strong> n’affiche que trois paramètres :</p>
         <ul>
-          <li>la salinité, en PSU : à titre indicatif, 1 PSU correspond approximativement à 1 g de sel dissous dans 1 kg d’eau ;</li>
+          <li>la salinité pratique, sans unité, couramment notée PSU ;</li>
           <li>la température de l’eau, en °C ;</li>
           <li>l’oxygène dissous dans l’eau, en mg/L.</li>
         </ul>
+        <p>La salinité indique à quel point l’eau est salée. La salinité pratique est sans unité, même si la notation PSU est couramment utilisée. Pour donner un ordre de grandeur, une eau de mer à 35 PSU contient environ 35 grammes de sels par kilogramme d’eau. Il ne s’agit pas d’une équivalence exacte avec les grammes par litre (g/L).</p>
         <p>La partie <strong>« Études et comparaisons complémentaires »</strong> présente les données des campagnes DCE et du suivi Canavérier, avec leurs paramètres et leurs unités propres.</p>
         <p>Les stations des organismes partenaires peuvent notamment proposer des mesures de salinité, de conductivité, de température et de hauteur d’eau. Les paramètres disponibles varient selon les stations et les structures.</p>
+      </article>
+      <article class="bloc-informations" id="comprendre-dce">
+        <h3>Les campagnes DCE des lagunes</h3>
+        <p>La <strong>Directive Cadre sur l’Eau (DCE)</strong> prévoit une surveillance de l’état des milieux aquatiques. Les campagnes présentées ici portent sur la qualité de l’eau et le phytoplancton des lagunes de Marette, Charnier, Crey et Scamandre. Elles sont réalisées par la <strong>Tour du Valat pour l’Agence de l’eau Rhône Méditerranée Corse</strong>, avec l’appui des gestionnaires et de laboratoires partenaires.</p>
+        <p>Ces campagnes ont lieu principalement en été. Elles associent des mesures sur le terrain, comme la salinité, la température et l’oxygène dissous, à des prélèvements d’eau analysés en laboratoire, notamment pour les nutriments et la chlorophylle a. Certains points sont des stations de référence pour l’évaluation DCE ; d’autres complètent la connaissance de chaque lagune.</p>
+        <p>Ces relevés ponctuels sont distincts du suivi mensuel FILMED du SMCG. Les graphiques du portail présentent les mesures disponibles ; ils ne constituent pas un classement officiel de l’état DCE des lagunes.</p>
+        <p class="source-producteur">Source méthodologique : Grillas et al., 2020, <em>Campagne de surveillance 2019 de l’état DCE des lagunes méditerranéennes oligo- et mésohalines françaises pour la physico-chimie et le phytoplancton</em>, Tour du Valat / Agence de l’eau Rhône Méditerranée Corse, pages 6 à 9. Le calendrier précis dépend de chaque campagne.</p>
       </article>
       <article class="bloc-informations">
         <h3>Accès aux données des partenaires</h3>
@@ -254,6 +266,16 @@
           <h4 id="titre-producteur-cen">CEN Occitanie — Conservatoire d’espaces naturels d’Occitanie</h4>
           <p>Le Conservatoire d’espaces naturels d’Occitanie est une association à but non lucratif qui agit pour préserver la biodiversité régionale. Il étudie les milieux naturels, protège et gère des sites, et sensibilise le public. Il accompagne également les collectivités et les autres acteurs du territoire dans leurs projets de conservation du patrimoine naturel.</p>
           <p><a href="https://www.cen-occitanie.org/" target="_blank" rel="noopener noreferrer">Site web du CEN Occitanie</a></p>
+        </section>
+        <section class="fiche-producteur" id="producteur-tdv" aria-labelledby="titre-producteur-tdv">
+          <h4 id="titre-producteur-tdv">Tour du Valat</h4>
+          <p>La Tour du Valat est un institut de recherche consacré à la conservation des zones humides méditerranéennes. Implantée en Camargue, elle développe des travaux scientifiques avec les gestionnaires et les autres acteurs du bassin méditerranéen. Elle réalise les campagnes DCE présentées dans ce portail pour l’Agence de l’eau Rhône Méditerranée Corse.</p>
+          <p><a href="https://tourduvalat.org/" target="_blank" rel="noopener noreferrer">Site web de la Tour du Valat</a></p>
+        </section>
+        <section class="fiche-producteur" id="producteur-aermc" aria-labelledby="titre-producteur-aermc">
+          <h4 id="titre-producteur-aermc">Agence de l’eau Rhône Méditerranée Corse</h4>
+          <p>L’Agence de l’eau Rhône Méditerranée Corse est un établissement public de l’État qui agit pour préserver l’eau et les milieux aquatiques. Elle produit et diffuse des connaissances, finance des projets et accompagne les territoires. Elle est le commanditaire des campagnes DCE présentées dans ce portail.</p>
+          <p><a href="https://www.eaurmc.fr/" target="_blank" rel="noopener noreferrer">Site web de l’Agence de l’eau Rhône Méditerranée Corse</a></p>
         </section>
         <section class="fiche-producteur" id="producteur-vnf" aria-labelledby="titre-producteur-vnf">
           <h4 id="titre-producteur-vnf">VNF — Voies navigables de France</h4>
@@ -295,7 +317,7 @@
   </main>
 
   <footer>
-    <p>FILMED Sud — Version de test</p>
+    <p>SMCG et partenaires — Version de test</p>
   </footer>
 </body>
 </html>

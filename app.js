@@ -10,6 +10,13 @@ const structures = {
     texteLien: "Site du SMCG",
     donneesPubliques: true
   },
+  TDV: {
+    nom: "Tour du Valat",
+    libelleFiltre: "Tour du Valat — DCE",
+    site: "https://tourduvalat.org/",
+    texteLien: "Site de la Tour du Valat",
+    donneesPubliques: true
+  },
   VNF: {
     nom: "VNF",
     site: "https://www.vnf.fr/aghyre/#!/displaySIG",
@@ -282,6 +289,16 @@ const stations = [
     site: "https://www.vigicrues.gouv.fr/station/Y353401001"
   },
 
+  {
+    nom: "Tarascon [Pont de Beaucaire] (Rhône)",
+    latitude: 43.80458141570242,
+    longitude: 4.649140397279217,
+    structure: "VIGICRUES",
+    teletransmission: true,
+    parametres: ["Hauteur d’eau"],
+    site: "https://www.vigicrues.gouv.fr/station/V720001003"
+  },
+
   // AJOUTER LES NOUVELLES STATIONS JUSTE AU-DESSUS DE CETTE LIGNE.
 ];
 
@@ -333,7 +350,10 @@ function creerFiche(station) {
   structure.textContent = organisme.nom;
   if (station.suivi === "DCE") {
     const suivi = document.createElement("div");
-    suivi.textContent = "SMCG · Suivi DCE des lagunes";
+    suivi.textContent = "Suivi DCE des lagunes";
+    const commanditaire = document.createElement("div");
+    commanditaire.textContent = "Commanditaire : Agence de l’eau Rhône Méditerranée Corse";
+    fiche.append(commanditaire);
     fiche.append(suivi);
   }
   if (station.suivi === "CANAVERIER") {
@@ -392,7 +412,7 @@ function creerFiche(station) {
     ligneLien.append(lien);
     fiche.append(ligneLien);
   }
-  if (station.structure === "SMCG" && publiques !== false) {
+  if ((station.structure === "SMCG" || station.suivi === "DCE") && publiques !== false) {
     const ligneGraphiques = document.createElement("div");
     const lienGraphiques = document.createElement("a");
     lienGraphiques.href = station.suivi === "CANAVERIER"
@@ -610,18 +630,21 @@ window.addEventListener("hashchange", afficherRubrique);
 afficherRubrique();
 
 
-/* Les points DCE proviennent du fichier mesures_dce.csv chargé par dce.js.
-   Ils sont ajoutés une seule fois et restent indépendants des stations FILMED. */
+/* Les campagnes DCE sont réalisées par la Tour du Valat pour l’Agence de l’eau.
+   Les relevés chargés par dce.js restent indépendants du réseau FILMED du SMCG. */
 window.addEventListener("dce:stations", evenement => {
   const nouvelles = evenement.detail;
   if (!Array.isArray(nouvelles)) return;
   for (const station of nouvelles) {
-    if (station.structure !== "SMCG" || station.suivi !== "DCE"
+    if (station.structure !== "TDV" || station.suivi !== "DCE"
         || !Number.isFinite(station.latitude) || !Number.isFinite(station.longitude)) continue;
     const ancienne = stations.findIndex(s => s.id === station.id && s.suivi === "DCE");
     if (ancienne >= 0) stations[ancienne] = station;
     else stations.push(station);
   }
+  remplirFiltre("filtre-structure", "Toutes les structures",
+    [...new Set(stations.map(station => station.structure))].sort(),
+    valeur => structures[valeur]?.libelleFiltre || valeur);
   const presents = [...new Set(stations.flatMap(station => station.parametres))];
   remplirFiltre("filtre-parametre", "Tous les paramètres", [
     ...ordreParametres.filter(p => presents.includes(p)),
@@ -638,7 +661,7 @@ window.addEventListener("dce:stations", evenement => {
     label.id = "choix-suivi-smcg"; label.hidden = true;
     const texte = document.createElement("span"); texte.textContent = "Suivi du SMCG";
     const select = document.createElement("select"); select.id = "filtre-suivi-smcg";
-    for (const [valeur, libelle] of [["", "Tous les suivis du SMCG"], ["FILMED", "FILMED"], ["DCE", "DCE"], ["CANAVERIER", "Suivi Canaverier"]]) {
+    for (const [valeur, libelle] of [["", "Tous les suivis du SMCG"], ["FILMED", "FILMED"], ["CANAVERIER", "Suivi Canaverier"]]) {
       const option = document.createElement("option"); option.value = valeur; option.textContent = libelle; select.append(option);
     }
     select.addEventListener("change", actualiserStations); label.append(texte, select);
@@ -677,7 +700,7 @@ window.addEventListener("canaverier:stations", evenement => {
     const label = document.createElement("label"); label.id = "choix-suivi-smcg"; label.hidden = true;
     const texte = document.createElement("span"); texte.textContent = "Suivi du SMCG";
     select = document.createElement("select"); select.id = "filtre-suivi-smcg";
-    for (const [valeur, libelle] of [["", "Tous les suivis du SMCG"], ["FILMED", "FILMED"], ["DCE", "DCE"]]) {
+    for (const [valeur, libelle] of [["", "Tous les suivis du SMCG"], ["FILMED", "FILMED"]]) {
       const option = document.createElement("option"); option.value = valeur; option.textContent = libelle; select.append(option);
     }
     select.addEventListener("change", actualiserStations); label.append(texte, select);
