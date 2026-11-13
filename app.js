@@ -368,7 +368,9 @@ function creerFiche(station) {
   const parametres = document.createElement("div");
   parametres.textContent = "Paramètres : " + (station.parametresResume || station.parametres).join(" · ");
   fiche.prepend(titre, structure);
-  fiche.append(mode, parametres);
+  const milieu = document.createElement("div");
+  milieu.textContent = categorieStation(station).libelle;
+  fiche.append(milieu, mode, parametres);
   if (station.suivi === "DCE") {
     const periode = document.createElement("div");
     periode.textContent = "Années disponibles : " + station.annees.join(", ");
@@ -437,19 +439,23 @@ function creerFiche(station) {
 let carte = null;
 let coucheStations = null;
 
-// Une même forme ; la couleur indique le mode de mesure ou la campagne DCE.
+// Une même forme ; la couleur indique le milieu observé, indépendamment du mode de mesure.
 const categoriesMarqueurs = {
-  tt: { classe: "tt", libelle: "Télétransmission" },
-  manuel: { classe: "manuel", libelle: "Relevés manuels" },
-  dce: { classe: "dce", libelle: "Campagnes DCE" }
+  surface: { classe: "surface", libelle: "Eaux de surface" },
+  souterraine: { classe: "souterraine", libelle: "Eaux souterraines" }
 };
 const dessinRepereStation = '<svg viewBox="0 0 28 38" aria-hidden="true" focusable="false">'
   + '<path d="M14 1C7 1 1 6.6 1 13.5c0 9.4 13 23 13 23s13-13.6 13-23C27 6.6 21 1 14 1Z" fill="currentColor" stroke="white" stroke-width="2"/>'
   + '<circle cx="14" cy="13" r="4" fill="white"/></svg>';
 
 function categorieStation(station) {
-  if (station.suivi === "DCE") return categoriesMarqueurs.dce;
-  return station.teletransmission ? categoriesMarqueurs.tt : categoriesMarqueurs.manuel;
+  // Les piézomètres Canavérier sont identifiés par le type de suivi du CSV.
+  // Pour un autre réseau souterrain, préciser milieu: "souterraine" dans sa fiche.
+  if (station.typeSuivi === "Piézométrique" || station.milieu === "souterraine") {
+    return categoriesMarqueurs.souterraine;
+  }
+  // Les autres points actuels mesurent les lagunes, canaux, cours d’eau et la mer.
+  return categoriesMarqueurs.surface;
 }
 
 function creerIconeStation(station) {

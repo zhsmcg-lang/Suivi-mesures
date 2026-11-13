@@ -1,7 +1,6 @@
 /* Même forme de repère pour toutes les stations. */
-.repere-tt { color:#7b3fba; }
-.repere-manuel { color:#2474ac; }
-.repere-dce { color:#bd5b08; }
+.repere-surface { color:#2474ac; }
+.repere-souterraine { color:#7b3fba; }
 .repere-station { background:transparent; border:0; }
 .repere-station svg { display:block; width:28px; height:38px; overflow:visible; filter:drop-shadow(0 1px 2px #0006); }
 .repere-station:focus-visible { outline:3px solid #183d41; outline-offset:4px; border-radius:6px; }
