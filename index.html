@@ -51,14 +51,14 @@
 <script src="app.js?v=milieux20261113" defer></script>
 
 <!-- Lecture des mesures et graphiques interactifs -->
-<script src="graphiques.js" defer></script>
+<script src="graphiques.js?v=analyses4-20261113" defer></script>
 <script src="comparaison-annees.js" defer></script>
 <link rel="stylesheet" href="dce.css?v=analyses20261113">
 <script src="dce.js?v=analyses20261113" defer></script>
 <link rel="stylesheet" href="vigicrues.css?v=2">
 <script src="vigicrues.js?v=2" defer></script>
-<link rel="stylesheet" href="canaverier.css?v=1">
-<script src="canaverier.js?v=analyses20261113" defer></script>
+<link rel="stylesheet" href="canaverier.css?v=analyses4-20261113">
+<script src="canaverier.js?v=analyses4-20261113" defer></script>
 <link rel="stylesheet" href="carte-marqueurs.css?v=3">
 <link rel="stylesheet" href="informations.css?v=2">
 <link rel="stylesheet" href="ressources.css?v=1">
@@ -166,14 +166,8 @@
 
     <section id="graphiques">
   <h2>Graphiques des mesures</h2>
-  <p>
-    Choisissez des stations, des paramètres et une période.
-    Les graphiques s’actualisent automatiquement à chaque modification.
-  </p>
-  <p id="resume-donnees"></p>
-  <p class="aide-graphiques" id="explication-psu"><strong>Que signifie PSU ?</strong> La salinité indique à quel point l’eau est salée. La salinité pratique est sans unité, même si la notation PSU est couramment utilisée. Pour donner un ordre de grandeur, une eau de mer à 35 PSU contient environ 35 grammes de sels par kilogramme d’eau. Il ne s’agit pas d’une équivalence exacte avec les grammes par litre (g/L).</p>
   <p><a id="lien-filmed-cen" class="lien-guide-partenaire" href="https://dashboards.cen-occitanie.org/public/dashboards/KuS0pg0Uu8IaiihpnDDNxGeYHvBPdHL05F3stX8r?org_slug=default&amp;p_annee_debut=1999&amp;p_annee_fin=2026&amp;p_lagune=8174334" target="_blank" rel="noopener noreferrer">Explorer les suivis FILMED sur le portail du CEN Occitanie</a></p>
-  <p class="aide-graphiques">Cet outil externe permet de consulter les suivis par lagune. Le lien s’ouvre avec une lagune et la période 1999–2026 présélectionnées ; ces choix sont modifiables dans le tableau de bord du CEN.</p>
+  <p class="intro-filmed">Choisissez les stations, les paramètres et la période. Les graphiques s’actualisent automatiquement.</p>
 
   <fieldset id="commandes-graphiques" class="commandes-graphiques" disabled>
     <legend>Choisir les mesures à afficher</legend>
@@ -211,7 +205,7 @@
     Survolez ou touchez un point pour consulter la date et la valeur du relevé.
     Chaque station conserve sa couleur et son symbole dans les différents graphiques.
     Les lignes relient les relevés disponibles et ne représentent pas une mesure continue.
-    Les mesures des réseaux partenaires sont consultables depuis la carte ; les campagnes DCE disposent également de graphiques dans « Études et comparaisons complémentaires ».
+    Les mesures des réseaux partenaires sont consultables depuis la carte.
   </p>
 </section>
 

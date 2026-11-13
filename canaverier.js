@@ -6,7 +6,7 @@
     { id:"salinite",colonne:"Salinite_pour_mille",nom:"Salinité",unite:"‰",carte:"Salinité" },
     { id:"temperature",colonne:"Temperature_C",nom:"Température",unite:"°C",carte:"Température" },
     { id:"conductivite",colonne:"Conductivite_mS_cm",nom:"Conductivité",unite:"mS/cm",carte:"Conductivité" },
-    { id:"hauteur",colonne:"Hauteur_eau_m_NGF",nom:"Niveau d’eau NGF",unite:"m NGF",carte:"Hauteur d’eau" }
+    { id:"hauteur",colonne:"Hauteur_eau_m_NGF",nom:"Altitude du niveau d’eau",unite:"m NGF",carte:"Hauteur d’eau" }
   ];
   const nombre=new Intl.NumberFormat("fr-FR",{maximumFractionDigits:3});
   const dateCourte=new Intl.DateTimeFormat("fr-FR",{dateStyle:"short",timeZone:"UTC"});
@@ -65,16 +65,16 @@
     const etudes=document.getElementById("analyses-complementaires");if(!etudes||document.getElementById("analyse-canaverier"))return;
     const panneau=creer("article",undefined,"panneau-canaverier");panneau.id="analyse-canaverier";panneau.hidden=true;
     const titre=creer("h3","Suivi Canavérier");titre.id="titre-analyse-canaverier";panneau.setAttribute("aria-labelledby",titre.id);
-    panneau.append(titre,creer("p","Relevés du SMCG sur les eaux de surface (limnimétrie) et la nappe (piézométrie). Les deux suivis restent identifiés séparément."));
+    panneau.append(titre,creer("p","Relevés du SMCG sur les eaux de surface (limnimétrie) et les eaux souterraines (piézométrie). Les deux suivis restent identifiés séparément."));
     const controles=creer("fieldset",undefined,"commandes-canaverier");controles.disabled=true;controles.append(creer("legend","Choisir les mesures"));
     const ligne=creer("div",undefined,"ligne-filtres-canaverier");
     const type=champ("select","type-canaverier","Type de suivi"),vue=champ("select","vue-canaverier","Présentation");
-    option(type.input,"Limnimétrique","Limnimétrie — eaux de surface");option(type.input,"Piézométrique","Piézométrie — nappe");option(type.input,"","Les deux suivis");
+    option(type.input,"Limnimétrique","Limnimétrie — eaux de surface");option(type.input,"Piézométrique","Piézométrie — eaux souterraines");option(type.input,"","Les deux suivis");
     option(vue.input,"chronologie","Évolution dans le temps");option(vue.input,"annees","Comparer les années d’une station");
     const debut=champ("input","debut-canaverier","Du","date"),fin=champ("input","fin-canaverier","Au","date");
     ligne.append(type.parent,vue.parent,debut.parent,fin.parent);controles.append(ligne);
     const choixStations=creer("details",undefined,"selection-stations-canaverier"),resumeStations=creer("summary","Stations à comparer");choixStations.append(resumeStations);
-    const recherche=champ("input","recherche-canaverier","Rechercher une station","search");recherche.input.placeholder="Ex. : mare, bourgidou, étang…";recherche.parent.className="recherche-canaverier";
+    const recherche=champ("input","recherche-canaverier","Rechercher une station","search");recherche.input.placeholder="Ex. : bourgidou, étang, paradis…";recherche.parent.className="recherche-canaverier";
     const actions=creer("div",undefined,"outils-canaverier"),cocher=creer("button","Cocher les stations visibles"),decocher=creer("button","Tout décocher");
     for(const b of [cocher,decocher])b.type="button";actions.append(cocher,decocher);
     const stationsZone=creer("div",undefined,"cases-canaverier");stationsZone.id="stations-canaverier";
@@ -195,14 +195,20 @@
     let total=0,ecartes=0;
     for(const p of parametres){
       const article=creer("article",undefined,"carte-graphique carte-graphique-canaverier");article.dataset.parametre=p.id;article.append(creer("h4",p.nom+" ("+p.unite+")"));
+      if(p.id==="hauteur"){
+        const repere=creer("p",undefined,"repere-ngf"),lien=creer("a","zéro NGF");
+        lien.href="https://geodesie.ign.fr/les-reseaux-de-nivellement-francais";lien.target="_blank";lien.rel="noopener noreferrer";
+        repere.append("Cette altitude est mesurée par rapport au ",lien,", lié au niveau moyen historique de la mer. Elle n’indique ni la profondeur d’eau, ni une hauteur au-dessus du sol ou du zéro de l’échelle.");
+        article.append(repere);
+      }
       const groupes=annuelle?[...annees].sort((a,b)=>a-b).map(a=>({label:String(a),cle:String(a),releves:releves.filter(r=>r.annee===a)})):points.filter(point=>selection.has(point.id)).map(point=>({label:point.nom,cle:point.id,releves:releves.filter(r=>r.id===point.id)}));
       const series=groupes.map(g=>({...g,stats:statistiques(g.releves,p)})),compte=series.reduce((n,s)=>n+s.stats.n,0);total+=compte;
       if(p.id==="conductivite")ecartes+=releves.filter(r=>r.valeurs[p.id]!==null&&valeur(r,p)===null).length;
       if(!compte){article.append(creer("p","Aucune valeur disponible pour ce paramètre sur cette sélection. Une hauteur NGF manquante n’est pas remplacée par une colonne d’eau ou une lecture d’échelle."));ui.zone.append(article);continue;}
       const mode=modes.get(p.id)||"mesures",datasets=[];let courbesAjoutees=0;
-      if(!annuelle){const label=creer("label",undefined,"affichage-canaverier"),select=creer("select");select.id="affichage-canaverier-"+p.id;
+      if(!annuelle){const label=creer("label",undefined,"affichage-canaverier"),select=creer("select");select.id="affichage-canaverier-"+p.id;select.setAttribute("aria-label","Présentation du graphique de "+p.nom);
         for(const [v,t]of [["mesures","Mesures seules"],["mobile3","Mesures + lissage sur 3 mois"],["tendance","Mesures + droite de tendance"]])option(select,v,t);
-        select.value=mode;select.addEventListener("change",()=>{modes.set(p.id,select.value);actualiser();});label.append(creer("span","Affichage"),select);article.append(label);}
+        select.value=mode;select.addEventListener("change",()=>{modes.set(p.id,select.value);actualiser();});label.append(select);article.append(label);}
       for(const serie of series){
         if(!serie.stats.n)continue;
         const color=couleur(serie.cle),mensuels=annuelle?[]:moyenneMensuelle(serie.releves,p,du,au);

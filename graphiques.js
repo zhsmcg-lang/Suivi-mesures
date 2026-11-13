@@ -27,7 +27,6 @@
   const fin = document.getElementById("date-fin");
   const message = document.getElementById("message-graphiques");
   const zone = document.getElementById("courbes-graphiques");
-  const resume = document.getElementById("resume-donnees");
 
   let mesures = [];
   let nomsStations = [];
@@ -286,10 +285,9 @@
         titre.textContent = p.nom + " (" + p.unite + ")";
         const choix = document.createElement("label");
         choix.className = "choix-affichage";
-        const libelle = document.createElement("span");
-        libelle.textContent = "Affichage";
         const select = document.createElement("select");
         select.id = "affichage-" + p.cle;
+        select.setAttribute("aria-label", "Présentation du graphique de " + p.nom);
         for (const [valeur, texte] of [
           ["mesures", "Mesures seules"],
           ["mobile3", "Mesures + lissage sur 3 mois"],
@@ -305,7 +303,7 @@
           modesAffichage.set(p.cle, select.value);
           actualiser();
         });
-        choix.append(libelle, select);
+        choix.append(select);
         const info = document.createElement("p");
         const methode = document.createElement("p");
         methode.className = "methode-graphique";
@@ -545,9 +543,6 @@
     debut.value = debut.min;
     fin.value = fin.max;
     controles.disabled = false;
-    resume.textContent = "SMCG · Relevés mensuels sans télétransmission · " + mesures.length
-      + " relevés disponibles, du " + dateCourte.format(mesures[0].date)
-      + " au " + dateCourte.format(mesures[mesures.length - 1].date) + ".";
     controles.addEventListener("change", evenement => {
       if (evenement.target.name === "station-graphe") stationSansDonnees = "";
       actualiser();

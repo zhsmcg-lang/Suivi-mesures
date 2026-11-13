@@ -47,3 +47,19 @@
 .selection-stations-canaverier { margin:18px 0; }
 .selection-stations-canaverier > summary { padding:10px 0; font-weight:600; cursor:pointer; }
 .selection-stations-canaverier[open] > summary { margin-bottom:10px; }
+
+/* Rappel de lecture, commun aux graphiques chronologiques et annuels de niveau d’eau. */
+.carte-graphique-canaverier .repere-ngf {
+  margin:0 0 16px;
+  padding:12px 14px;
+  border-left:3px solid #537f95;
+  border-radius:4px;
+  background:#f3f6f4;
+  color:var(--texte-secondaire,#526b6b);
+  font-size:14px;
+  line-height:1.6;
+}
+.carte-graphique-canaverier .repere-ngf a {
+  color:var(--vert,#167568);
+  text-underline-offset:3px;
+}
