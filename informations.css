@@ -7,3 +7,45 @@
 #informations a { overflow-wrap:anywhere; }
 .lien-guide-partenaire { display:inline-block; padding:10px 16px; border:1px solid var(--vert,#167568); border-radius:6px; color:var(--vert,#167568); text-decoration:none; }
 .lien-guide-partenaire:hover { background:var(--vert-clair,#eaf3ed); text-decoration:underline; }
+
+/* Le titre reste accessible sans répéter visuellement le nom de l’onglet. */
+#informations > .visuellement-masque {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+#informations .bloc-informations { min-width:0; }
+.liste-parametres { margin:24px 0 0; }
+.liste-parametres > div {
+  display:grid;
+  grid-template-columns:minmax(170px,0.8fr) minmax(0,2fr);
+  gap:12px 24px;
+  padding:18px 0;
+  border-top:1px solid var(--bordure,#dce6e1);
+}
+.liste-parametres dt { font-weight:600; color:var(--texte,#183d41); }
+.liste-parametres dd { min-width:0; margin:0; color:var(--texte-secondaire,#526b6b); }
+.liste-parametres dd p { margin:0; }
+.liste-parametres dd p + p { margin-top:12px; }
+.liste-parametres .exemple-ngf {
+  padding:12px 14px;
+  border-left:3px solid #537f95;
+  border-radius:4px;
+  background:var(--fond,#f3f6f4);
+}
+.sources-parametres { margin-top:20px; font-size:14px; }
+.sources-parametres summary { cursor:pointer; font-weight:600; padding:8px 0; }
+.sources-parametres summary:focus-visible { outline:3px solid #c28a2b; outline-offset:3px; }
+.sources-parametres li { margin-bottom:8px; }
+.fiche-suivi { min-width:0; }
+.fiche-suivi + .fiche-suivi { padding-top:22px; margin-top:22px; border-top:1px solid var(--bordure,#dce6e1); }
+.fiche-suivi h4 { margin:0; font-size:19px; font-weight:600; line-height:1.4; color:var(--texte,#183d41); }
+@media(max-width:700px) {
+  .liste-parametres > div { grid-template-columns:minmax(0,1fr); gap:6px; padding:16px 0; }
+}

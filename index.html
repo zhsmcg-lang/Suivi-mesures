@@ -60,8 +60,8 @@
 <link rel="stylesheet" href="canaverier.css?v=analyses4-20261113">
 <script src="canaverier.js?v=analyses4-20261113" defer></script>
 <link rel="stylesheet" href="carte-marqueurs.css?v=3">
-<link rel="stylesheet" href="informations.css?v=2">
-<link rel="stylesheet" href="ressources.css?v=1">
+<link rel="stylesheet" href="informations.css?v=informations5-20261113">
+<link rel="stylesheet" href="ressources.css?v=informations5-20261113">
 </head>
 
 <body>
@@ -97,7 +97,7 @@
       <h2>Origine des données</h2>
       <p>Ce portail réunit deux types de suivis :</p>
       <ul class="liste-origines">
-        <li><strong>Les stations des organismes producteurs de données, partenaires du SMCG :</strong> ce site présente leur localisation, les paramètres suivis et l’organisme responsable. La plupart des réseaux présentés recueillent leurs mesures en télétransmission. Ces mesures peuvent être consultées sur les sites des structures concernées, selon leurs conditions d’accès. Les sites web de ces organismes sont présentés dans l’onglet « Comprendre les suivis ». Les <strong>campagnes DCE des lagunes</strong>, réalisées manuellement par la <strong>Tour du Valat pour l’Agence de l’eau Rhône Méditerranée Corse</strong>, font également partie des suivis partenaires. Leurs données disponibles dans ce portail sont consultables dans « Analyses des données », puis « Études et comparaisons complémentaires ».</li>
+        <li><strong>Les stations des organismes producteurs de données, partenaires du SMCG :</strong> ce site présente leur localisation, les paramètres suivis et l’organisme responsable. La plupart des réseaux présentés recueillent leurs mesures en télétransmission. Ces mesures peuvent être consultées sur les sites des structures concernées, selon leurs conditions d’accès. Les sites web de ces organismes sont présentés dans l’onglet « Comprendre les suivis ». Les <strong>campagnes DCE des lagunes</strong>, réalisées manuellement par la <strong>Tour du Valat pour l’Agence de l’eau Rhône Méditerranée Corse</strong>, font également partie des suivis partenaires. Leurs données disponibles dans ce portail sont consultables dans « Analyses des données », puis « Suivi DCE des lagunes ».</li>
         <li><strong>Les stations du SMCG :</strong> ce site présente à un niveau plus précis les suivis du SMCG. Vous y trouverez les relevés mensuels de salinité, de température et d’oxygène dissous (FILMED) et certaines données localisées sur des sites en gestion du SMCG, comme le site du Canavérier. Ces données sont consultables dans l’onglet « Analyses des données ». Ces mesures sont réalisées manuellement, sans télétransmission.</li>
       </ul>
     </article>
@@ -210,42 +210,119 @@
 </section>
 
 
-        <section id="informations">
-      <h2>Comprendre les suivis</h2>
-      <article class="bloc-informations">
-        <h3>Deux modes de suivi</h3>
-        <p>Comme expliqué dans la page d’accueil, les stations du réseau FILMED du Syndicat Mixte Camargue Gardoise (SMCG) font l’objet de relevés mensuels manuels sur le terrain, sans télétransmission. Les suivis des sites en gestion du SMCG, comme le Canavérier, sont également réalisés manuellement, selon leur propre calendrier.</p>
-        <p>La plupart des stations des organismes partenaires présentées sur la carte sont suivies par télétransmission. Les campagnes DCE des lagunes sont réalisées manuellement par la Tour du Valat pour l’Agence de l’eau Rhône Méditerranée Corse. Les fiches de la carte précisent le mode de suivi et l’accès aux données.</p>
-      </article>
-      <article class="bloc-informations">
-        <h3>Précisions sur les paramètres mesurés</h3>
-        <p>Sur les stations FILMED du SMCG, les mesures sont réalisées une fois par mois avec des sondes multiparamètres. Elles portent sur la salinité, la conductivité, l’oxygène dissous dans l’eau en mg/L, la saturation en oxygène en %, la turbidité, la température et le pH.</p>
-        <p>Pour faciliter la consultation, dans l’onglet « Analyses des données », la partie <strong>« Analyse des mesures FILMED »</strong> n’affiche que trois paramètres :</p>
+    <section id="informations" aria-labelledby="titre-informations">
+      <h2 id="titre-informations" class="visuellement-masque">Comprendre les suivis</h2>
+      <article class="bloc-informations" id="modes-suivi">
+        <h3>Modes de suivi</h3>
+        <p>Les stations présentées sur ce portail concernent deux milieux :</p>
         <ul>
-          <li>la salinité pratique, sans unité, couramment notée PSU ;</li>
-          <li>la température de l’eau, en °C ;</li>
-          <li>l’oxygène dissous dans l’eau, en mg/L.</li>
+          <li><strong>les eaux de surface</strong> : étangs, marais, canaux, cours d’eau et mer ;</li>
+          <li><strong>les eaux souterraines</strong> : eau des nappes, suivie notamment dans des tubes de piézomètres.</li>
         </ul>
-        <p>La salinité indique à quel point l’eau est salée. La salinité pratique est sans unité, même si la notation PSU est couramment utilisée. Pour donner un ordre de grandeur, une eau de mer à 35 PSU contient environ 35 grammes de sels par kilogramme d’eau. Il ne s’agit pas d’une équivalence exacte avec les grammes par litre (g/L).</p>
-        <p>La partie <strong>« Études et comparaisons complémentaires »</strong> présente les données des campagnes DCE et du suivi Canavérier, avec leurs paramètres et leurs unités propres.</p>
-        <p>Les stations des organismes partenaires peuvent notamment proposer des mesures de salinité, de conductivité, de température et de hauteur d’eau. Les paramètres disponibles varient selon les stations et les structures.</p>
+        <p>Dans ces milieux, les mesures peuvent être recueillies de différentes façons :</p>
+        <ul>
+          <li><strong>par télétransmission</strong> : des capteurs mesurent et transmettent les informations à distance. La fréquence des mesures et celle de leur transmission dépendent du réseau ;</li>
+          <li><strong>par relevés manuels</strong> : un opérateur effectue les mesures sur le terrain, selon un calendrier défini par le gestionnaire. Les relevés peuvent par exemple être mensuels ou réalisés deux fois par mois, ou s’inscrire dans des campagnes ponctuelles.</li>
+        </ul>
+        <p>Les relevés FILMED du SMCG sont réalisés une fois par mois. Les campagnes DCE et les suivis des sites en gestion, comme le Canavérier, suivent leur propre calendrier. Les fiches de la carte précisent le milieu, le mode de suivi, les paramètres et l’organisme responsable.</p>
       </article>
-      <article class="bloc-informations" id="comprendre-dce">
-        <h3>Les campagnes DCE des lagunes</h3>
-        <p>La <strong>Directive Cadre sur l’Eau (DCE)</strong> prévoit une surveillance de l’état des milieux aquatiques. Les campagnes présentées ici portent sur la qualité de l’eau et le phytoplancton des lagunes de Marette, Charnier, Crey et Scamandre. Elles sont réalisées par la <strong>Tour du Valat pour l’Agence de l’eau Rhône Méditerranée Corse</strong>, avec l’appui des gestionnaires et de laboratoires partenaires.</p>
-        <p>Ces campagnes ont lieu principalement en été. Elles associent des mesures sur le terrain, comme la salinité, la température et l’oxygène dissous, à des prélèvements d’eau analysés en laboratoire, notamment pour les nutriments et la chlorophylle a. Certains points sont des stations de référence pour l’évaluation DCE ; d’autres complètent la connaissance de chaque lagune.</p>
-        <p>Ces relevés ponctuels sont distincts du suivi mensuel FILMED du SMCG. Les graphiques du portail présentent les mesures disponibles ; ils ne constituent pas un classement officiel de l’état DCE des lagunes.</p>
-        <p class="source-producteur">Source méthodologique : Grillas et al., 2020, <em>Campagne de surveillance 2019 de l’état DCE des lagunes méditerranéennes oligo- et mésohalines françaises pour la physico-chimie et le phytoplancton</em>, Tour du Valat / Agence de l’eau Rhône Méditerranée Corse, pages 6 à 9. Le calendrier précis dépend de chaque campagne.</p>
+      <article class="bloc-informations" id="parametres-mesures">
+        <h3>Les paramètres mesurés</h3>
+        <p>Les paramètres disponibles varient selon les stations et les suivis. Chaque graphique indique la grandeur représentée et sa notation ou son unité.</p>
+        <dl class="liste-parametres">
+          <div>
+            <dt>Salinité pratique — PSU</dt>
+            <dd>Indique à quel point l’eau est salée. La salinité pratique est sans unité, même si la notation PSU est couramment utilisée. Pour donner un ordre de grandeur, une eau de mer à 35 PSU contient environ 35 grammes de sels par kilogramme d’eau. Ce n’est pas une équivalence exacte avec les grammes par litre (g/L). Le suivi Canavérier conserve la notation ‰ du fichier source.</dd>
+          </div>
+          <div>
+            <dt>Température de l’eau — °C</dt>
+            <dd>Indique si l’eau est plus ou moins chaude. Elle influence notamment l’activité des organismes aquatiques et la quantité d’oxygène que l’eau peut contenir. Elle est exprimée en degrés Celsius (°C).</dd>
+          </div>
+          <div>
+            <dt>Oxygène dissous — mg/L</dt>
+            <dd>Quantité d’oxygène dissous dans l’eau, disponible notamment pour la respiration des organismes aquatiques. La concentration est exprimée en milligrammes par litre (mg/L).</dd>
+          </div>
+          <div>
+            <dt>Saturation en oxygène — %</dt>
+            <dd>Compare la concentration mesurée à celle d’une eau à l’équilibre avec l’air, dans les mêmes conditions de température, de salinité et de pression. Elle est exprimée en pourcentage (%). Une valeur de 100 % correspond à cet équilibre ; des valeurs supérieures sont possibles.</dd>
+          </div>
+          <div>
+            <dt>Conductivité — mS/cm</dt>
+            <dd>Capacité de l’eau à conduire le courant électrique, liée notamment aux sels dissous. Elle est exprimée ici en millisiemens par centimètre (mS/cm). D’autres sites peuvent utiliser les microsiemens par centimètre (µS/cm) : 1 mS/cm = 1 000 µS/cm.</dd>
+          </div>
+          <div>
+            <dt>Turbidité — NTU</dt>
+            <dd>Indique à quel point l’eau est trouble, notamment du fait des particules en suspension. Elle est exprimée ici en NTU, pour <em>Nephelometric Turbidity Unit</em>, ou unité de turbidité néphélométrique en français.</dd>
+          </div>
+          <div>
+            <dt>pH</dt>
+            <dd>Indique le caractère acide ou basique de l’eau. Une valeur plus faible traduit une eau plus acide ; une valeur plus élevée traduit une eau plus basique. Le pH est sans unité.</dd>
+          </div>
+          <div>
+            <dt>Hauteur d’eau — m ou cm</dt>
+            <dd>Niveau de l’eau par rapport à une référence locale, par exemple le zéro d’une échelle. Elle est exprimée en mètres (m) ou en centimètres (cm). Le zéro local peut différer entre les stations : une hauteur d’eau n’est pas nécessairement une altitude NGF ni une profondeur d’eau.</dd>
+          </div>
+          <div id="parametre-ngf">
+            <dt>Altitude du niveau d’eau — m NGF</dt>
+            <dd>
+              <p>Altitude de l’eau par rapport au zéro du Nivellement général de la France (NGF). En France continentale, cette référence est liée au niveau moyen historique de la mer mesuré à Marseille. Ce n’est ni le niveau actuel de la mer, ni le zéro de l’échelle, ni le niveau du sol ou du fond de l’étang.</p>
+              <p>Une valeur négative signifie que l’eau est sous le zéro NGF ; elle n’indique pas, à elle seule, sa profondeur ou sa position par rapport au terrain.</p>
+              <p class="exemple-ngf"><strong>Exemple fictif :</strong> si l’eau est à −0,50 m NGF et le fond à −1,20 m NGF au même endroit, la profondeur d’eau est de 0,70 m.</p>
+            </dd>
+          </div>
+          <div>
+            <dt>Débit — m³/s</dt>
+            <dd>Volume d’eau qui traverse une section de cours d’eau en une seconde. Il est généralement exprimé en mètres cubes par seconde (m³/s) : 1 m³ correspond à 1 000 litres.</dd>
+          </div>
+        </dl>
+        <details class="sources-parametres">
+          <summary>Sources des définitions</summary>
+          <ul>
+            <li><a href="https://www.teos-10.org/pubs/gsw/html/gsw_SR_from_SP.html" target="_blank" rel="noopener noreferrer">TEOS-10 — salinité pratique et salinité de référence</a></li>
+            <li><a href="https://ope.andra.fr/lobservatoire-et-le-territoire/moyens/stations-de-suivi-en-continu-des-eaux-de-surface" target="_blank" rel="noopener noreferrer">Andra — paramètres de suivi des eaux de surface</a></li>
+            <li><a href="https://www.epa.gov/caddis/dissolved-oxygen" target="_blank" rel="noopener noreferrer">US EPA — oxygène dissous et saturation</a></li>
+            <li><a href="https://www.usgs.gov/water-science-school/science/conductivity-electrical-conductance-and-water" target="_blank" rel="noopener noreferrer">USGS — conductivité</a> ; <a href="https://www.usgs.gov/water-science-school/science/ph-and-water" target="_blank" rel="noopener noreferrer">pH</a> ; <a href="https://www.usgs.gov/water-science-school/science/turbidity-and-water" target="_blank" rel="noopener noreferrer">turbidité</a></li>
+            <li><a href="https://geodesie.ign.fr/les-reseaux-de-nivellement-francais" target="_blank" rel="noopener noreferrer">IGN — référence des altitudes NGF</a></li>
+            <li><a href="https://hydro.eaufrance.fr/aide/le-capteur-hydrometrique" target="_blank" rel="noopener noreferrer">HydroPortail — hauteurs et références des stations</a> ; <a href="https://www.eaufrance.fr/glossaire/debit" target="_blank" rel="noopener noreferrer">Eaufrance — débit</a></li>
+          </ul>
+        </details>
       </article>
-      <article class="bloc-informations">
-        <h3>Accès aux données des partenaires</h3>
-        <p>Certaines données des stations présentées ne sont pas accessibles au public. Pour cela, vous pouvez vous rapprocher des structures compétentes à partir de leurs sites web, présentés ci-dessous.</p>
-        <p>Pour les données issues du portail <strong>AGHyre de VNF</strong>, un mode d’emploi est consultable ci-dessous :</p>
-        <p><a class="lien-guide-partenaire" href="https://www.vnf.fr/vnf/app/uploads/2019/12/20191125-Aghyre-Documentation-utilisateurs-Acc%C3%A8s-%C3%A0-aGHyre-sans-authentification.pdf" target="_blank" rel="noopener noreferrer">Afficher le mode d’emploi VNF (PDF)</a></p>
-        <p class="source-producteur">Document publié par VNF : « Accéder à aGHyre sans authentification ». <a href="https://www.vnf.fr/vnf/services/gestion-de-leau-donnees-publiques-aghyre/" target="_blank" rel="noopener noreferrer">Page officielle du service AGHyre</a>.</p>
+      <article class="bloc-informations" id="differents-suivis">
+        <h3>Les différents suivis réalisés en Camargue Gardoise</h3>
+        <section class="fiche-suivi" id="comprendre-filmed" aria-labelledby="titre-suivi-filmed">
+          <h4 id="titre-suivi-filmed">FILMED — SMCG</h4>
+          <p>Le SMCG réalise des relevés mensuels avec une sonde multiparamètre sur les stations des tournées Nord et Sud. La rubrique « Analyse des mesures FILMED » présente la salinité, la température et l’oxygène dissous. Ces relevés sont manuels, sans télétransmission.</p>
+        </section>
+        <section class="fiche-suivi" id="comprendre-dce" aria-labelledby="titre-suivi-dce">
+          <h4 id="titre-suivi-dce">DCE — Suivi des lagunes</h4>
+          <p>Les campagnes de la Directive Cadre sur l’Eau (DCE) présentées ici sont réalisées par la <strong>Tour du Valat pour l’Agence de l’eau Rhône Méditerranée Corse</strong>, sur les lagunes de Marette, Charnier, Crey et Scamandre. Principalement estivales, elles associent des mesures sur le terrain et des prélèvements analysés en laboratoire, notamment pour les nutriments et la chlorophylle a.</p>
+          <p>Ces campagnes sont distinctes du suivi FILMED. Les graphiques présentent les mesures disponibles et ne constituent pas un classement officiel de l’état DCE des lagunes.</p>
+          <p class="source-producteur">Source méthodologique : Grillas et al., 2020, <em>Campagne de surveillance 2019 de l’état DCE des lagunes méditerranéennes oligo- et mésohalines françaises pour la physico-chimie et le phytoplancton</em>, Tour du Valat / Agence de l’eau Rhône Méditerranée Corse, pages 6 à 9. Le calendrier précis dépend de chaque campagne.</p>
+        </section>
+        <section class="fiche-suivi" id="comprendre-canaverier" aria-labelledby="titre-suivi-canaverier">
+          <h4 id="titre-suivi-canaverier">Canavérier — SMCG</h4>
+          <p>Ce suivi manuel distingue les eaux de surface, mesurées auprès d’échelles limnimétriques, et les eaux souterraines, suivies dans des piézomètres. Les graphiques présentent la conductivité, la salinité, la température et l’altitude du niveau d’eau en m NGF, selon les données disponibles.</p>
+        </section>
+        <section class="fiche-suivi" id="comprendre-vnf" aria-labelledby="titre-suivi-vnf">
+          <h4 id="titre-suivi-vnf">Réseau VNF</h4>
+          <p>Les stations VNF présentées sur la carte sont suivies par télétransmission. Selon les points, elles mesurent la salinité, la conductivité, la température ou la hauteur d’eau. Les mesures sont consultables sur le portail AGHyre ; son mode d’emploi se trouve dans l’onglet « Portails et ressources ».</p>
+        </section>
+        <section class="fiche-suivi" id="comprendre-symadrem" aria-labelledby="titre-suivi-symadrem">
+          <h4 id="titre-suivi-symadrem">Réseau SYMADREM</h4>
+          <p>Les stations présentées sont suivies par télétransmission, notamment pour les hauteurs d’eau et, sur certains points, la salinité et la température. Les données de mesure ne sont pas publiques ; ce portail présente la localisation des stations et les paramètres suivis.</p>
+        </section>
+        <section class="fiche-suivi" id="comprendre-cen" aria-labelledby="titre-suivi-cen">
+          <h4 id="titre-suivi-cen">Stations du CEN Occitanie</h4>
+          <p>Les stations du CEN Occitanie répertoriées sur la carte sont suivies par télétransmission pour la salinité, la conductivité, la température et la hauteur d’eau. Les données de ces stations ne sont pas publiques. Le tableau de bord public FILMED du CEN, accessible depuis les analyses FILMED, constitue une ressource distincte.</p>
+        </section>
+        <section class="fiche-suivi" id="comprendre-vigicrues" aria-labelledby="titre-suivi-vigicrues">
+          <h4 id="titre-suivi-vigicrues">Réseau Vigicrues — État</h4>
+          <p>Le portail Vigicrues permet de consulter des hauteurs d’eau et, selon les stations, des débits. La carte de ce site donne accès aux stations présentées. Elle peut aussi afficher la vigilance sur trois tronçons de cours d’eau : cette vigilance concerne les tronçons et reste distincte des mesures aux stations.</p>
+        </section>
       </article>
       <article class="bloc-informations" id="producteurs-donnees">
         <h3>Informations sur les producteurs de données</h3>
+        <p>Les conditions d’accès aux mesures dépendent des organismes. Pour les données non publiques, vous pouvez vous rapprocher de la structure concernée à partir de son site web.</p>
         <section class="fiche-producteur" id="producteur-smcg" aria-labelledby="titre-producteur-smcg">
           <h4 id="titre-producteur-smcg">SMCG — Syndicat Mixte Camargue Gardoise</h4>
           <p>Le Syndicat Mixte Camargue Gardoise est un établissement public réunissant le Département du Gard et les communes de son territoire. Il œuvre à la protection et à la gestion des espaces naturels de Camargue gardoise. Ses actions portent notamment sur la biodiversité, les zones humides, la gestion de l’eau et la valorisation du patrimoine.</p>
@@ -287,26 +364,32 @@
       <h2 id="titre-ressources">Ressources et portails</h2>
       <div class="tableau-ressources">
         <table>
-          <caption class="visuellement-masque">Portails complémentaires et intérêt pour le visiteur</caption>
+          <caption class="visuellement-masque">Sites web complémentaires et informations disponibles</caption>
           <thead>
-            <tr><th scope="col">Portail</th><th scope="col">Intérêt pour le visiteur</th></tr>
+            <tr><th scope="col">Site web</th><th scope="col">Informations présentes sur le site web</th></tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row"><a href="https://www.eaufrance.fr/" target="_blank" rel="noopener noreferrer">Eaufrance</a></th>
-              <td>Accéder aux ressources sur les eaux souterraines, les cours d’eau, le littoral et l’hydrométrie.</td>
+              <td>Ressources et données sur les eaux souterraines, les cours d’eau, le littoral et l’hydrométrie.</td>
             </tr>
             <tr>
               <th scope="row"><a href="https://sig.gard.fr/" target="_blank" rel="noopener noreferrer">SIG du Département du Gard</a></th>
-              <td>Consulter des cartes et des informations territoriales complémentaires.</td>
+              <td>Cartes et informations territoriales complémentaires sur le département du Gard.</td>
             </tr>
             <tr>
               <th scope="row"><a href="https://sig.reseau-zones-humides.org/" target="_blank" rel="noopener noreferrer">SIG Réseau zones humides</a></th>
-              <td>Explorer les inventaires et les informations cartographiques sur les zones humides.</td>
+              <td>Inventaires et informations cartographiques sur les zones humides.</td>
             </tr>
           </tbody>
         </table>
       </div>
+      <article class="guide-ressource" id="guide-aghyre" aria-labelledby="titre-guide-aghyre">
+        <h3 id="titre-guide-aghyre">Mode d’emploi AGHyre — VNF</h3>
+        <p>Pour rechercher les stations et consulter les mesures sur le portail AGHyre, VNF propose un mode d’emploi :</p>
+        <p><a class="lien-guide-partenaire" href="https://www.vnf.fr/vnf/app/uploads/2019/12/20191125-Aghyre-Documentation-utilisateurs-Acc%C3%A8s-%C3%A0-aGHyre-sans-authentification.pdf" target="_blank" rel="noopener noreferrer">Consulter le mode d’emploi AGHyre (PDF)</a></p>
+        <p class="source-ressource">Document publié par VNF : « Accéder à aGHyre sans authentification ». <a href="https://www.vnf.fr/vnf/services/gestion-de-leau-donnees-publiques-aghyre/" target="_blank" rel="noopener noreferrer">Page officielle du service AGHyre</a>.</p>
+      </article>
     </section>
   </main>
 
@@ -315,3 +398,4 @@
   </footer>
 </body>
 </html>
+
