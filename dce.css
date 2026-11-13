@@ -9,7 +9,8 @@
 .choix-analyses button, .panneau-dce button { min-height:44px; padding:10px 16px; border:1px solid var(--vert,#167568); border-radius:6px; background:#fff; color:var(--texte,#183d41); font:inherit; cursor:pointer; }
 .choix-analyses button[aria-pressed="true"] { background:var(--vert,#167568); color:#fff; font-weight:600; }
 .panneau-dce button:disabled { opacity:.55; cursor:default; }
-#analyse-filmed > h3, #analyses-complementaires > h3 { font-size:23px; margin:24px 0 16px; }
+#analyse-filmed > h3 { font-size:23px; margin:24px 0 16px; }
+#analyse-dce > h3, #analyse-canaverier > h3 { font-size:23px; line-height:1.4; margin:0 0 16px; }
 .panneau-dce { padding:24px; border:1px solid var(--bordure,#dce6e1); border-radius:12px; background:var(--vert-clair,#eaf3ed); }
 .panneau-dce h4 { margin:0 0 12px; font-size:22px; line-height:1.4; }
 .commandes-dce { min-width:0; margin:24px 0; padding:20px; border:1px solid #a8bfba; border-radius:10px; background:#fff; }

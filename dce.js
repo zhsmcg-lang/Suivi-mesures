@@ -121,15 +121,27 @@
     const navSite = document.querySelector('nav a[href="#graphiques"]');
     if (navSite) navSite.textContent = "Analyses des données";
     const choix = creer("div", undefined, "choix-analyses"); choix.setAttribute("role", "group"); choix.setAttribute("aria-label", "Choisir un espace d’analyse");
-    const boutonFilmed = creer("button", "Analyse des mesures FILMED"), boutonEtudes = creer("button", "Études et comparaisons complémentaires");
-    for (const b of [boutonFilmed, boutonEtudes]) b.type = "button";
-    boutonFilmed.addEventListener("click", () => { window.location.hash = "graphiques?vue=filmed"; appliquerVue(); });
-    boutonEtudes.addEventListener("click", () => { window.location.hash = "graphiques?vue=etudes"; appliquerVue(); });
-    choix.append(boutonFilmed, boutonEtudes);
+    const espaces = [
+      ["filmed", "Analyse des mesures FILMED", "analyse-filmed"],
+      ["dce", "Suivi DCE des lagunes", "analyse-dce"],
+      ["canaverier", "Suivi Canavérier", "analyse-canaverier"]
+    ];
+    const boutons = new Map();
+    for (const [vue, texte, cible] of espaces) {
+      const bouton = creer("button", texte); bouton.type = "button";
+      bouton.id = "choix-analyse-" + vue;
+      bouton.setAttribute("aria-controls", cible);
+      bouton.setAttribute("aria-pressed", "false");
+      bouton.addEventListener("click", () => {
+        window.location.hash = "graphiques?vue=" + vue; appliquerVue();
+      });
+      boutons.set(vue, bouton); choix.append(bouton);
+    }
     const etudes = creer("div"); etudes.id = "analyses-complementaires";
-    etudes.append(creer("h3", "Études et comparaisons complémentaires"));
-    const panneau = creer("details", undefined, "panneau-dce bloc-etude-repliable"); panneau.id = "analyse-dce";
-    panneau.append(creer("summary", "Suivi DCE des lagunes"), creer("p", "Campagnes estivales réalisées par la Tour du Valat pour l’Agence de l’eau Rhône Méditerranée Corse, sur les étangs de Marette, Charnier, Crey et Scamandre. Ces données sont distinctes du suivi mensuel FILMED du SMCG."));
+    const panneau = creer("article", undefined, "panneau-dce"); panneau.id = "analyse-dce";
+    const titreDce = creer("h3", "Suivi DCE des lagunes"); titreDce.id = "titre-analyse-dce";
+    panneau.setAttribute("aria-labelledby", titreDce.id);
+    panneau.append(titreDce, creer("p", "Campagnes estivales réalisées par la Tour du Valat pour l’Agence de l’eau Rhône Méditerranée Corse, sur les étangs de Marette, Charnier, Crey et Scamandre. Ces données sont distinctes du suivi mensuel FILMED du SMCG."));
     const message = creer("p", "Chargement des données DCE…"); message.id = "message-dce"; message.setAttribute("role", "status"); message.setAttribute("aria-live", "polite");
     const controles = creer("fieldset", undefined, "commandes-dce"); controles.disabled = true; controles.append(creer("legend", "Choisir les données DCE"));
     const ligne = creer("div", undefined, "ligne-filtres-dce");
@@ -152,9 +164,8 @@
     const zone = creer("div"); zone.id = "courbes-dce";
     panneau.append(controles, message, aide, zone); etudes.append(panneau);
     section.append(choix, filmed, etudes);
-    ui = { section, filmed, etudes, panneau, boutonFilmed, boutonEtudes, etang, debut, fin, points: pointsZone,
+    ui = { section, filmed, etudes, panneau, boutons, etang, debut, fin, points: pointsZone,
       parametres: paramZone, inclure, controles, message, zone };
-    panneau.addEventListener("toggle", () => { if (panneau.open) actualiser(); });
     etang.addEventListener("change", () => { selectionPoints(); actualiser(); });
     controles.addEventListener("change", actualiser);
     debut.addEventListener("input", actualiser); fin.addEventListener("input", actualiser);
@@ -186,12 +197,16 @@
   function appliquerVue() {
     if (!ui) return;
     const hash = window.location.hash.slice(1), [section, requete = ""] = hash.split("?");
-    const params = new URLSearchParams(requete), vue = params.get("vue") || "filmed";
-    const dce = ["dce", "canaverier", "etudes"].includes(vue);
-    if (vue === "dce") ui.panneau.open = true;
-    else if (vue === "canaverier") ui.panneau.open = false;
-    ui.filmed.hidden = dce; ui.etudes.hidden = !dce;
-    ui.boutonFilmed.setAttribute("aria-pressed", String(!dce)); ui.boutonEtudes.setAttribute("aria-pressed", String(dce));
+    const params = new URLSearchParams(requete), demandee = params.get("vue");
+    // Les anciens liens vers les études ouvrent directement le suivi DCE.
+    const vue = demandee === "etudes" ? "dce" : ui.boutons.has(demandee) ? demandee : "filmed";
+    ui.filmed.hidden = vue !== "filmed";
+    ui.etudes.hidden = vue === "filmed";
+    ui.panneau.hidden = vue !== "dce";
+    const canaverier = document.getElementById("analyse-canaverier");
+    if (canaverier) canaverier.hidden = vue !== "canaverier";
+    for (const [nom, bouton] of ui.boutons) bouton.setAttribute("aria-pressed", String(nom === vue));
+    if (section !== "graphiques" || vue !== "dce") dernierPoint = "";
     const id = params.get("point") || "";
     if (section === "graphiques" && vue === "dce" && donnees.length && id && id !== dernierPoint) {
       const point = points.find(p => p.id === id);
@@ -200,8 +215,8 @@
         ui.debut.value = moisISO(point.debut); ui.fin.value = moisISO(point.fin); dernierPoint = id;
       } else { vider(); ui.message.textContent = "Ce point DCE est absent du fichier. Choisissez un autre point."; return; }
     }
-    if (section === "graphiques" && dce && donnees.length) actualiser();
-    if (!dce) requestAnimationFrame(() => {
+    if (section === "graphiques" && vue === "dce" && donnees.length) actualiser();
+    if (vue === "filmed") requestAnimationFrame(() => {
       if (typeof Chart !== "undefined") for (const canvas of ui.filmed.querySelectorAll("canvas")) Chart.getChart?.(canvas)?.resize();
     });
   }
@@ -234,7 +249,7 @@
     table.append(tbody); details.append(table); article.append(details);
   }
   function actualiser() {
-    if (!ui || ui.section.hidden || ui.etudes.hidden || !ui.panneau.open || !donnees.length) return;
+    if (!ui || ui.section.hidden || ui.etudes.hidden || ui.panneau.hidden || !donnees.length) return;
     vider();
     const selection = new Set(Array.from(ui.points.querySelectorAll('input:checked'), c => c.value));
     const parametres = disponibles.filter(p => Array.from(ui.parametres.querySelectorAll('input:checked')).some(c => c.value === p.id));

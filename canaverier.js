@@ -63,8 +63,9 @@
   function option(select,valeur,texte){const e=creer("option",texte);e.value=valeur;select.append(e);}
   function preparerInterface(){
     const etudes=document.getElementById("analyses-complementaires");if(!etudes||document.getElementById("analyse-canaverier"))return;
-    const panneau=creer("details",undefined,"panneau-canaverier bloc-etude-repliable");panneau.id="analyse-canaverier";
-    panneau.append(creer("summary","Suivi Canaverier"),creer("p","Relevés du SMCG sur les eaux de surface (limnimétrie) et la nappe (piézométrie). Les deux suivis restent identifiés séparément."));
+    const panneau=creer("article",undefined,"panneau-canaverier");panneau.id="analyse-canaverier";panneau.hidden=true;
+    const titre=creer("h3","Suivi Canavérier");titre.id="titre-analyse-canaverier";panneau.setAttribute("aria-labelledby",titre.id);
+    panneau.append(titre,creer("p","Relevés du SMCG sur les eaux de surface (limnimétrie) et la nappe (piézométrie). Les deux suivis restent identifiés séparément."));
     const controles=creer("fieldset",undefined,"commandes-canaverier");controles.disabled=true;controles.append(creer("legend","Choisir les mesures"));
     const ligne=creer("div",undefined,"ligne-filtres-canaverier");
     const type=champ("select","type-canaverier","Type de suivi"),vue=champ("select","vue-canaverier","Présentation");
@@ -101,7 +102,6 @@
     cocher.addEventListener("click",()=>{pointAbsent="";ui.stations.querySelectorAll("label").forEach(l=>{if(!l.hidden)l.querySelector("input").checked=true;});actualiser();});
     decocher.addEventListener("click",()=>{pointAbsent="";pointAbsent="";ui.stations.querySelectorAll("input").forEach(c=>{c.checked=false;});actualiser();});
     reset.addEventListener("click",()=>{pointAbsent="";initialiserControles();modes.clear();dernierLien="";actualiser();});
-    panneau.addEventListener("toggle",()=>{if(panneau.open)requestAnimationFrame(actualiser);});
   }
   function pointsDuType(){return points.filter(p=>!ui.type.value||p.typeSuivi===ui.type.value);}
   function remplirStations(nouvelleSelection){
@@ -133,9 +133,9 @@
     if(!ui)return;
     const [section,requete=""]=location.hash.slice(1).split("?"),params=new URLSearchParams(requete),vue=params.get("vue");
     if(section!=="graphiques"||vue!=="canaverier"){dernierLien="";pointAbsent="";}
-    if(vue==="dce")ui.panneau.open=false;
+    ui.panneau.hidden=vue!=="canaverier";
     if(section==="graphiques"&&vue==="canaverier"){
-      ui.panneau.open=true;const id=params.get("point")||"";
+      const id=params.get("point")||"";
       if(donnees.length&&id&&id!==dernierLien){
         const p=points.find(p=>p.id===id);if(!p){pointAbsent=id;vider();ui.message.textContent="Ce point Canaverier est absent du fichier. Choisissez une autre station.";return;}
         pointAbsent="";ui.type.value=p.typeSuivi;ui.vue.value="chronologie";ui.recherche.value="";remplirStations(true);
@@ -179,7 +179,7 @@
     for(const [texte,g]of groupes)ui.notesListe.append(creer("li",texte+" — "+g.n+" relevé(s) : "+[...g.stations].join(", ")+"."));ui.notes.hidden=!groupes.size;
   }
   function actualiser(){
-    if(!ui||!donnees.length||ui.etudes.hidden||!ui.panneau.open||document.getElementById("graphiques")?.hidden)return;
+    if(!ui||!donnees.length||ui.etudes.hidden||ui.panneau.hidden||document.getElementById("graphiques")?.hidden)return;
     if(pointAbsent){vider();ui.message.textContent="Ce point Canaverier est absent du fichier. Choisissez une autre station.";return;}
     const coches=Array.from(ui.stations.querySelectorAll("input:checked"));ui.resumeStations.textContent=coches.length===1?"Station sélectionnée : "+points.find(p=>p.id===coches[0].value)?.nom:"Stations à comparer : "+coches.length+" sélectionnées";
     const annuelle=ui.vue.value==="annees",selection=new Set(annuelle?[ui.stationAnnuelle.value]:Array.from(ui.stations.querySelectorAll("input:checked"),c=>c.value));
