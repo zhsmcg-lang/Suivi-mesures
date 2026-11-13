@@ -38,8 +38,8 @@
     const vus=new Set(),identites=new Map(),resultat=[];
     for(const [index,r]of lecture.data.entries()){
       const ligne=index+2,id=String(r.Identifiant_station||"").trim(),type=String(r.Type_suivi||"").trim(),station=String(r.Station||"").trim();
-      // Les deux mares sont exclusivement limnimétriques dans ce portail.
-      if(type==="Piézométrique"&&(["CP06","CP07"].includes(id)||["mare nord","mare sud"].includes(normaliser(station))))continue;
+      // Points retirés du portail. Leurs identifiants restent réservés à leur historique.
+      if(["CL02","CL13","CL14","CP06","CP07"].includes(id))continue;
       const date=dateCSV(r.Date);
       if(!id||!station||!["Limnimétrique","Piézométrique"].includes(type)||date===null)throw new Error("Identification ou date invalide, ligne "+ligne+".");
       const longitude=nombreCSV(r.Longitude_WGS84,ligne),latitude=nombreCSV(r.Latitude_WGS84,ligne);
@@ -64,7 +64,7 @@
   function preparerInterface(){
     const etudes=document.getElementById("analyses-complementaires");if(!etudes||document.getElementById("analyse-canaverier"))return;
     const panneau=creer("details",undefined,"panneau-canaverier bloc-etude-repliable");panneau.id="analyse-canaverier";
-    panneau.append(creer("summary","Suivi Canaverier"),creer("p","Relevés du SMCG sur les eaux de surface (limnimétrie) et la nappe (piézométrie). Les deux suivis restent identifiés séparément. Mare Nord et Mare Sud sont présentées uniquement en limnimétrie."));
+    panneau.append(creer("summary","Suivi Canaverier"),creer("p","Relevés du SMCG sur les eaux de surface (limnimétrie) et la nappe (piézométrie). Les deux suivis restent identifiés séparément."));
     const controles=creer("fieldset",undefined,"commandes-canaverier");controles.disabled=true;controles.append(creer("legend","Choisir les mesures"));
     const ligne=creer("div",undefined,"ligne-filtres-canaverier");
     const type=champ("select","type-canaverier","Type de suivi"),vue=champ("select","vue-canaverier","Présentation");
